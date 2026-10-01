@@ -1,0 +1,11 @@
+# Railway: monorepo backend — do not use Railpack/Nixpacks auto-detect at repo root.
+# Dashboard: Service → Settings → Build → confirm "Dockerfile" and path below.
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "backend/Dockerfile"
+
+[deploy]
+healthcheckPath = "/api/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
