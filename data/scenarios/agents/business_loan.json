@@ -1,0 +1,87 @@
+[
+  {
+    "id": "q1_01_cooperative", "agent": "business_loan", "today": "2026-10-01",
+    "title": "Cooperative customer, multi-detail answer, pre-qualified, callback scheduled",
+    "turns": [
+      {"user": "Yes, go ahead."},
+      {"user": "We've been running the shop since 2019.", "expect": {"slot": ["business_vintage_years", 7]}},
+      {"user": "Our turnover is about 3 lakh a month and I need around 15 lakh.", "expect": {"slot": ["annual_turnover_inr", 3600000], "contains": "36 lakh rupees a year"}},
+      {"user": "To buy a new packaging machine.", "expect": {"slot": ["loan_purpose", "equipment"]}},
+      {"user": "It's around 745.", "expect": {"slot": ["credit_score", 745]}},
+      {"user": "No, never.", "expect": {"slot": ["recent_default", false]}},
+      {"user": "Yes, we have GST registration.", "expect": {"contains": "preliminary"}},
+      {"user": "Yes please."},
+      {"user": "Tomorrow at 11 am.", "expect": {"contains": "scheduled"}}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "pre_qualified", "actions": ["eligibility_check", "callback_scheduled", "crm_summary"]}
+  },
+  {
+    "id": "q1_02_objection", "agent": "business_loan", "today": "2026-10-01",
+    "title": "Objections (rate too high, hidden charges, documents) answered from the KB with citations",
+    "turns": [
+      {"user": "Okay, but honestly your interest rate is too high.", "expect": {"intent": "objection", "citations": true, "contains": "14%"}},
+      {"user": "About four years.", "expect": {"slot": ["business_vintage_years", 4]}},
+      {"user": "Roughly 60 lakh annual turnover."},
+      {"user": "I am worried there will be hidden charges.", "expect": {"intent": "objection", "citations": true, "contains": "Key Fact Statement"}},
+      {"user": "25 lakh.", "expect": {"slot": ["loan_amount_inr", 2500000]}},
+      {"user": "Working capital for salaries."},
+      {"user": "I don't want to share my documents with you people.", "expect": {"intent": "objection", "citations": true, "contains": "encrypted"}},
+      {"user": "It is 712."},
+      {"user": "No."},
+      {"user": "Yes, Udyam registered."},
+      {"user": "No, I'll think about it.", "expect": {"contains": "no callback"}}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "pre_qualified"}
+  },
+  {
+    "id": "q1_03_incomplete_conflicting", "agent": "business_loan", "today": "2026-10-01",
+    "title": "Incomplete (unknown credit score) and conflicting (vintage) details; ends in needs_review / policy fail",
+    "turns": [
+      {"user": "Sure."},
+      {"user": "Five years.", "expect": {"slot": ["business_vintage_years", 5]}},
+      {"user": "Actually we started last year, so about one year in business.", "expect": {"intent": "conflict_detected", "contains": "Which one is correct"}},
+      {"user": "The second one, one year is correct.", "expect": {"slot": ["business_vintage_years", 1], "contains": "noted 1 year.", "not_contains": "didn't quite catch"}},
+      {"user": "Around 18 lakh a year."},
+      {"user": "10 lakh."},
+      {"user": "Inventory for the festive season."},
+      {"user": "I don't know, never checked it.", "expect": {"slot": ["credit_score", "unknown"]}},
+      {"user": "No."},
+      {"user": "Hmm."},
+      {"user": "Yes, shop and establishment licence.", "expect": {"contains": "at least 2 years"}},
+      {"user": "No thanks."}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "not_eligible"}
+  },
+  {
+    "id": "q1_04_out_of_scope", "agent": "business_loan", "today": "2026-10-01",
+    "title": "Out-of-scope and unsupported questions trigger the safe fallback (no invented answer)",
+    "turns": [
+      {"user": "Yes."},
+      {"user": "Do you also offer home loans for flats in Pune?", "expect": {"intent": "fallback", "contains": "don't have verified information"}},
+      {"user": "Three years."},
+      {"user": "What is today's gold rate?", "expect": {"intent": "fallback", "contains": "relationship manager"}},
+      {"user": "Fine. Can I prepay the loan early?", "expect": {"intent": "question", "citations": true, "contains": "6 EMIs"}}
+    ],
+    "expect_final": {"stage": "collecting"}
+  },
+  {
+    "id": "q1_05_human_request", "agent": "business_loan", "today": "2026-10-01",
+    "title": "Customer asks for a human mid-flow; escalation with handoff summary",
+    "turns": [
+      {"user": "Yes."},
+      {"user": "Six years."},
+      {"user": "Look, can I just speak to a real person please?", "expect": {"intent": "escalation", "contains": "relationship manager"}}
+    ],
+    "expect_final": {"stage": "escalated", "actions": ["escalation"]}
+  },
+  {
+    "id": "q1_06_excluded_purpose", "agent": "business_loan", "today": "2026-10-01",
+    "title": "Policy-excluded purpose (stock trading) is declined using KB rules",
+    "turns": [
+      {"user": "Yes."}, {"user": "Ten years."}, {"user": "2 crore turnover."}, {"user": "50 lakh."},
+      {"user": "Mostly for stock market trading.", "expect": {"slot": ["loan_purpose", "excluded:stock market trading"]}},
+      {"user": "800."}, {"user": "No."}, {"user": "Yes.", "expect": {"contains": "cannot be used for stock market trading"}}, {"user": "No."}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "not_eligible"}
+  }
+]

@@ -1,0 +1,3572 @@
+{
+  "aggregate": {
+    "latency_ms": {
+      "end_to_end": {
+        "n": 18,
+        "p50": 2079.45,
+        "p95": 3220.57
+      },
+      "asr_finalization_lag": {
+        "n": 213,
+        "p50": 919.7,
+        "p95": 1134.44
+      },
+      "signal_extraction": {
+        "n": 18,
+        "p50": 0.23,
+        "p95": 0.53
+      },
+      "nudge_control": {
+        "n": 18,
+        "p50": 0.05,
+        "p95": 0.45
+      },
+      "delivery": {
+        "n": 18,
+        "p50": 0.65,
+        "p95": 1.63
+      },
+      "asr_compute_per_chunk": {
+        "n": 528,
+        "p50": 25.93,
+        "p95": 123.38,
+        "note": "max of per-run P95"
+      }
+    },
+    "nudges_emitted": 18,
+    "false_positives": 0,
+    "precision": 1.0,
+    "recall_required_kinds": 1.0,
+    "suppressed_by_reason": {
+      "duplicate": 37,
+      "cooldown_grouped": 9
+    }
+  },
+  "aggregate_single_call": {
+    "latency_ms": {
+      "end_to_end": {
+        "n": 6,
+        "p50": 2156.95,
+        "p95": 3085.03
+      },
+      "asr_finalization_lag": {
+        "n": 71,
+        "p50": 923.1,
+        "p95": 1130.4
+      },
+      "signal_extraction": {
+        "n": 6,
+        "p50": 0.38,
+        "p95": 0.44
+      },
+      "nudge_control": {
+        "n": 6,
+        "p50": 0.1,
+        "p95": 0.17
+      },
+      "delivery": {
+        "n": 6,
+        "p50": 1.2,
+        "p95": 1.3
+      },
+      "asr_compute_per_chunk": {
+        "n": 175,
+        "p50": 25.28,
+        "p95": 129.86,
+        "note": "max of per-run P95"
+      }
+    },
+    "nudges_emitted": 6,
+    "false_positives": 0,
+    "precision": 1.0,
+    "recall_required_kinds": 1.0,
+    "suppressed_by_reason": {
+      "duplicate": 12,
+      "cooldown_grouped": 3
+    }
+  },
+  "runs": [
+    {
+      "scenario": "rt_cross_sell",
+      "summary": {
+        "label": "rt_cross_sell",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 62.42,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 2629.6,
+            "p95": 3159.16,
+            "max": 3218.0
+          },
+          "asr_finalization_lag": {
+            "n": 15,
+            "p50": 921.4,
+            "p95": 1060.18,
+            "max": 1120.8
+          },
+          "asr_compute_per_chunk": {
+            "n": 47,
+            "p50": 25.12,
+            "p95": 72.09,
+            "max": 102.4
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.23,
+            "p95": 0.24,
+            "max": 0.2
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.07,
+            "p95": 0.1,
+            "max": 0.1
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 0.85,
+            "p95": 1.08,
+            "max": 1.1
+          }
+        },
+        "nudges": [
+          {
+            "id": "c6f5ea7d",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "priority": 2,
+            "status": "resolved_by_agent",
+            "confidence": 0.63,
+            "t_stream": 25.9,
+            "evidence": [
+              "i wanted to renew",
+              "can i pay online"
+            ],
+            "message": "Buying signal. Confirm the next step and close: payment link or application.",
+            "source": "rule-partial",
+            "e2e_ms": 2041.2,
+            "delivery_ms": 0.6
+          },
+          {
+            "id": "28c43942",
+            "kind": "cross_sell",
+            "topic": "multi_vehicle",
+            "priority": 2,
+            "status": "missed_opportunity",
+            "confidence": 0.9,
+            "t_stream": 29.4,
+            "evidence": [
+              "second car",
+              "son just got his driving licence"
+            ],
+            "message": "Customer mentioned another vehicle. Offer the multi-vehicle discount on a second policy. Also: A new driver will use the car. Suggest adding a named driver so claims stay covered.",
+            "source": "rule",
+            "e2e_ms": 3218.0,
+            "delivery_ms": 1.1
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "reason": "duplicate",
+            "confidence": 0.7,
+            "asr_conf": 1.0,
+            "evidence": "i wanted to renew",
+            "t_stream": 29.4,
+            "grouped_into": "c6f5ea7d"
+          },
+          {
+            "type": "suppressed",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "reason": "duplicate",
+            "confidence": 0.614,
+            "asr_conf": 0.878,
+            "evidence": "can i pay online",
+            "t_stream": 41.16,
+            "grouped_into": "c6f5ea7d"
+          },
+          {
+            "type": "suppressed",
+            "kind": "cross_sell",
+            "topic": "add_driver",
+            "reason": "cooldown_grouped",
+            "confidence": 0.72,
+            "asr_conf": 0.9,
+            "evidence": "son just got his driving licence",
+            "t_stream": 51.3,
+            "grouped_into": "28c43942"
+          },
+          {
+            "type": "suppressed",
+            "kind": "cross_sell",
+            "topic": "add_driver",
+            "reason": "duplicate",
+            "confidence": 0.774,
+            "asr_conf": 0.967,
+            "evidence": "son just got his driving licence",
+            "t_stream": 51.51,
+            "grouped_into": "28c43942"
+          }
+        ],
+        "suppressed_by_reason": {
+          "duplicate": 3,
+          "cooldown_grouped": 1
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "renewal",
+            "t_stream": 20.43,
+            "speaker": "agent"
+          },
+          {
+            "from": "renewal",
+            "to": "payment",
+            "t_stream": 41.16,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "good morning this is rahul from coach general insurance",
+            "t_stream": 4.29,
+            "asr_conf": 0.889
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is recorded for equality and training purposes",
+            "t_stream": 8.16,
+            "asr_conf": 0.946
+          },
+          {
+            "speaker": "agent",
+            "text": "am i speaking with mr mentor",
+            "t_stream": 10.83,
+            "asr_conf": 0.844
+          },
+          {
+            "speaker": "customer",
+            "text": "he is speaking",
+            "t_stream": 13.77,
+            "asr_conf": 0.779
+          },
+          {
+            "speaker": "agent",
+            "text": "hi i'm calling about the renewal of your car insurance policy which expires on the fifteenth",
+            "t_stream": 20.43,
+            "asr_conf": 0.926
+          },
+          {
+            "speaker": "customer",
+            "text": "white i wanted to renew it actually my wife also bought a second car last month a small hatchback",
+            "t_stream": 29.4,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "huh okay",
+            "t_stream": 31.35,
+            "asr_conf": 0.691
+          },
+          {
+            "speaker": "agent",
+            "text": "so for your policy the renewal premium is eleven thousand four hundred rupees",
+            "t_stream": 37.11,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "hein can i pay online",
+            "t_stream": 41.16,
+            "asr_conf": 0.878
+          },
+          {
+            "speaker": "agent",
+            "text": "yes i will send you a payment linked by message",
+            "t_stream": 45.72,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "also my son just got his driving licence and he will use the car sometimes",
+            "t_stream": 51.51,
+            "asr_conf": 0.967
+          },
+          {
+            "speaker": "agent",
+            "text": "he noted",
+            "t_stream": 53.49,
+            "asr_conf": 0.823
+          },
+          {
+            "speaker": "agent",
+            "text": "is there anything else i can help you with today",
+            "t_stream": 56.73,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "no that is all thank you",
+            "t_stream": 60.99,
+            "asr_conf": 0.948
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 62.4,
+            "asr_conf": 0.455
+          }
+        ]
+      },
+      "wall_s": 63.807623863220215,
+      "round": 1,
+      "score": {
+        "emitted": [
+          "buying_signal",
+          "cross_sell"
+        ],
+        "true_positive_kinds": [
+          "cross_sell"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": [
+          "buying_signal"
+        ]
+      }
+    },
+    {
+      "scenario": "rt_compliance",
+      "summary": {
+        "label": "rt_compliance",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 49.46,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 2143.35,
+            "p95": 2217.28,
+            "max": 2225.5
+          },
+          "asr_finalization_lag": {
+            "n": 13,
+            "p50": 927.2,
+            "p95": 1037.58,
+            "max": 1043.4
+          },
+          "asr_compute_per_chunk": {
+            "n": 37,
+            "p50": 40.78,
+            "p95": 75.65,
+            "max": 121.5
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.17,
+            "p95": 0.19,
+            "max": 0.2
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.07,
+            "p95": 0.11,
+            "max": 0.1
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 0.55,
+            "p95": 0.59,
+            "max": 0.6
+          }
+        },
+        "nudges": [
+          {
+            "id": "5aab8693",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.855,
+            "t_stream": 19.4,
+            "evidence": [
+              "guaranteed",
+              "no recording disclosure by 20s (agent ASR conf 0.98)",
+              "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+              "one hundred percent",
+              "definitely get"
+            ],
+            "message": "Risky claim: approval cannot be guaranteed. Correct it now: the final decision is subject to credit assessment. Also: Recording disclosure missing. Tell the customer the call is recorded before continuing. Also: Rate quoted without the credit-assessment disclosure. Add: final terms are subject to credit assessment.",
+            "source": "rule-partial",
+            "e2e_ms": 2061.2,
+            "delivery_ms": 0.6
+          },
+          {
+            "id": "32777869",
+            "kind": "compliance",
+            "topic": "fee_evasion",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.675,
+            "t_stream": 48.7,
+            "evidence": [
+              "it is very small"
+            ],
+            "message": "Fee question deflected. State the processing fee (up to 2% plus GST) and point to the Key Fact Statement.",
+            "source": "rule-partial",
+            "e2e_ms": 2225.5,
+            "delivery_ms": 0.5
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "recording_disclosure",
+            "reason": "cooldown_grouped",
+            "confidence": 0.9,
+            "asr_conf": 0.983,
+            "evidence": "no recording disclosure by 20s (agent ASR conf 0.98)",
+            "t_stream": 20.0,
+            "grouped_into": "5aab8693"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "pricing_before_disclosure",
+            "reason": "cooldown_grouped",
+            "confidence": 0.85,
+            "asr_conf": 1.0,
+            "evidence": "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+            "t_stream": 20.73,
+            "grouped_into": "5aab8693"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.95,
+            "asr_conf": 1.0,
+            "evidence": "guaranteed",
+            "t_stream": 20.73,
+            "grouped_into": "5aab8693"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.95,
+            "asr_conf": 1.0,
+            "evidence": "one hundred percent",
+            "t_stream": 28.17,
+            "grouped_into": "5aab8693"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.824,
+            "asr_conf": 0.867,
+            "evidence": "definitely get",
+            "t_stream": 30.57,
+            "grouped_into": "5aab8693"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "fee_evasion",
+            "reason": "duplicate",
+            "confidence": 0.75,
+            "asr_conf": 1.0,
+            "evidence": "it is very small",
+            "t_stream": 48.0,
+            "grouped_into": "32777869"
+          }
+        ],
+        "suppressed_by_reason": {
+          "cooldown_grouped": 2,
+          "duplicate": 4
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "pricing",
+            "t_stream": 20.73,
+            "speaker": "agent"
+          },
+          {
+            "from": "pricing",
+            "to": "documents",
+            "t_stream": 35.28,
+            "speaker": "customer"
+          },
+          {
+            "from": "documents",
+            "to": "pricing",
+            "t_stream": 43.86,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hi this is vikram broncos your capital",
+            "t_stream": 3.3,
+            "asr_conf": 0.967
+          },
+          {
+            "speaker": "agent",
+            "text": "i saw that you apply for a business loan on our website",
+            "t_stream": 7.2,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "he yes i need about twenty lakh rupees for my shop",
+            "t_stream": 12.06,
+            "asr_conf": 0.981
+          },
+          {
+            "speaker": "agent",
+            "text": "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+            "t_stream": 20.73,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "wheeler",
+            "t_stream": 22.71,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "it is guaranteed",
+            "t_stream": 24.57,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "yes one hundred percent",
+            "t_stream": 28.17,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "you will definitely get the load",
+            "t_stream": 30.57,
+            "asr_conf": 0.867
+          },
+          {
+            "speaker": "customer",
+            "text": "huh okay",
+            "t_stream": 32.61,
+            "asr_conf": 0.796
+          },
+          {
+            "speaker": "customer",
+            "text": "what documents do you need from me",
+            "t_stream": 35.28,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "just your pen card or god heart and twelve months of bank statements",
+            "t_stream": 40.74,
+            "asr_conf": 0.905
+          },
+          {
+            "speaker": "customer",
+            "text": "and what is the processing fee",
+            "t_stream": 43.86,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "it is very small i will tell you later",
+            "t_stream": 48.0,
+            "asr_conf": 1.0
+          }
+        ]
+      },
+      "wall_s": 52.21784043312073,
+      "round": 1,
+      "score": {
+        "emitted": [
+          "compliance",
+          "compliance"
+        ],
+        "true_positive_kinds": [
+          "compliance"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_frustration",
+      "summary": {
+        "label": "rt_frustration",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 51.48,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 1681.8,
+            "p95": 2542.47,
+            "max": 2638.1
+          },
+          "asr_finalization_lag": {
+            "n": 14,
+            "p50": 834.65,
+            "p95": 1042.19,
+            "max": 1060.2
+          },
+          "asr_compute_per_chunk": {
+            "n": 38,
+            "p50": 28.97,
+            "p95": 78.23,
+            "max": 85.6
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.31,
+            "p95": 0.34,
+            "max": 0.3
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.09,
+            "p95": 0.13,
+            "max": 0.1
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 0.75,
+            "p95": 0.8,
+            "max": 0.8
+          }
+        },
+        "nudges": [
+          {
+            "id": "8078d708",
+            "kind": "frustration",
+            "topic": "rising",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.69,
+            "t_stream": 24.66,
+            "evidence": [
+              "ridiculous",
+              "how many times, same thing",
+              "again and again, keep calling",
+              "are you even listening",
+              "frustrat"
+            ],
+            "message": "Customer frustration is rising. Pause the script, acknowledge the concern, and summarize what you will do next.",
+            "source": "rule",
+            "e2e_ms": 725.5,
+            "delivery_ms": 0.8
+          },
+          {
+            "id": "cc69c3cd",
+            "kind": "payment_difficulty",
+            "topic": "hardship",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.81,
+            "t_stream": 38.4,
+            "evidence": [
+              "lost my job"
+            ],
+            "message": "Payment difficulty disclosed. Offer the approved payment-support / restructuring callback; do not push for payment now.",
+            "source": "rule-partial",
+            "e2e_ms": 2638.1,
+            "delivery_ms": 0.7
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "how many times, same thing",
+            "t_stream": 28.17,
+            "grouped_into": "8078d708"
+          },
+          {
+            "type": "suppressed",
+            "kind": "payment_difficulty",
+            "topic": "hardship",
+            "reason": "duplicate",
+            "confidence": 0.888,
+            "asr_conf": 0.986,
+            "evidence": "lost my job",
+            "t_stream": 38.22,
+            "grouped_into": "cc69c3cd"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "again and again, keep calling",
+            "t_stream": 41.19,
+            "grouped_into": "8078d708"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "are you even listening",
+            "t_stream": 47.88,
+            "grouped_into": "8078d708"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "frustrat",
+            "t_stream": 50.04,
+            "grouped_into": "8078d708"
+          }
+        ],
+        "suppressed_by_reason": {
+          "duplicate": 5
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "small_talk",
+            "t_stream": 5.37,
+            "speaker": "agent"
+          },
+          {
+            "from": "small_talk",
+            "to": "payment",
+            "t_stream": 9.57,
+            "speaker": "agent"
+          },
+          {
+            "from": "payment",
+            "to": "complaint",
+            "t_stream": 24.66,
+            "speaker": "customer"
+          },
+          {
+            "from": "complaint",
+            "to": "renewal",
+            "t_stream": 33.27,
+            "speaker": "agent"
+          },
+          {
+            "from": "renewal",
+            "to": "payment",
+            "t_stream": 38.22,
+            "speaker": "customer"
+          },
+          {
+            "from": "payment",
+            "to": "complaint",
+            "t_stream": 47.88,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hello this is know how from coach capital this call is recorded",
+            "t_stream": 5.37,
+            "asr_conf": 0.838
+          },
+          {
+            "speaker": "agent",
+            "text": "i'm calling about your monthly installment that was due on the fifth",
+            "t_stream": 9.57,
+            "asr_conf": 0.9
+          },
+          {
+            "speaker": "customer",
+            "text": "hi already told your colleague yesterday i will pay next week",
+            "t_stream": 15.0,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "i understand",
+            "t_stream": 17.43,
+            "asr_conf": 0.868
+          },
+          {
+            "speaker": "agent",
+            "text": "but the installment is overdue and lay charges are applying",
+            "t_stream": 21.93,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "hi this is ridiculous",
+            "t_stream": 24.66,
+            "asr_conf": 0.861
+          },
+          {
+            "speaker": "customer",
+            "text": "how many times do i have to explain the same thing",
+            "t_stream": 28.17,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "he served as per our policy i need to remind you",
+            "t_stream": 33.27,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "i lost my job last month and i simply cannot pay right now",
+            "t_stream": 38.22,
+            "asr_conf": 0.986
+          },
+          {
+            "speaker": "customer",
+            "text": "you people keep calling me again and again",
+            "t_stream": 41.19,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "how can you pay at least half of the amount today",
+            "t_stream": 44.94,
+            "asr_conf": 0.97
+          },
+          {
+            "speaker": "customer",
+            "text": "are you even listening to me",
+            "t_stream": 47.88,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "this is so frustrating",
+            "t_stream": 50.04,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 51.48,
+            "asr_conf": 0.643
+          }
+        ]
+      },
+      "wall_s": 54.27194571495056,
+      "round": 1,
+      "score": {
+        "emitted": [
+          "frustration",
+          "payment_difficulty"
+        ],
+        "true_positive_kinds": [
+          "frustration",
+          "payment_difficulty"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_noisy",
+      "summary": {
+        "label": "rt_noisy",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 36.9,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "asr_finalization_lag": {
+            "n": 14,
+            "p50": 943.95,
+            "p95": 1129.32,
+            "max": 1137.9
+          },
+          "asr_compute_per_chunk": {
+            "n": 24,
+            "p50": 32.13,
+            "p95": 118.83,
+            "max": 217.2
+          },
+          "signal_extraction": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "delivery": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "nudges": [],
+        "suppressed": [],
+        "suppressed_by_reason": {},
+        "topics": [
+          {
+            "from": null,
+            "to": "small_talk",
+            "t_stream": 2.79,
+            "speaker": "agent"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hello this is close your capital",
+            "t_stream": 2.79,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is reported for quality",
+            "t_stream": 5.46,
+            "asr_conf": 0.843
+          },
+          {
+            "speaker": "customer",
+            "text": "hello",
+            "t_stream": 7.44,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "selling the line is very that",
+            "t_stream": 10.38,
+            "asr_conf": 0.742
+          },
+          {
+            "speaker": "agent",
+            "text": "when you hear me now",
+            "t_stream": 12.9,
+            "asr_conf": 0.955
+          },
+          {
+            "speaker": "customer",
+            "text": "yeah",
+            "t_stream": 15.33,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "i am on his own the seeking this week",
+            "t_stream": 19.14,
+            "asr_conf": 0.832
+          },
+          {
+            "speaker": "agent",
+            "text": "he's this about your loan application",
+            "t_stream": 22.62,
+            "asr_conf": 0.888
+          },
+          {
+            "speaker": "customer",
+            "text": "maybe i do not know",
+            "t_stream": 25.89,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "my brother handle this",
+            "t_stream": 27.87,
+            "asr_conf": 0.812
+          },
+          {
+            "speaker": "agent",
+            "text": "hey no problem at all",
+            "t_stream": 30.54,
+            "asr_conf": 0.881
+          },
+          {
+            "speaker": "customer",
+            "text": "him okay",
+            "t_stream": 33.3,
+            "asr_conf": 0.625
+          },
+          {
+            "speaker": "customer",
+            "text": "so it alone",
+            "t_stream": 35.43,
+            "asr_conf": 0.787
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 36.9,
+            "asr_conf": 0.514
+          }
+        ]
+      },
+      "wall_s": 39.69590640068054,
+      "round": 1,
+      "score": {
+        "emitted": [],
+        "true_positive_kinds": [],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_holdout_noisy",
+      "summary": {
+        "label": "rt_holdout_noisy",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 40.57,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "asr_finalization_lag": {
+            "n": 15,
+            "p50": 912.6,
+            "p95": 1148.85,
+            "max": 1156.2
+          },
+          "asr_compute_per_chunk": {
+            "n": 29,
+            "p50": 40.5,
+            "p95": 105.54,
+            "max": 129.7
+          },
+          "signal_extraction": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "delivery": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "nudges": [],
+        "suppressed": [],
+        "suppressed_by_reason": {},
+        "topics": [
+          {
+            "from": null,
+            "to": "documents",
+            "t_stream": 18.27,
+            "speaker": "agent"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "good afternoon",
+            "t_stream": 1.41,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "this is free of from social capital",
+            "t_stream": 3.87,
+            "asr_conf": 0.855
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is being recorded",
+            "t_stream": 6.24,
+            "asr_conf": 0.956
+          },
+          {
+            "speaker": "customer",
+            "text": "hi sorry i am if the market it is very noisy here",
+            "t_stream": 12.12,
+            "asr_conf": 0.941
+          },
+          {
+            "speaker": "agent",
+            "text": "hey no worries",
+            "t_stream": 14.25,
+            "asr_conf": 0.632
+          },
+          {
+            "speaker": "agent",
+            "text": "i am talking about the documents for your loan application",
+            "t_stream": 18.27,
+            "asr_conf": 0.862
+          },
+          {
+            "speaker": "customer",
+            "text": "which document",
+            "t_stream": 20.67,
+            "asr_conf": 0.932
+          },
+          {
+            "speaker": "customer",
+            "text": "i think i sent everything already",
+            "t_stream": 23.46,
+            "asr_conf": 0.92
+          },
+          {
+            "speaker": "agent",
+            "text": "what we still need the bank statement for march",
+            "t_stream": 27.12,
+            "asr_conf": 0.881
+          },
+          {
+            "speaker": "customer",
+            "text": "huh okay okay",
+            "t_stream": 30.03,
+            "asr_conf": 0.906
+          },
+          {
+            "speaker": "customer",
+            "text": "i will check in every night",
+            "t_stream": 32.49,
+            "asr_conf": 0.782
+          },
+          {
+            "speaker": "agent",
+            "text": "hey you that would be great",
+            "t_stream": 35.91,
+            "asr_conf": 0.932
+          },
+          {
+            "speaker": "customer",
+            "text": "here",
+            "t_stream": 37.83,
+            "asr_conf": 0.85
+          },
+          {
+            "speaker": "customer",
+            "text": "by",
+            "t_stream": 39.15,
+            "asr_conf": 0.329
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 40.56,
+            "asr_conf": 0.513
+          }
+        ]
+      },
+      "wall_s": 43.337833404541016,
+      "round": 1,
+      "score": {
+        "emitted": [],
+        "true_positive_kinds": [],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_cross_sell",
+      "summary": {
+        "label": "rt_cross_sell",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 62.42,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 2049.55,
+            "p95": 2049.78,
+            "max": 2049.8
+          },
+          "asr_finalization_lag": {
+            "n": 15,
+            "p50": 920.2,
+            "p95": 1054.21,
+            "max": 1121.2
+          },
+          "asr_compute_per_chunk": {
+            "n": 48,
+            "p50": 22.62,
+            "p95": 68.77,
+            "max": 144.1
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.18,
+            "p95": 0.21,
+            "max": 0.2
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.04,
+            "p95": 0.05,
+            "max": 0.1
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 0.45,
+            "p95": 0.49,
+            "max": 0.5
+          }
+        },
+        "nudges": [
+          {
+            "id": "780a9ea5",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "priority": 2,
+            "status": "resolved_by_agent",
+            "confidence": 0.63,
+            "t_stream": 25.9,
+            "evidence": [
+              "i wanted to renew",
+              "can i pay online"
+            ],
+            "message": "Buying signal. Confirm the next step and close: payment link or application.",
+            "source": "rule-partial",
+            "e2e_ms": 2049.3,
+            "delivery_ms": 0.4
+          },
+          {
+            "id": "851e9314",
+            "kind": "cross_sell",
+            "topic": "multi_vehicle",
+            "priority": 2,
+            "status": "missed_opportunity",
+            "confidence": 0.81,
+            "t_stream": 29.2,
+            "evidence": [
+              "second car",
+              "son just got his driving licence"
+            ],
+            "message": "Customer mentioned another vehicle. Offer the multi-vehicle discount on a second policy. Also: A new driver will use the car. Suggest adding a named driver so claims stay covered.",
+            "source": "rule-partial",
+            "e2e_ms": 2049.8,
+            "delivery_ms": 0.5
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "cross_sell",
+            "topic": "multi_vehicle",
+            "reason": "duplicate",
+            "confidence": 0.9,
+            "asr_conf": 1.0,
+            "evidence": "second car",
+            "t_stream": 29.4,
+            "grouped_into": "851e9314"
+          },
+          {
+            "type": "suppressed",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "reason": "duplicate",
+            "confidence": 0.7,
+            "asr_conf": 1.0,
+            "evidence": "i wanted to renew",
+            "t_stream": 29.4,
+            "grouped_into": "780a9ea5"
+          },
+          {
+            "type": "suppressed",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "reason": "duplicate",
+            "confidence": 0.614,
+            "asr_conf": 0.878,
+            "evidence": "can i pay online",
+            "t_stream": 41.16,
+            "grouped_into": "780a9ea5"
+          },
+          {
+            "type": "suppressed",
+            "kind": "cross_sell",
+            "topic": "add_driver",
+            "reason": "cooldown_grouped",
+            "confidence": 0.72,
+            "asr_conf": 0.9,
+            "evidence": "son just got his driving licence",
+            "t_stream": 51.3,
+            "grouped_into": "851e9314"
+          },
+          {
+            "type": "suppressed",
+            "kind": "cross_sell",
+            "topic": "add_driver",
+            "reason": "duplicate",
+            "confidence": 0.774,
+            "asr_conf": 0.967,
+            "evidence": "son just got his driving licence",
+            "t_stream": 51.51,
+            "grouped_into": "851e9314"
+          }
+        ],
+        "suppressed_by_reason": {
+          "duplicate": 4,
+          "cooldown_grouped": 1
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "renewal",
+            "t_stream": 20.43,
+            "speaker": "agent"
+          },
+          {
+            "from": "renewal",
+            "to": "payment",
+            "t_stream": 41.16,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "good morning this is rahul from coach general insurance",
+            "t_stream": 4.29,
+            "asr_conf": 0.89
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is recorded for equality and training purposes",
+            "t_stream": 8.16,
+            "asr_conf": 0.946
+          },
+          {
+            "speaker": "agent",
+            "text": "am i speaking with mr mentor",
+            "t_stream": 10.83,
+            "asr_conf": 0.844
+          },
+          {
+            "speaker": "customer",
+            "text": "he is speaking",
+            "t_stream": 13.77,
+            "asr_conf": 0.781
+          },
+          {
+            "speaker": "agent",
+            "text": "hi i'm calling about the renewal of your car insurance policy which expires on the fifteenth",
+            "t_stream": 20.43,
+            "asr_conf": 0.926
+          },
+          {
+            "speaker": "customer",
+            "text": "white i wanted to renew it actually my wife also bought a second car last month a small hatchback",
+            "t_stream": 29.4,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "huh okay",
+            "t_stream": 31.35,
+            "asr_conf": 0.691
+          },
+          {
+            "speaker": "agent",
+            "text": "so for your policy the renewal premium is eleven thousand four hundred rupees",
+            "t_stream": 37.11,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "hein can i pay online",
+            "t_stream": 41.16,
+            "asr_conf": 0.878
+          },
+          {
+            "speaker": "agent",
+            "text": "yes i will send you a payment linked by message",
+            "t_stream": 45.72,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "also my son just got his driving licence and he will use the car sometimes",
+            "t_stream": 51.51,
+            "asr_conf": 0.967
+          },
+          {
+            "speaker": "agent",
+            "text": "he noted",
+            "t_stream": 53.49,
+            "asr_conf": 0.823
+          },
+          {
+            "speaker": "agent",
+            "text": "is there anything else i can help you with today",
+            "t_stream": 56.73,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "no that is all thank you",
+            "t_stream": 60.99,
+            "asr_conf": 0.948
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 62.4,
+            "asr_conf": 0.456
+          }
+        ]
+      },
+      "wall_s": 63.01565885543823,
+      "round": 2,
+      "score": {
+        "emitted": [
+          "buying_signal",
+          "cross_sell"
+        ],
+        "true_positive_kinds": [
+          "cross_sell"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": [
+          "buying_signal"
+        ]
+      }
+    },
+    {
+      "scenario": "rt_compliance",
+      "summary": {
+        "label": "rt_compliance",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 49.46,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 2152.3,
+            "p95": 2224.57,
+            "max": 2232.6
+          },
+          "asr_finalization_lag": {
+            "n": 13,
+            "p50": 918.7,
+            "p95": 1034.62,
+            "max": 1037.5
+          },
+          "asr_compute_per_chunk": {
+            "n": 37,
+            "p50": 30.03,
+            "p95": 83.86,
+            "max": 114.5
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.33,
+            "p95": 0.48,
+            "max": 0.5
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.03,
+            "p95": 0.04,
+            "max": 0.0
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 0.9,
+            "p95": 1.35,
+            "max": 1.4
+          }
+        },
+        "nudges": [
+          {
+            "id": "3c8ced5a",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.855,
+            "t_stream": 19.4,
+            "evidence": [
+              "guaranteed",
+              "no recording disclosure by 20s (agent ASR conf 0.98)",
+              "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+              "one hundred percent",
+              "definitely get"
+            ],
+            "message": "Risky claim: approval cannot be guaranteed. Correct it now: the final decision is subject to credit assessment. Also: Recording disclosure missing. Tell the customer the call is recorded before continuing. Also: Rate quoted without the credit-assessment disclosure. Add: final terms are subject to credit assessment.",
+            "source": "rule-partial",
+            "e2e_ms": 2072.0,
+            "delivery_ms": 0.4
+          },
+          {
+            "id": "1d5ddd0f",
+            "kind": "compliance",
+            "topic": "fee_evasion",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.675,
+            "t_stream": 48.7,
+            "evidence": [
+              "it is very small"
+            ],
+            "message": "Fee question deflected. State the processing fee (up to 2% plus GST) and point to the Key Fact Statement.",
+            "source": "rule-partial",
+            "e2e_ms": 2232.6,
+            "delivery_ms": 1.4
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "recording_disclosure",
+            "reason": "cooldown_grouped",
+            "confidence": 0.9,
+            "asr_conf": 0.983,
+            "evidence": "no recording disclosure by 20s (agent ASR conf 0.98)",
+            "t_stream": 20.0,
+            "grouped_into": "3c8ced5a"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "pricing_before_disclosure",
+            "reason": "cooldown_grouped",
+            "confidence": 0.85,
+            "asr_conf": 1.0,
+            "evidence": "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+            "t_stream": 20.73,
+            "grouped_into": "3c8ced5a"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.95,
+            "asr_conf": 1.0,
+            "evidence": "guaranteed",
+            "t_stream": 20.73,
+            "grouped_into": "3c8ced5a"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.95,
+            "asr_conf": 1.0,
+            "evidence": "one hundred percent",
+            "t_stream": 28.17,
+            "grouped_into": "3c8ced5a"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.824,
+            "asr_conf": 0.867,
+            "evidence": "definitely get",
+            "t_stream": 30.57,
+            "grouped_into": "3c8ced5a"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "fee_evasion",
+            "reason": "duplicate",
+            "confidence": 0.75,
+            "asr_conf": 1.0,
+            "evidence": "it is very small",
+            "t_stream": 48.0,
+            "grouped_into": "1d5ddd0f"
+          }
+        ],
+        "suppressed_by_reason": {
+          "cooldown_grouped": 2,
+          "duplicate": 4
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "pricing",
+            "t_stream": 20.73,
+            "speaker": "agent"
+          },
+          {
+            "from": "pricing",
+            "to": "documents",
+            "t_stream": 35.28,
+            "speaker": "customer"
+          },
+          {
+            "from": "documents",
+            "to": "pricing",
+            "t_stream": 43.86,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hi this is vikram broncos your capital",
+            "t_stream": 3.3,
+            "asr_conf": 0.967
+          },
+          {
+            "speaker": "agent",
+            "text": "i saw that you apply for a business loan on our website",
+            "t_stream": 7.2,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "he yes i need about twenty lakh rupees for my shop",
+            "t_stream": 12.06,
+            "asr_conf": 0.981
+          },
+          {
+            "speaker": "agent",
+            "text": "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+            "t_stream": 20.73,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "wheeler",
+            "t_stream": 22.71,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "it is guaranteed",
+            "t_stream": 24.57,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "yes one hundred percent",
+            "t_stream": 28.17,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "you will definitely get the load",
+            "t_stream": 30.57,
+            "asr_conf": 0.867
+          },
+          {
+            "speaker": "customer",
+            "text": "huh okay",
+            "t_stream": 32.61,
+            "asr_conf": 0.796
+          },
+          {
+            "speaker": "customer",
+            "text": "what documents do you need from me",
+            "t_stream": 35.28,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "just your pen card or god heart and twelve months of bank statements",
+            "t_stream": 40.74,
+            "asr_conf": 0.905
+          },
+          {
+            "speaker": "customer",
+            "text": "and what is the processing fee",
+            "t_stream": 43.86,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "it is very small i will tell you later",
+            "t_stream": 48.0,
+            "asr_conf": 1.0
+          }
+        ]
+      },
+      "wall_s": 51.16815233230591,
+      "round": 2,
+      "score": {
+        "emitted": [
+          "compliance",
+          "compliance"
+        ],
+        "true_positive_kinds": [
+          "compliance"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_frustration",
+      "summary": {
+        "label": "rt_frustration",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 51.48,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 1709.65,
+            "p95": 2576.39,
+            "max": 2672.7
+          },
+          "asr_finalization_lag": {
+            "n": 14,
+            "p50": 832.55,
+            "p95": 1042.71,
+            "max": 1044.2
+          },
+          "asr_compute_per_chunk": {
+            "n": 39,
+            "p50": 28.52,
+            "p95": 69.17,
+            "max": 79.3
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.36,
+            "p95": 0.47,
+            "max": 0.5
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.23,
+            "p95": 0.38,
+            "max": 0.4
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 0.75,
+            "p95": 0.8,
+            "max": 0.8
+          }
+        },
+        "nudges": [
+          {
+            "id": "c9c4b1fb",
+            "kind": "frustration",
+            "topic": "rising",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.69,
+            "t_stream": 24.66,
+            "evidence": [
+              "ridiculous",
+              "how many times, same thing",
+              "again and again, keep calling",
+              "are you even listening",
+              "frustrat"
+            ],
+            "message": "Customer frustration is rising. Pause the script, acknowledge the concern, and summarize what you will do next.",
+            "source": "rule",
+            "e2e_ms": 746.6,
+            "delivery_ms": 0.8
+          },
+          {
+            "id": "a9ed130a",
+            "kind": "payment_difficulty",
+            "topic": "hardship",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.81,
+            "t_stream": 38.4,
+            "evidence": [
+              "lost my job"
+            ],
+            "message": "Payment difficulty disclosed. Offer the approved payment-support / restructuring callback; do not push for payment now.",
+            "source": "rule-partial",
+            "e2e_ms": 2672.7,
+            "delivery_ms": 0.7
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "how many times, same thing",
+            "t_stream": 28.17,
+            "grouped_into": "c9c4b1fb"
+          },
+          {
+            "type": "suppressed",
+            "kind": "payment_difficulty",
+            "topic": "hardship",
+            "reason": "duplicate",
+            "confidence": 0.888,
+            "asr_conf": 0.987,
+            "evidence": "lost my job",
+            "t_stream": 38.22,
+            "grouped_into": "a9ed130a"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "again and again, keep calling",
+            "t_stream": 41.19,
+            "grouped_into": "c9c4b1fb"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "are you even listening",
+            "t_stream": 47.88,
+            "grouped_into": "c9c4b1fb"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "frustrat",
+            "t_stream": 50.04,
+            "grouped_into": "c9c4b1fb"
+          }
+        ],
+        "suppressed_by_reason": {
+          "duplicate": 5
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "small_talk",
+            "t_stream": 5.37,
+            "speaker": "agent"
+          },
+          {
+            "from": "small_talk",
+            "to": "payment",
+            "t_stream": 9.57,
+            "speaker": "agent"
+          },
+          {
+            "from": "payment",
+            "to": "complaint",
+            "t_stream": 24.66,
+            "speaker": "customer"
+          },
+          {
+            "from": "complaint",
+            "to": "renewal",
+            "t_stream": 33.27,
+            "speaker": "agent"
+          },
+          {
+            "from": "renewal",
+            "to": "payment",
+            "t_stream": 38.22,
+            "speaker": "customer"
+          },
+          {
+            "from": "payment",
+            "to": "complaint",
+            "t_stream": 47.88,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hello this is know how from coach capital this call is recorded",
+            "t_stream": 5.37,
+            "asr_conf": 0.837
+          },
+          {
+            "speaker": "agent",
+            "text": "i'm calling about your monthly installment that was due on the fifth",
+            "t_stream": 9.57,
+            "asr_conf": 0.9
+          },
+          {
+            "speaker": "customer",
+            "text": "hi already told your colleague yesterday i will pay next week",
+            "t_stream": 15.0,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "i understand",
+            "t_stream": 17.43,
+            "asr_conf": 0.866
+          },
+          {
+            "speaker": "agent",
+            "text": "but the installment is overdue and lay charges are applying",
+            "t_stream": 21.93,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "hi this is ridiculous",
+            "t_stream": 24.66,
+            "asr_conf": 0.86
+          },
+          {
+            "speaker": "customer",
+            "text": "how many times do i have to explain the same thing",
+            "t_stream": 28.17,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "he served as per our policy i need to remind you",
+            "t_stream": 33.27,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "i lost my job last month and i simply cannot pay right now",
+            "t_stream": 38.22,
+            "asr_conf": 0.987
+          },
+          {
+            "speaker": "customer",
+            "text": "you people keep calling me again and again",
+            "t_stream": 41.19,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "how can you pay at least half of the amount today",
+            "t_stream": 44.94,
+            "asr_conf": 0.97
+          },
+          {
+            "speaker": "customer",
+            "text": "are you even listening to me",
+            "t_stream": 47.88,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "this is so frustrating",
+            "t_stream": 50.04,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 51.48,
+            "asr_conf": 0.643
+          }
+        ]
+      },
+      "wall_s": 53.21883034706116,
+      "round": 2,
+      "score": {
+        "emitted": [
+          "frustration",
+          "payment_difficulty"
+        ],
+        "true_positive_kinds": [
+          "frustration",
+          "payment_difficulty"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_noisy",
+      "summary": {
+        "label": "rt_noisy",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 36.9,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "asr_finalization_lag": {
+            "n": 14,
+            "p50": 931.4,
+            "p95": 1138.74,
+            "max": 1145.5
+          },
+          "asr_compute_per_chunk": {
+            "n": 24,
+            "p50": 24.88,
+            "p95": 123.38,
+            "max": 192.7
+          },
+          "signal_extraction": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "delivery": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "nudges": [],
+        "suppressed": [],
+        "suppressed_by_reason": {},
+        "topics": [
+          {
+            "from": null,
+            "to": "small_talk",
+            "t_stream": 2.79,
+            "speaker": "agent"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hello this is close your capital",
+            "t_stream": 2.79,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is reported for quality",
+            "t_stream": 5.46,
+            "asr_conf": 0.843
+          },
+          {
+            "speaker": "customer",
+            "text": "hello",
+            "t_stream": 7.44,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "selling the line is very that",
+            "t_stream": 10.38,
+            "asr_conf": 0.742
+          },
+          {
+            "speaker": "agent",
+            "text": "when you hear me now",
+            "t_stream": 12.9,
+            "asr_conf": 0.955
+          },
+          {
+            "speaker": "customer",
+            "text": "yeah",
+            "t_stream": 15.33,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "i am on his own the seeking this week",
+            "t_stream": 19.14,
+            "asr_conf": 0.832
+          },
+          {
+            "speaker": "agent",
+            "text": "he's this about your loan application",
+            "t_stream": 22.62,
+            "asr_conf": 0.888
+          },
+          {
+            "speaker": "customer",
+            "text": "maybe i do not know",
+            "t_stream": 25.89,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "my brother handle this",
+            "t_stream": 27.87,
+            "asr_conf": 0.812
+          },
+          {
+            "speaker": "agent",
+            "text": "hey no problem at all",
+            "t_stream": 30.54,
+            "asr_conf": 0.881
+          },
+          {
+            "speaker": "customer",
+            "text": "him okay",
+            "t_stream": 33.3,
+            "asr_conf": 0.625
+          },
+          {
+            "speaker": "customer",
+            "text": "so it alone",
+            "t_stream": 35.43,
+            "asr_conf": 0.787
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 36.9,
+            "asr_conf": 0.513
+          }
+        ]
+      },
+      "wall_s": 38.630513191223145,
+      "round": 2,
+      "score": {
+        "emitted": [],
+        "true_positive_kinds": [],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_holdout_noisy",
+      "summary": {
+        "label": "rt_holdout_noisy",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 40.57,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "asr_finalization_lag": {
+            "n": 15,
+            "p50": 910.9,
+            "p95": 1145.52,
+            "max": 1145.8
+          },
+          "asr_compute_per_chunk": {
+            "n": 29,
+            "p50": 30.08,
+            "p95": 96.16,
+            "max": 144.4
+          },
+          "signal_extraction": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "delivery": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "nudges": [],
+        "suppressed": [],
+        "suppressed_by_reason": {},
+        "topics": [
+          {
+            "from": null,
+            "to": "documents",
+            "t_stream": 18.27,
+            "speaker": "agent"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "good afternoon",
+            "t_stream": 1.41,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "this is free of from social capital",
+            "t_stream": 3.87,
+            "asr_conf": 0.855
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is being recorded",
+            "t_stream": 6.24,
+            "asr_conf": 0.956
+          },
+          {
+            "speaker": "customer",
+            "text": "hi sorry i am if the market it is very noisy here",
+            "t_stream": 12.12,
+            "asr_conf": 0.941
+          },
+          {
+            "speaker": "agent",
+            "text": "hey no worries",
+            "t_stream": 14.25,
+            "asr_conf": 0.634
+          },
+          {
+            "speaker": "agent",
+            "text": "i am talking about the documents for your loan application",
+            "t_stream": 18.27,
+            "asr_conf": 0.862
+          },
+          {
+            "speaker": "customer",
+            "text": "which document",
+            "t_stream": 20.67,
+            "asr_conf": 0.932
+          },
+          {
+            "speaker": "customer",
+            "text": "i think i sent everything already",
+            "t_stream": 23.46,
+            "asr_conf": 0.92
+          },
+          {
+            "speaker": "agent",
+            "text": "what we still need the bank statement for march",
+            "t_stream": 27.12,
+            "asr_conf": 0.881
+          },
+          {
+            "speaker": "customer",
+            "text": "huh okay okay",
+            "t_stream": 30.03,
+            "asr_conf": 0.906
+          },
+          {
+            "speaker": "customer",
+            "text": "i will check in every night",
+            "t_stream": 32.49,
+            "asr_conf": 0.77
+          },
+          {
+            "speaker": "agent",
+            "text": "hey you that would be great",
+            "t_stream": 35.91,
+            "asr_conf": 0.932
+          },
+          {
+            "speaker": "customer",
+            "text": "here",
+            "t_stream": 37.83,
+            "asr_conf": 0.85
+          },
+          {
+            "speaker": "customer",
+            "text": "by",
+            "t_stream": 39.15,
+            "asr_conf": 0.329
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 40.56,
+            "asr_conf": 0.513
+          }
+        ]
+      },
+      "wall_s": 42.26455569267273,
+      "round": 2,
+      "score": {
+        "emitted": [],
+        "true_positive_kinds": [],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_cross_sell",
+      "summary": {
+        "label": "rt_cross_sell",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 62.42,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 2661.0,
+            "p95": 3177.69,
+            "max": 3235.1
+          },
+          "asr_finalization_lag": {
+            "n": 15,
+            "p50": 921.9,
+            "p95": 1055.4,
+            "max": 1107.9
+          },
+          "asr_compute_per_chunk": {
+            "n": 47,
+            "p50": 19.33,
+            "p95": 89.3,
+            "max": 135.8
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.3,
+            "p95": 0.44,
+            "max": 0.5
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.11,
+            "p95": 0.18,
+            "max": 0.2
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 0.95,
+            "p95": 1.44,
+            "max": 1.5
+          }
+        },
+        "nudges": [
+          {
+            "id": "e1d716c5",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "priority": 2,
+            "status": "resolved_by_agent",
+            "confidence": 0.63,
+            "t_stream": 25.9,
+            "evidence": [
+              "i wanted to renew",
+              "can i pay online"
+            ],
+            "message": "Buying signal. Confirm the next step and close: payment link or application.",
+            "source": "rule-partial",
+            "e2e_ms": 2086.9,
+            "delivery_ms": 0.4
+          },
+          {
+            "id": "ae168029",
+            "kind": "cross_sell",
+            "topic": "multi_vehicle",
+            "priority": 2,
+            "status": "missed_opportunity",
+            "confidence": 0.9,
+            "t_stream": 29.4,
+            "evidence": [
+              "second car",
+              "son just got his driving licence"
+            ],
+            "message": "Customer mentioned another vehicle. Offer the multi-vehicle discount on a second policy. Also: A new driver will use the car. Suggest adding a named driver so claims stay covered.",
+            "source": "rule",
+            "e2e_ms": 3235.1,
+            "delivery_ms": 1.5
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "reason": "duplicate",
+            "confidence": 0.7,
+            "asr_conf": 1.0,
+            "evidence": "i wanted to renew",
+            "t_stream": 29.4,
+            "grouped_into": "e1d716c5"
+          },
+          {
+            "type": "suppressed",
+            "kind": "buying_signal",
+            "topic": "ready",
+            "reason": "duplicate",
+            "confidence": 0.614,
+            "asr_conf": 0.878,
+            "evidence": "can i pay online",
+            "t_stream": 41.16,
+            "grouped_into": "e1d716c5"
+          },
+          {
+            "type": "suppressed",
+            "kind": "cross_sell",
+            "topic": "add_driver",
+            "reason": "cooldown_grouped",
+            "confidence": 0.72,
+            "asr_conf": 0.9,
+            "evidence": "son just got his driving licence",
+            "t_stream": 51.3,
+            "grouped_into": "ae168029"
+          },
+          {
+            "type": "suppressed",
+            "kind": "cross_sell",
+            "topic": "add_driver",
+            "reason": "duplicate",
+            "confidence": 0.774,
+            "asr_conf": 0.967,
+            "evidence": "son just got his driving licence",
+            "t_stream": 51.51,
+            "grouped_into": "ae168029"
+          }
+        ],
+        "suppressed_by_reason": {
+          "duplicate": 3,
+          "cooldown_grouped": 1
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "renewal",
+            "t_stream": 20.43,
+            "speaker": "agent"
+          },
+          {
+            "from": "renewal",
+            "to": "payment",
+            "t_stream": 41.16,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "good morning this is rahul from coach general insurance",
+            "t_stream": 4.29,
+            "asr_conf": 0.889
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is recorded for equality and training purposes",
+            "t_stream": 8.16,
+            "asr_conf": 0.946
+          },
+          {
+            "speaker": "agent",
+            "text": "am i speaking with mr mentor",
+            "t_stream": 10.83,
+            "asr_conf": 0.844
+          },
+          {
+            "speaker": "customer",
+            "text": "he is speaking",
+            "t_stream": 13.77,
+            "asr_conf": 0.779
+          },
+          {
+            "speaker": "agent",
+            "text": "hi i'm calling about the renewal of your car insurance policy which expires on the fifteenth",
+            "t_stream": 20.43,
+            "asr_conf": 0.926
+          },
+          {
+            "speaker": "customer",
+            "text": "white i wanted to renew it actually my wife also bought a second car last month a small hatchback",
+            "t_stream": 29.4,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "huh okay",
+            "t_stream": 31.35,
+            "asr_conf": 0.691
+          },
+          {
+            "speaker": "agent",
+            "text": "so for your policy the renewal premium is eleven thousand four hundred rupees",
+            "t_stream": 37.11,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "hein can i pay online",
+            "t_stream": 41.16,
+            "asr_conf": 0.878
+          },
+          {
+            "speaker": "agent",
+            "text": "yes i will send you a payment linked by message",
+            "t_stream": 45.72,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "also my son just got his driving licence and he will use the car sometimes",
+            "t_stream": 51.51,
+            "asr_conf": 0.967
+          },
+          {
+            "speaker": "agent",
+            "text": "he noted",
+            "t_stream": 53.49,
+            "asr_conf": 0.823
+          },
+          {
+            "speaker": "agent",
+            "text": "is there anything else i can help you with today",
+            "t_stream": 56.73,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "no that is all thank you",
+            "t_stream": 60.99,
+            "asr_conf": 0.948
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 62.4,
+            "asr_conf": 0.454
+          }
+        ]
+      },
+      "wall_s": 63.011958360672,
+      "round": 3,
+      "score": {
+        "emitted": [
+          "buying_signal",
+          "cross_sell"
+        ],
+        "true_positive_kinds": [
+          "cross_sell"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": [
+          "buying_signal"
+        ]
+      }
+    },
+    {
+      "scenario": "rt_compliance",
+      "summary": {
+        "label": "rt_compliance",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 49.46,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 2134.75,
+            "p95": 2210.75,
+            "max": 2219.2
+          },
+          "asr_finalization_lag": {
+            "n": 13,
+            "p50": 919.6,
+            "p95": 1026.06,
+            "max": 1031.7
+          },
+          "asr_compute_per_chunk": {
+            "n": 37,
+            "p50": 21.67,
+            "p95": 55.86,
+            "max": 90.1
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.27,
+            "p95": 0.37,
+            "max": 0.4
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.04,
+            "p95": 0.05,
+            "max": 0.1
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 1.0,
+            "p95": 1.54,
+            "max": 1.6
+          }
+        },
+        "nudges": [
+          {
+            "id": "3b536a5c",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.855,
+            "t_stream": 19.4,
+            "evidence": [
+              "guaranteed",
+              "no recording disclosure by 20s (agent ASR conf 0.98)",
+              "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+              "one hundred percent",
+              "definitely get"
+            ],
+            "message": "Risky claim: approval cannot be guaranteed. Correct it now: the final decision is subject to credit assessment. Also: Recording disclosure missing. Tell the customer the call is recorded before continuing. Also: Rate quoted without the credit-assessment disclosure. Add: final terms are subject to credit assessment.",
+            "source": "rule-partial",
+            "e2e_ms": 2050.3,
+            "delivery_ms": 0.4
+          },
+          {
+            "id": "56a8b112",
+            "kind": "compliance",
+            "topic": "fee_evasion",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.675,
+            "t_stream": 48.7,
+            "evidence": [
+              "it is very small"
+            ],
+            "message": "Fee question deflected. State the processing fee (up to 2% plus GST) and point to the Key Fact Statement.",
+            "source": "rule-partial",
+            "e2e_ms": 2219.2,
+            "delivery_ms": 1.6
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "recording_disclosure",
+            "reason": "cooldown_grouped",
+            "confidence": 0.9,
+            "asr_conf": 0.983,
+            "evidence": "no recording disclosure by 20s (agent ASR conf 0.98)",
+            "t_stream": 20.0,
+            "grouped_into": "3b536a5c"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "pricing_before_disclosure",
+            "reason": "cooldown_grouped",
+            "confidence": 0.85,
+            "asr_conf": 1.0,
+            "evidence": "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+            "t_stream": 20.73,
+            "grouped_into": "3b536a5c"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.95,
+            "asr_conf": 1.0,
+            "evidence": "guaranteed",
+            "t_stream": 20.73,
+            "grouped_into": "3b536a5c"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.95,
+            "asr_conf": 1.0,
+            "evidence": "one hundred percent",
+            "t_stream": 28.17,
+            "grouped_into": "3b536a5c"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "risky_claim",
+            "reason": "duplicate",
+            "confidence": 0.824,
+            "asr_conf": 0.867,
+            "evidence": "definitely get",
+            "t_stream": 30.57,
+            "grouped_into": "3b536a5c"
+          },
+          {
+            "type": "suppressed",
+            "kind": "compliance",
+            "topic": "fee_evasion",
+            "reason": "duplicate",
+            "confidence": 0.75,
+            "asr_conf": 1.0,
+            "evidence": "it is very small",
+            "t_stream": 48.0,
+            "grouped_into": "56a8b112"
+          }
+        ],
+        "suppressed_by_reason": {
+          "cooldown_grouped": 2,
+          "duplicate": 4
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "pricing",
+            "t_stream": 20.73,
+            "speaker": "agent"
+          },
+          {
+            "from": "pricing",
+            "to": "documents",
+            "t_stream": 35.28,
+            "speaker": "customer"
+          },
+          {
+            "from": "documents",
+            "to": "pricing",
+            "t_stream": 43.86,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hi this is vikram broncos your capital",
+            "t_stream": 3.3,
+            "asr_conf": 0.967
+          },
+          {
+            "speaker": "agent",
+            "text": "i saw that you apply for a business loan on our website",
+            "t_stream": 7.2,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "he yes i need about twenty lakh rupees for my shop",
+            "t_stream": 12.06,
+            "asr_conf": 0.981
+          },
+          {
+            "speaker": "agent",
+            "text": "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent",
+            "t_stream": 20.73,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "wheeler",
+            "t_stream": 22.71,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "it is guaranteed",
+            "t_stream": 24.57,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "yes one hundred percent",
+            "t_stream": 28.17,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "you will definitely get the load",
+            "t_stream": 30.57,
+            "asr_conf": 0.867
+          },
+          {
+            "speaker": "customer",
+            "text": "huh okay",
+            "t_stream": 32.61,
+            "asr_conf": 0.796
+          },
+          {
+            "speaker": "customer",
+            "text": "what documents do you need from me",
+            "t_stream": 35.28,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "just your pen card or god heart and twelve months of bank statements",
+            "t_stream": 40.74,
+            "asr_conf": 0.906
+          },
+          {
+            "speaker": "customer",
+            "text": "and what is the processing fee",
+            "t_stream": 43.86,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "it is very small i will tell you later",
+            "t_stream": 48.0,
+            "asr_conf": 1.0
+          }
+        ]
+      },
+      "wall_s": 50.277039527893066,
+      "round": 3,
+      "score": {
+        "emitted": [
+          "compliance",
+          "compliance"
+        ],
+        "true_positive_kinds": [
+          "compliance"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_frustration",
+      "summary": {
+        "label": "rt_frustration",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 51.48,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 2,
+            "p50": 1677.1,
+            "p95": 2526.79,
+            "max": 2621.2
+          },
+          "asr_finalization_lag": {
+            "n": 14,
+            "p50": 824.0,
+            "p95": 1032.38,
+            "max": 1048.7
+          },
+          "asr_compute_per_chunk": {
+            "n": 39,
+            "p50": 19.08,
+            "p95": 65.45,
+            "max": 78.9
+          },
+          "signal_extraction": {
+            "n": 2,
+            "p50": 0.43,
+            "p95": 0.68,
+            "max": 0.7
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 2,
+            "p50": 0.4,
+            "p95": 0.72,
+            "max": 0.8
+          },
+          "delivery": {
+            "n": 2,
+            "p50": 1.05,
+            "p95": 1.72,
+            "max": 1.8
+          }
+        },
+        "nudges": [
+          {
+            "id": "d4836d38",
+            "kind": "frustration",
+            "topic": "rising",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.69,
+            "t_stream": 24.66,
+            "evidence": [
+              "ridiculous",
+              "how many times, same thing",
+              "again and again, keep calling",
+              "are you even listening",
+              "frustrat"
+            ],
+            "message": "Customer frustration is rising. Pause the script, acknowledge the concern, and summarize what you will do next.",
+            "source": "rule",
+            "e2e_ms": 733.0,
+            "delivery_ms": 1.8
+          },
+          {
+            "id": "74ec5697",
+            "kind": "payment_difficulty",
+            "topic": "hardship",
+            "priority": 1,
+            "status": "open_at_call_end",
+            "confidence": 0.81,
+            "t_stream": 38.4,
+            "evidence": [
+              "lost my job"
+            ],
+            "message": "Payment difficulty disclosed. Offer the approved payment-support / restructuring callback; do not push for payment now.",
+            "source": "rule-partial",
+            "e2e_ms": 2621.2,
+            "delivery_ms": 0.3
+          }
+        ],
+        "suppressed": [
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "how many times, same thing",
+            "t_stream": 28.17,
+            "grouped_into": "d4836d38"
+          },
+          {
+            "type": "suppressed",
+            "kind": "payment_difficulty",
+            "topic": "hardship",
+            "reason": "duplicate",
+            "confidence": 0.888,
+            "asr_conf": 0.986,
+            "evidence": "lost my job",
+            "t_stream": 38.22,
+            "grouped_into": "74ec5697"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "again and again, keep calling",
+            "t_stream": 41.19,
+            "grouped_into": "d4836d38"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "are you even listening",
+            "t_stream": 47.88,
+            "grouped_into": "d4836d38"
+          },
+          {
+            "type": "suppressed",
+            "kind": "frustration",
+            "topic": "rising",
+            "reason": "duplicate",
+            "confidence": 1.0,
+            "asr_conf": 1.0,
+            "evidence": "frustrat",
+            "t_stream": 50.04,
+            "grouped_into": "d4836d38"
+          }
+        ],
+        "suppressed_by_reason": {
+          "duplicate": 5
+        },
+        "topics": [
+          {
+            "from": null,
+            "to": "small_talk",
+            "t_stream": 5.37,
+            "speaker": "agent"
+          },
+          {
+            "from": "small_talk",
+            "to": "payment",
+            "t_stream": 9.57,
+            "speaker": "agent"
+          },
+          {
+            "from": "payment",
+            "to": "complaint",
+            "t_stream": 24.66,
+            "speaker": "customer"
+          },
+          {
+            "from": "complaint",
+            "to": "renewal",
+            "t_stream": 33.27,
+            "speaker": "agent"
+          },
+          {
+            "from": "renewal",
+            "to": "payment",
+            "t_stream": 38.22,
+            "speaker": "customer"
+          },
+          {
+            "from": "payment",
+            "to": "complaint",
+            "t_stream": 47.88,
+            "speaker": "customer"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hello this is know how from coach capital this call is recorded",
+            "t_stream": 5.37,
+            "asr_conf": 0.838
+          },
+          {
+            "speaker": "agent",
+            "text": "i'm calling about your monthly installment that was due on the fifth",
+            "t_stream": 9.57,
+            "asr_conf": 0.9
+          },
+          {
+            "speaker": "customer",
+            "text": "hi already told your colleague yesterday i will pay next week",
+            "t_stream": 15.0,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "i understand",
+            "t_stream": 17.43,
+            "asr_conf": 0.867
+          },
+          {
+            "speaker": "agent",
+            "text": "but the installment is overdue and lay charges are applying",
+            "t_stream": 21.93,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "hi this is ridiculous",
+            "t_stream": 24.66,
+            "asr_conf": 0.86
+          },
+          {
+            "speaker": "customer",
+            "text": "how many times do i have to explain the same thing",
+            "t_stream": 28.17,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "he served as per our policy i need to remind you",
+            "t_stream": 33.27,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "i lost my job last month and i simply cannot pay right now",
+            "t_stream": 38.22,
+            "asr_conf": 0.986
+          },
+          {
+            "speaker": "customer",
+            "text": "you people keep calling me again and again",
+            "t_stream": 41.19,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "how can you pay at least half of the amount today",
+            "t_stream": 44.94,
+            "asr_conf": 0.97
+          },
+          {
+            "speaker": "customer",
+            "text": "are you even listening to me",
+            "t_stream": 47.88,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "this is so frustrating",
+            "t_stream": 50.04,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 51.48,
+            "asr_conf": 0.643
+          }
+        ]
+      },
+      "wall_s": 52.81935906410217,
+      "round": 3,
+      "score": {
+        "emitted": [
+          "frustration",
+          "payment_difficulty"
+        ],
+        "true_positive_kinds": [
+          "frustration",
+          "payment_difficulty"
+        ],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_noisy",
+      "summary": {
+        "label": "rt_noisy",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 36.9,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "asr_finalization_lag": {
+            "n": 14,
+            "p50": 925.2,
+            "p95": 1122.33,
+            "max": 1141.5
+          },
+          "asr_compute_per_chunk": {
+            "n": 24,
+            "p50": 25.93,
+            "p95": 93.85,
+            "max": 140.3
+          },
+          "signal_extraction": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "delivery": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "nudges": [],
+        "suppressed": [],
+        "suppressed_by_reason": {},
+        "topics": [
+          {
+            "from": null,
+            "to": "small_talk",
+            "t_stream": 2.79,
+            "speaker": "agent"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "hello this is close your capital",
+            "t_stream": 2.79,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is reported for quality",
+            "t_stream": 5.46,
+            "asr_conf": 0.843
+          },
+          {
+            "speaker": "customer",
+            "text": "hello",
+            "t_stream": 7.44,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "selling the line is very that",
+            "t_stream": 10.38,
+            "asr_conf": 0.741
+          },
+          {
+            "speaker": "agent",
+            "text": "when you hear me now",
+            "t_stream": 12.9,
+            "asr_conf": 0.955
+          },
+          {
+            "speaker": "customer",
+            "text": "yeah",
+            "t_stream": 15.33,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "i am on his own the seeking this week",
+            "t_stream": 19.14,
+            "asr_conf": 0.832
+          },
+          {
+            "speaker": "agent",
+            "text": "he's this about your loan application",
+            "t_stream": 22.62,
+            "asr_conf": 0.888
+          },
+          {
+            "speaker": "customer",
+            "text": "maybe i do not know",
+            "t_stream": 25.89,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "customer",
+            "text": "my brother handle this",
+            "t_stream": 27.87,
+            "asr_conf": 0.812
+          },
+          {
+            "speaker": "agent",
+            "text": "hey no problem at all",
+            "t_stream": 30.54,
+            "asr_conf": 0.881
+          },
+          {
+            "speaker": "customer",
+            "text": "him okay",
+            "t_stream": 33.3,
+            "asr_conf": 0.626
+          },
+          {
+            "speaker": "customer",
+            "text": "so it alone",
+            "t_stream": 35.43,
+            "asr_conf": 0.788
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 36.9,
+            "asr_conf": 0.514
+          }
+        ]
+      },
+      "wall_s": 38.20512652397156,
+      "round": 3,
+      "score": {
+        "emitted": [],
+        "true_positive_kinds": [],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    },
+    {
+      "scenario": "rt_holdout_noisy",
+      "summary": {
+        "label": "rt_holdout_noisy",
+        "mode": "replay",
+        "asr": "vosk-small-en-us-0.15",
+        "audio_seconds": 40.57,
+        "llm_enabled": false,
+        "latency_ms": {
+          "end_to_end": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "asr_finalization_lag": {
+            "n": 15,
+            "p50": 906.2,
+            "p95": 1121.51,
+            "max": 1122.0
+          },
+          "asr_compute_per_chunk": {
+            "n": 29,
+            "p50": 19.89,
+            "p95": 88.03,
+            "max": 137.5
+          },
+          "signal_extraction": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "llm": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "nudge_control": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          },
+          "delivery": {
+            "n": 0,
+            "p50": null,
+            "p95": null,
+            "max": null
+          }
+        },
+        "nudges": [],
+        "suppressed": [],
+        "suppressed_by_reason": {},
+        "topics": [
+          {
+            "from": null,
+            "to": "documents",
+            "t_stream": 18.27,
+            "speaker": "agent"
+          }
+        ],
+        "transcript": [
+          {
+            "speaker": "agent",
+            "text": "good afternoon",
+            "t_stream": 1.41,
+            "asr_conf": 1.0
+          },
+          {
+            "speaker": "agent",
+            "text": "this is free of from social capital",
+            "t_stream": 3.87,
+            "asr_conf": 0.855
+          },
+          {
+            "speaker": "agent",
+            "text": "this call is being recorded",
+            "t_stream": 6.24,
+            "asr_conf": 0.955
+          },
+          {
+            "speaker": "customer",
+            "text": "hi sorry i am if the market it is very noisy here",
+            "t_stream": 12.12,
+            "asr_conf": 0.941
+          },
+          {
+            "speaker": "agent",
+            "text": "hey no worries",
+            "t_stream": 14.25,
+            "asr_conf": 0.633
+          },
+          {
+            "speaker": "agent",
+            "text": "i am talking about the documents for your loan application",
+            "t_stream": 18.27,
+            "asr_conf": 0.862
+          },
+          {
+            "speaker": "customer",
+            "text": "which document",
+            "t_stream": 20.67,
+            "asr_conf": 0.932
+          },
+          {
+            "speaker": "customer",
+            "text": "i think i sent everything already",
+            "t_stream": 23.46,
+            "asr_conf": 0.92
+          },
+          {
+            "speaker": "agent",
+            "text": "what we still need the bank statement for march",
+            "t_stream": 27.12,
+            "asr_conf": 0.88
+          },
+          {
+            "speaker": "customer",
+            "text": "huh okay okay",
+            "t_stream": 30.03,
+            "asr_conf": 0.906
+          },
+          {
+            "speaker": "customer",
+            "text": "i will check in every night",
+            "t_stream": 32.49,
+            "asr_conf": 0.782
+          },
+          {
+            "speaker": "agent",
+            "text": "hey you that would be great",
+            "t_stream": 35.91,
+            "asr_conf": 0.932
+          },
+          {
+            "speaker": "customer",
+            "text": "here",
+            "t_stream": 37.83,
+            "asr_conf": 0.85
+          },
+          {
+            "speaker": "customer",
+            "text": "by",
+            "t_stream": 39.15,
+            "asr_conf": 0.329
+          },
+          {
+            "speaker": "agent",
+            "text": "huh",
+            "t_stream": 40.56,
+            "asr_conf": 0.513
+          }
+        ]
+      },
+      "wall_s": 42.09640407562256,
+      "round": 3,
+      "score": {
+        "emitted": [],
+        "true_positive_kinds": [],
+        "missed_kinds": [],
+        "false_positives": [],
+        "allowed_extras": []
+      }
+    }
+  ]
+}

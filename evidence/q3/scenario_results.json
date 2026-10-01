@@ -1,0 +1,953 @@
+[
+  {
+    "id": "q3_id_01_cooperative_formal",
+    "title": "Cooperative customer, formal register; on-time promise to pay via virtual account",
+    "agent": "id_consumer_finance",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "promise_to_pay",
+      "payment_date": "2026-10-02",
+      "days_late": 0,
+      "estimated_penalty_idr": 0.0,
+      "channel": "va_bca",
+      "hardship": false,
+      "within_contact_hours": false
+    },
+    "actions": [
+      "promise_to_pay",
+      "crm_summary"
+    ],
+    "slots": {
+      "identity_confirmed": true,
+      "payment_date": "2026-10-02",
+      "payment_channel": "va_bca"
+    },
+    "dialects": [],
+    "lang_final": "formal",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 0,
+      "questions": 0
+    },
+    "retrievals": [],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Selamat malam. Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam untuk menjaga kualitas layanan. Apakah saya berbicara dengan Bapak Budi Santoso?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Iya, betul, saya sendiri."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Kami ingin mengingatkan bahwa angsuran ke-7 untuk Honda Beat sebesar Rp850.000 akan jatuh tempo pada Minggu, 4 Oktober 2026. Kapan Bapak berencana melakukan pembayaran?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": 0.52
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Baik, saya akan bayar besok."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Baik, kami catat rencana pembayaran pada Jumat, 2 Oktober 2026, sebelum jatuh tempo, jadi tidak ada denda. Pembayarannya rencananya melalui apa, Bapak? Virtual account BCA, BRI, Mandiri, gerai Indomaret atau Alfamart, atau aplikasi Sinar Mobile?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": 0.36
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Melalui virtual account BCA."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Terima kasih. Pembayaran melalui virtual account BCA sudah kami catat. Terima kasih atas waktunya, Bapak. Selamat malam.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": 0.34
+      }
+    ]
+  },
+  {
+    "id": "q3_id_02_colloquial_objection",
+    "title": "Colloquial Jakarta register with finance loanwords; 'belum gajian' and denda objections; late promise with computed penalty",
+    "agent": "id_consumer_finance",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "promise_to_pay",
+      "payment_date": "2026-10-10",
+      "days_late": 6,
+      "estimated_penalty_idr": 10200.0,
+      "channel": "retail",
+      "hardship": false,
+      "within_contact_hours": false
+    },
+    "actions": [
+      "promise_to_pay",
+      "crm_summary"
+    ],
+    "slots": {
+      "identity_confirmed": true,
+      "payment_date": "2026-10-10",
+      "payment_channel": "retail"
+    },
+    "dialects": [],
+    "lang_final": "casual",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 2,
+      "questions": 1
+    },
+    "retrievals": [
+      {
+        "query": "Iya bener, gue sendiri. Kenapa ya?",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "record_ids": [],
+        "top_confidence": 0.049
+      },
+      {
+        "query": "Belum gajian",
+        "status": "OK",
+        "record_ids": [
+          "kb_id_belum_gajian_7894bb"
+        ],
+        "top_confidence": 0.648
+      },
+      {
+        "query": "denda keterlambatan angsuran",
+        "status": "OK",
+        "record_ids": [
+          "kb_id_berapa_denda_keterlambatan_066da6",
+          "kb_id_dendanya_kok_besar_591afd"
+        ],
+        "top_confidence": 0.497
+      },
+      {
+        "query": "cara membayar cicilan",
+        "status": "OK",
+        "record_ids": [
+          "kb_id_bagaimana_cara_membayar_cicilan_b46fad"
+        ],
+        "top_confidence": 0.636
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Selamat malam. Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam untuk menjaga kualitas layanan. Apakah saya berbicara dengan Bapak Budi Santoso?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Iya bener, gue sendiri. Kenapa ya?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Mau ngingetin aja, Kak, cicilan ke-7 buat Honda Beat sebesar Rp850.000 jatuh temponya Minggu, 4 Oktober 2026. Rencananya mau bayar kapan, Kak?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "casual",
+        "latency_ms": 2.17
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Waduh, gue belum gajian nih, Kak."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Jadi gini, Kak. Kami mengerti kondisinya. Denda 0,2% per hari berlaku sejak 1 hari setelah jatuh tempo, jadi semakin cepat dibayar, semakin kecil dendanya. Mau ngingetin aja, Kak, cicilan ke-7 buat Honda Beat sebesar Rp850.000 jatuh temponya Minggu, 4 Oktober 2026. Rencananya mau bayar kapan, Kak?",
+        "intent": "objection",
+        "citations": [
+          "[kb_id_belum_gajian_7894bb] Sinar Multifinance (DEMO) - Panduan Panggilan Pengingat Angsuran > Belum gajian (internal playbook, v1.0, id_reminder_playbook.md#sec-1)"
+        ],
+        "lang": "casual",
+        "latency_ms": 1.0
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Dendanya kok gede banget sih? Emang berapa?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Jadi gini, Kak. Denda keterlambatan adalah 0,2% per hari dari angsuran yang tertunggak, dihitung mulai 1 hari setelah tanggal jatuh tempo. Tidak ada masa tenggang. Mau ngingetin aja, Kak, cicilan ke-7 buat Honda Beat sebesar Rp850.000 jatuh temponya Minggu, 4 Oktober 2026. Rencananya mau bayar kapan, Kak?",
+        "intent": "objection",
+        "citations": [
+          "[kb_id_berapa_denda_keterlambatan_066da6] Pertanyaan Umum Pembiayaan Motor > Berapa denda keterlambatan (website section, v2026.08, sinar-pembiayaan-faq.html#h2-3)",
+          "[kb_id_dendanya_kok_besar_591afd] Sinar Multifinance (DEMO) - Panduan Panggilan Pengingat Angsuran > Dendanya kok besar (internal playbook, v1.0, id_reminder_playbook.md#sec-2)"
+        ],
+        "lang": "casual",
+        "latency_ms": 0.72
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Ya udah, abis gajian tanggal 10 deh."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Oke, dicatat tanggal Sabtu, 10 Oktober 2026 ya, Kak. Karena lewat 6 hari dari jatuh tempo, nanti ada denda sekitar Rp10.200. Bayarnya mau lewat apa, Kak? VA BCA, BRI, Mandiri, Indomaret atau Alfamart, atau aplikasi Sinar Mobile?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "casual",
+        "latency_ms": 0.56
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Lewat Indomaret aja."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sip, bayar lewat gerai Indomaret/Alfamart ya, Kak. Pembayaran melalui gerai ritel dikenakan biaya admin Rp2.500. Makasih banyak ya, Kak. Selamat malam!",
+        "intent": "slot",
+        "citations": [
+          "[kb_id_bagaimana_cara_membayar_cicilan_b46fad] Pertanyaan Umum Pembiayaan Motor > Bagaimana cara membayar cicilan (website section, v2026.08, sinar-pembiayaan-faq.html#h2-4)"
+        ],
+        "lang": "casual",
+        "latency_ms": 1.39
+      }
+    ]
+  },
+  {
+    "id": "q3_id_03_regional_hardship_escalation",
+    "title": "Javanese-influenced speech (nggih, mboten, sampun), hardship (PHK) routed to restructuring info, then human escalation in Indonesian",
+    "agent": "id_consumer_finance",
+    "passed": true,
+    "failures": [],
+    "stage": "escalated",
+    "outcome": {
+      "escalated": true,
+      "escalation_reason": "customer_requested_human"
+    },
+    "actions": [
+      "hardship_flag",
+      "escalation"
+    ],
+    "slots": {
+      "identity_confirmed": true
+    },
+    "dialects": [
+      "javanese"
+    ],
+    "lang_final": "casual",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 1,
+      "objections": 1,
+      "questions": 1
+    },
+    "retrievals": [
+      {
+        "query": "musibah PHK sakit restrukturisasi",
+        "status": "OK",
+        "record_ids": [
+          "kb_id_lagi_kena_musibah_di_phk_sakit_bb680f"
+        ],
+        "top_confidence": 0.581
+      },
+      {
+        "query": "Pripun carane? Sing ngurus sopo?",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "record_ids": [],
+        "top_confidence": 0.018
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Selamat malam. Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam untuk menjaga kualitas layanan. Apakah saya berbicara dengan Bapak Budi Santoso?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Nggih, leres, kula Budi."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Mau ngingetin aja, Kak, cicilan ke-7 buat Honda Beat sebesar Rp850.000 jatuh temponya Minggu, 4 Oktober 2026. Rencananya mau bayar kapan, Kak?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "casual",
+        "latency_ms": 0.13
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Mboten saged mbayar, Mbak, kula sampun di-PHK bulan kemarin."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Jadi gini, Kak. Kami turut prihatin. Pelanggan dapat mengajukan restrukturisasi melalui kantor cabang atau layanan pelanggan dengan dokumen pendukung. Kondisinya juga saya catat ya, Kak, biar petugas kami bisa hubungi soal pengajuan keringanan. Nggak harus sekarang kok, Kak. Kalau sudah ada perkiraan tanggal bisa bayar, boleh kabari; kalau belum, nanti petugas kami yang hubungi.",
+        "intent": "objection",
+        "citations": [
+          "[kb_id_lagi_kena_musibah_di_phk_sakit_bb680f] Sinar Multifinance (DEMO) - Panduan Panggilan Pengingat Angsuran > Lagi kena musibah / di-PHK / sakit (internal playbook, v1.0, id_reminder_playbook.md#sec-3)"
+        ],
+        "lang": "casual",
+        "latency_ms": 1.26
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Pripun carane? Sing ngurus sopo?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Mohon maaf, informasi tersebut tidak tersedia di materi resmi kami, jadi saya tidak bisa memastikannya. Soal itu, petugas kami di 1500-777 bisa bantu jelasin ya, Kak. Nggak harus sekarang kok, Kak. Kalau sudah ada perkiraan tanggal bisa bayar, boleh kabari; kalau belum, nanti petugas kami yang hubungi.",
+        "intent": "fallback",
+        "citations": [],
+        "lang": "casual",
+        "latency_ms": 0.62
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Saya mau bicara sama petugas saja, Mbak."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Siap, Kak. Saya sambungin ke petugas sekarang ya. Ringkasan obrolan ini sudah saya kirim, jadi nggak perlu cerita ulang.",
+        "intent": "escalation",
+        "citations": [],
+        "lang": "casual",
+        "latency_ms": 0.33
+      }
+    ]
+  },
+  {
+    "id": "q3_id_04_wrong_person",
+    "title": "Third party answers; bot ends without disclosing the debt (collection-ethics rule)",
+    "agent": "id_consumer_finance",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "ended_reason": "identity_confirmed_declined"
+    },
+    "actions": [
+      "crm_summary"
+    ],
+    "slots": {
+      "identity_confirmed": false
+    },
+    "dialects": [],
+    "lang_final": "formal",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 0,
+      "questions": 0
+    },
+    "retrievals": [],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Selamat malam. Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam untuk menjaga kualitas layanan. Apakah saya berbicara dengan Bapak Budi Santoso?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Bukan, ini istrinya. Bapaknya lagi kerja."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Mohon maaf atas gangguannya. Terima kasih, selamat malam.",
+        "intent": "slot_end",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": 0.42
+      }
+    ]
+  },
+  {
+    "id": "q3_id_05_already_paid_sundanese",
+    "title": "Sundanese-influenced speech (muhun, teh, atuh) claiming already paid",
+    "agent": "id_consumer_finance",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "claimed_paid",
+      "channel": "app",
+      "hardship": false,
+      "within_contact_hours": false
+    },
+    "actions": [
+      "payment_claim",
+      "crm_summary"
+    ],
+    "slots": {
+      "identity_confirmed": true,
+      "payment_date": "claimed_paid",
+      "payment_channel": "app"
+    },
+    "dialects": [
+      "sundanese"
+    ],
+    "lang_final": "formal",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 1,
+      "questions": 0
+    },
+    "retrievals": [
+      {
+        "query": "Saya sudah bayar, kenapa masih ditagih",
+        "status": "OK",
+        "record_ids": [
+          "kb_id_saya_sudah_bayar_kenapa_masih_di_434a5d"
+        ],
+        "top_confidence": 0.772
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Selamat malam. Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam untuk menjaga kualitas layanan. Apakah saya berbicara dengan Bapak Budi Santoso?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Muhun, abdi Budi."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Kami ingin mengingatkan bahwa angsuran ke-7 untuk Honda Beat sebesar Rp850.000 akan jatuh tempo pada Minggu, 4 Oktober 2026. Kapan Bapak berencana melakukan pembayaran?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": 0.09
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Atuh Teh, saya teh sudah bayar kemarin."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Baik, kami catat bahwa Bapak sudah membayar. Tim kami akan memverifikasi pembayarannya. Baik, Bapak. Pembayaran melalui virtual account biasanya tercatat dalam 1x24 jam, dan pembayaran melalui gerai ritel dalam 2x24 jam. Jika setelah itu status belum berubah, hubungi layanan pelanggan dengan menyertakan bukti bayar. Untuk membantu verifikasi, pembayaran kemarin dilakukan melalui apa, Bapak? Virtual account, gerai Indomaret atau Alfamart, atau aplikasi Sinar Mobile?",
+        "intent": "objection",
+        "citations": [
+          "[kb_id_saya_sudah_bayar_kenapa_masih_di_434a5d] Pertanyaan Umum Pembiayaan Motor > Saya sudah bayar, kenapa masih ditagih (website section, v2026.08, sinar-pembiayaan-faq.html#h2-5)"
+        ],
+        "lang": "formal",
+        "latency_ms": 0.7
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Lewat aplikasi."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Terima kasih. Pembayaran melalui aplikasi Sinar Mobile sudah kami catat. Terima kasih atas waktunya, Bapak. Selamat malam.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "formal",
+        "latency_ms": 0.53
+      }
+    ]
+  },
+  {
+    "id": "q3_ph_01_cooperative_taglish",
+    "title": "Cooperative customer in natural Taglish with finance terms; quotation request and advisor callback",
+    "agent": "ph_life_insurance",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "qualified_lead",
+      "indicative_coverage_php": 2000000.0,
+      "basis": "illustration: PHP 1250/month per PHP 1,000,000 (30-year-old non-smoker)"
+    },
+    "actions": [
+      "quotation_request",
+      "callback_scheduled",
+      "crm_summary"
+    ],
+    "slots": {
+      "consent": true,
+      "age": 32.0,
+      "dependents": "spouse_and_children",
+      "monthly_budget_php": 2500.0,
+      "coverage_goal": "income_protection",
+      "existing_life_policy": false,
+      "advisor_callback": true,
+      "callback_time": "2026-10-03 15:00"
+    },
+    "dialects": [],
+    "lang_final": "tl",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 1,
+      "questions": 0
+    },
+    "retrievals": [
+      {
+        "query": "I already have an HMO",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_i_already_have_an_hmo_3650b9"
+        ],
+        "top_confidence": 0.754
+      },
+      {
+        "query": "beneficiaries revocable irrevocable",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_beneficiaries_bda5ec"
+        ],
+        "top_confidence": 0.743
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hi po, magandang araw! Si Lumi po ito, automated assistant ng Lumina Life, partner ng Bangko Kapwa. Tumatawag po ako kasi nag-request kayo ng info about life insurance sa branch. Naka-record po ang call na ito for quality. Okay lang po ba kung magtanong ako ng ilang quick questions? Mga 2 minutes lang po.",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Sige po, okay lang."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ilang taon na po kayo?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.56
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "32 years old na po ako."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sino po ang umaasa sa inyo financially, halimbawa asawa, anak, o magulang? Sila po kasi ang magiging beneficiary.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.08
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yung asawa ko at dalawang anak ko po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Magkano po ang comfortable na budget ninyo para sa premium kada buwan?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.27
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Siguro mga 2,500 pesos kada buwan po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ano po ang pinaka-goal ninyo: proteksyon ng income para sa pamilya, pang-education ng anak, o coverage para sa critical illness?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.1
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Para sa income protection ng family ko po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "May existing life insurance policy na po ba kayo? Hindi po kasama dito ang HMO.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.34
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Wala pa po, HMO lang from work."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ayon po sa aming policy: An HMO pays hospital and medical bills while you are alive. Life insurance gives a cash benefit to your beneficiaries if you pass away. Salamat po! Base sa budget na ₱2,500 kada buwan, puwedeng nasa ₱2,000,000 ang coverage ninyo para sa isang 30-year-old na non-smoker. Ihahanda po ng advisor ang exact quotation. You can name up to 5 beneficiaries. Paalala lang po: hindi po ako licensed financial advisor, at ang premium ay illustration pa lang. Ang final na premium ay depende sa underwriting. Gusto n'yo po bang tawagan kayo ng licensed financial advisor para sa exact quotation?",
+        "intent": "objection",
+        "citations": [
+          "[kb_ph_i_already_have_an_hmo_3650b9] Lumina Life (DEMO) - Bank Referral Call Guide and FAQ > I already have an HMO (internal playbook, v1.1, ph_faq_objections.md#sec-5)",
+          "[kb_ph_beneficiaries_bda5ec] Lumina Protect Plus - Term Life Insurance > Beneficiaries (website section, v2026.08, lumina-protect-plus.html#h2-5)"
+        ],
+        "lang": "tl",
+        "latency_ms": 2.51
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Oo, sige po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Kailan po kayo available? Halimbawa, bukas ng umaga o sa Sabado ng hapon.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.08
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Sa Sabado ng hapon po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ayan po, naka-schedule na ang tawag ng advisor sa Sabado, October 3, alas-3:00 ng hapon. Maraming salamat po sa oras ninyo. Ingat po kayo!",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 1.06
+      }
+    ]
+  },
+  {
+    "id": "q3_ph_02_objections_colloquial",
+    "title": "Sector objections (HMO, mahal, lapse question) in colloquial Tagalog; KB-grounded Taglish answers",
+    "agent": "ph_life_insurance",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "qualified_lead",
+      "indicative_coverage_php": 1200000.0,
+      "basis": "illustration: PHP 1250/month per PHP 1,000,000 (30-year-old non-smoker)"
+    },
+    "actions": [
+      "quotation_request",
+      "crm_summary"
+    ],
+    "slots": {
+      "consent": true,
+      "age": 45.0,
+      "dependents": "parents",
+      "monthly_budget_php": 1500.0,
+      "coverage_goal": "critical_illness",
+      "existing_life_policy": false,
+      "advisor_callback": false
+    },
+    "dialects": [],
+    "lang_final": "tl",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 3,
+      "questions": 1
+    },
+    "retrievals": [
+      {
+        "query": "I already have an HMO",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_i_already_have_an_hmo_3650b9"
+        ],
+        "top_confidence": 0.754
+      },
+      {
+        "query": "Mahal too expensive budget",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_mahal_too_expensive_fd6e6d"
+        ],
+        "top_confidence": 0.756
+      },
+      {
+        "query": "grace period lapse premium unpaid",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_grace_period_and_lapse_81cf0d"
+        ],
+        "top_confidence": 0.538
+      },
+      {
+        "query": "beneficiaries revocable irrevocable",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_beneficiaries_bda5ec"
+        ],
+        "top_confidence": 0.743
+      },
+      {
+        "query": "I need to think about it",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_i_need_to_think_about_it_pag_iis_fcd47c"
+        ],
+        "top_confidence": 0.726
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hi po, magandang araw! Si Lumi po ito, automated assistant ng Lumina Life, partner ng Bangko Kapwa. Tumatawag po ako kasi nag-request kayo ng info about life insurance sa branch. Naka-record po ang call na ito for quality. Okay lang po ba kung magtanong ako ng ilang quick questions? Mga 2 minutes lang po.",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Ano ba yan, may HMO na ako eh, bakit kailangan ko pa ng life insurance?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ayon po sa aming policy: An HMO pays hospital and medical bills while you are alive. Life insurance gives a cash benefit to your beneficiaries if you pass away. Okay lang po ba kung magtanong ako ng ilang quick questions? Mga 2 minutes lang po.",
+        "intent": "objection",
+        "citations": [
+          "[kb_ph_i_already_have_an_hmo_3650b9] Lumina Life (DEMO) - Bank Referral Call Guide and FAQ > I already have an HMO (internal playbook, v1.1, ph_faq_objections.md#sec-5)"
+        ],
+        "lang": "tl",
+        "latency_ms": 0.65
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Sige na nga, tanong lang kayo."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ilang taon na po kayo?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.11
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "45 po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sino po ang umaasa sa inyo financially, halimbawa asawa, anak, o magulang? Sila po kasi ang magiging beneficiary.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.07
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Mga magulang ko po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Magkano po ang comfortable na budget ninyo para sa premium kada buwan?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.33
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Grabe, mahal siguro yan, wala akong budget."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ayon po sa aming policy: Naiintindihan ko po, budget is important. Coverage can start at PHP 500,000 and the premium can be paid monthly through auto-debit. Magkano po ang comfortable na budget ninyo para sa premium kada buwan?",
+        "intent": "objection",
+        "citations": [
+          "[kb_ph_mahal_too_expensive_fd6e6d] Lumina Life (DEMO) - Bank Referral Call Guide and FAQ > Mahal / too expensive (internal playbook, v1.1, ph_faq_objections.md#sec-4)"
+        ],
+        "lang": "tl",
+        "latency_ms": 0.65
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Siguro 1,500 a month."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ano po ang pinaka-goal ninyo: proteksyon ng income para sa pamilya, pang-education ng anak, o coverage para sa critical illness?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.1
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Pag na-ospital ako, critical illness."
+      },
+      {
+        "speaker": "BOT",
+        "text": "May existing life insurance policy na po ba kayo? Hindi po kasama dito ang HMO.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.09
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Paano po kung hindi ako makabayad, ma-lapse ba agad?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Ayon po sa aming policy: There is a 31-day grace period after the premium due date. If the premium is still unpaid after the grace period, the policy lapses and coverage stops. May existing life insurance policy na po ba kayo? Hindi po kasama dito ang HMO.",
+        "intent": "question",
+        "citations": [
+          "[kb_ph_grace_period_and_lapse_81cf0d] Lumina Protect Plus - Term Life Insurance > Grace Period and Lapse (website section, v2026.08, lumina-protect-plus.html#h2-6)"
+        ],
+        "lang": "tl",
+        "latency_ms": 0.9
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Wala po."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Salamat po! Base sa budget na ₱1,500 kada buwan, puwedeng nasa ₱1,200,000 ang coverage ninyo para sa isang 30-year-old na non-smoker. Ihahanda po ng advisor ang exact quotation. Dahil concern n'yo po ang critical illness, puwede rin pong idagdag ang Critical Illness rider. You can name up to 5 beneficiaries. Paalala lang po: hindi po ako licensed financial advisor, at ang premium ay illustration pa lang. Ang final na premium ay depende sa underwriting. Gusto n'yo po bang tawagan kayo ng licensed financial advisor para sa exact quotation?",
+        "intent": "slot",
+        "citations": [
+          "[kb_ph_beneficiaries_bda5ec] Lumina Protect Plus - Term Life Insurance > Beneficiaries (website section, v2026.08, lumina-protect-plus.html#h2-5)"
+        ],
+        "lang": "tl",
+        "latency_ms": 1.08
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Hindi muna po, pag-iisipan ko pa."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sige po. Puwede po kayong pumunta sa kahit anong Bangko Kapwa branch kung may tanong pa kayo. Ayon po sa aming policy: Walang problema po, take your time. A licensed financial advisor can call you back at a time convenient for you. Maraming salamat po sa oras ninyo. Ingat po kayo!",
+        "intent": "objection",
+        "citations": [
+          "[kb_ph_i_need_to_think_about_it_pag_iis_fcd47c] Lumina Life (DEMO) - Bank Referral Call Guide and FAQ > I need to think about it / Pag-iisipan ko muna (internal playbook, v1.1, ph_faq_objections.md#sec-8)"
+        ],
+        "lang": "tl",
+        "latency_ms": 0.96
+      }
+    ]
+  },
+  {
+    "id": "q3_ph_03_english_switch_escalation",
+    "title": "Customer replies in English (bot follows), asks something unsupported, then asks for a human",
+    "agent": "ph_life_insurance",
+    "passed": true,
+    "failures": [],
+    "stage": "escalated",
+    "outcome": {
+      "escalated": true,
+      "escalation_reason": "customer_requested_human"
+    },
+    "actions": [
+      "escalation"
+    ],
+    "slots": {
+      "consent": true,
+      "age": 28.0
+    },
+    "dialects": [],
+    "lang_final": "tl",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 1,
+      "objections": 0,
+      "questions": 2
+    },
+    "retrievals": [
+      {
+        "query": "Is this a scam trust concern",
+        "status": "OK",
+        "record_ids": [
+          "kb_ph_is_this_a_scam_trust_concern_495d97"
+        ],
+        "top_confidence": 0.781
+      },
+      {
+        "query": "Do you offer car insurance as well?",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "record_ids": [],
+        "top_confidence": 0.385
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hi po, magandang araw! Si Lumi po ito, automated assistant ng Lumina Life, partner ng Bangko Kapwa. Tumatawag po ako kasi nag-request kayo ng info about life insurance sa branch. Naka-record po ang call na ito for quality. Okay lang po ba kung magtanong ako ng ilang quick questions? Mga 2 minutes lang po.",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Hi, yes, I have a few minutes. Is this really from the bank?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "The policy is issued by Lumina Life and sold only by licensed financial advisors at Bangko Kapwa. You can verify the advisor's license and visit any branch. May I know your age?",
+        "intent": "question",
+        "citations": [
+          "[kb_ph_is_this_a_scam_trust_concern_495d97] Lumina Life (DEMO) - Bank Referral Call Guide and FAQ > Is this a scam? / Trust concern (internal playbook, v1.1, ph_faq_objections.md#sec-6)"
+        ],
+        "lang": "en",
+        "latency_ms": 1.32
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Okay, go ahead. I'm 28 years old."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Who depends on you financially, for example a spouse, children, or parents? They would be your beneficiaries.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.13
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Do you offer car insurance as well?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "I don't have verified information about that in our approved material, so I won't guess. Our licensed financial advisor can answer that properly. Who depends on you financially, for example a spouse, children, or parents? They would be your beneficiaries.",
+        "intent": "fallback",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.85
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Pwede ko bang makausap yung totoong tao, yung advisor?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sige po, ikokonekta ko na kayo sa isang licensed financial advisor ng Bangko Kapwa. Naipasa ko na po ang details ninyo para hindi na kayo mag-ulit. Kung busy po sila, tatawagan nila kayo within the day.",
+        "intent": "escalation",
+        "citations": [],
+        "lang": "tl",
+        "latency_ms": 0.38
+      }
+    ]
+  }
+]

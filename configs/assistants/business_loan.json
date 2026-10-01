@@ -1,0 +1,108 @@
+{
+  "key": "business_loan",
+  "name": "Kosha Business Loan Qualifier",
+  "description": "Outbound/inbound qualification for the Kosha Business Growth Loan (India, English).",
+  "script": {
+    "market": "IN",
+    "product": "business_loan",
+    "languages": ["en"],
+    "voice_lang": {"en": "en-IN"},
+    "answer_lang": {"en": "en"},
+    "lines": {
+      "greeting": {"en": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality."},
+      "consent_declined": {"en": "No problem at all. I won't take any details. You can reach us at support@kosha-demo.example whenever you're ready. Have a good day."},
+      "reprompt": {"en": "Sorry, I didn't quite catch that."},
+      "conflict": {"en": "Just to be sure I record this correctly: earlier I noted {old} for {field}, and now I heard {new}. Which one is correct?"},
+      "conflict_resolved": {"en": "Thanks, I've noted {value}."},
+      "answer_prefix": {"en": ""},
+      "turnover_annualized": {"en": "Noted, that's about {value} a year."},
+      "fallback": {"en": "A relationship manager can confirm that for you on a callback."},
+      "fallback_offer_human": {"en": "Since I couldn't answer that, would you like me to connect you to a relationship manager? Just say 'talk to a person' at any time."},
+      "escalate": {"en": "Sure. I'm connecting you to a relationship manager now, and I've shared your details so you won't need to repeat them. If no one is available, they will call you back within 1 business day."},
+      "optout": {"en": "Understood, I won't continue. We won't call you again about this enquiry. Thank you for your time."},
+      "closing": {"en": "Thank you for your time. Goodbye."},
+      "already_ended": {"en": "This call has ended. Thank you."},
+      "disclosure": {"en": "Please note this is a preliminary check only, not an approval. The final decision is subject to credit assessment."},
+      "eligible": {"en": "Thank you. Based on what you've shared, you appear to meet our preliminary criteria."},
+      "not_eligible": {"en": "Thank you for sharing these details. Based on our current policy, we may not be able to proceed right now because: {reasons}."},
+      "needs_review": {"en": "Thank you. A few details need to be verified, so a relationship manager will review your profile: {reasons}."},
+      "excluded_purpose": {"en": "Our business loan cannot be used for {purpose}."},
+      "callback_confirmed": {"en": "Done. I've scheduled a callback with a relationship manager for {when} India time."},
+      "callback_outside_hours": {"en": "Callbacks are available Monday to Saturday, 9:30 AM to 6:30 PM. I've scheduled it for {when} instead."},
+      "callback_declined": {"en": "Okay, no callback then. You can reach us any time at support@kosha-demo.example."}
+    },
+    "slots": [
+      {"name": "consent", "type": "yesno", "required_yes": "consent_declined", "ask": {"en": "Is now a good time to answer a few quick questions to check your eligibility?"}},
+      {"name": "business_vintage_years", "label": "years in business", "type": "years", "keywords": "\\b(year|years|yrs|since|running|operating|started|old)\\b",
+       "ask": {"en": "How many years has your business been operating?"}},
+      {"name": "annual_turnover_inr", "label": "annual turnover", "type": "money", "annualize": true, "min_plausible": 10000,
+       "keywords": "turnover|revenue|sales|business (does|makes|earns)|we (make|earn|do)|income",
+       "ask": {"en": "What is your approximate annual business turnover? A rough figure in lakhs is fine."}},
+      {"name": "loan_amount_inr", "label": "loan amount", "type": "money", "min_plausible": 10000,
+       "keywords": "\\b(loan|need|borrow|require|looking for|want)\\b",
+       "ask": {"en": "How much would you like to borrow?"}},
+      {"name": "loan_purpose", "label": "loan purpose", "type": "choice",
+       "choices": {
+         "working_capital": "working capital|salar|day to day|cash flow|operations",
+         "inventory": "inventory|stock up|raw material|goods|stock for",
+         "equipment": "equipment|machine|machinery|vehicle|computer|tools",
+         "expansion": "expan|new branch|second (shop|store|outlet)|grow|open another",
+         "renovation": "renovat|refurbish|interior|repair",
+         "excluded:real estate speculation": "real estate|property investment|buy (a )?(flat|plot|land)",
+         "excluded:stock market trading": "stock market|shares|trading|intraday",
+         "excluded:cryptocurrency trading": "crypto|bitcoin",
+         "excluded:gambling": "gambl|betting|casino",
+         "excluded:repaying credit card debt": "credit card",
+         "other": "[a-z]{3,}"
+       },
+       "ask": {"en": "What will you mainly use the loan for?"}},
+      {"name": "credit_score", "label": "credit score", "type": "number", "range": [300, 900], "allow_unknown": true, "keywords": "score|cibil",
+       "ask": {"en": "Do you know your approximate CIBIL credit score? It's fine if you don't."}},
+      {"name": "recent_default", "label": "recent default", "type": "yesno",
+       "ask": {"en": "In the last 12 months, have you missed any loan payment by more than 90 days?"}},
+      {"name": "business_registered", "label": "business registration", "type": "yesno",
+       "ask": {"en": "Is your business registered, for example with GST, Udyam, or a shop and establishment licence?"}},
+      {"name": "callback_wanted", "phase": "post", "type": "yesno",
+       "ask": {"en": "Would you like a relationship manager to call you back to take this forward?"}},
+      {"name": "callback_time", "phase": "post", "type": "time", "only_if": {"slot": "callback_wanted", "equals": true},
+       "ask": {"en": "What day and time works best for the callback?"}}
+    ],
+    "intents": {
+      "human": ["\\b(talk|speak|connect|transfer)\\b.{0,25}\\b(human|person|agent|someone|representative|manager|executive|real)\\b", "\\breal person\\b", "\\bhuman\\b", "\\b(customer care|customer service)\\b"],
+      "optout": ["\\bnot interested\\b", "\\bdon'?t call\\b", "\\bstop calling\\b", "\\bremove my number\\b", "\\bunsubscribe\\b"],
+      "objection": ["too (high|expensive|costly|much)", "\\bhidden (charges|fees|costs)\\b", "\\b(don'?t|do not) want to share\\b", "\\bneed (some )?time\\b", "\\bthink about it\\b",
+                    "\\b(low|bad|poor) (credit|cibil)", "\\balready have a loan\\b", "\\bworried\\b", "\\bdon'?t trust\\b"],
+      "question": ["^(what|how|why|when|where|which|who|can|could|do|does|is|are|will|would|should)\\b", "\\b(tell me|i want to know|i wanted to know|any idea|what about)\\b"]
+    },
+    "kb_query_map": [
+      {"pattern": "(rate|interest|emi).{0,20}too (high|expensive|costly)|too (high|expensive|costly).{0,20}(rate|interest)", "query": "interest rate too high"},
+      {"pattern": "need (some )?time|think about it", "query": "I need time to think"}
+    ],
+    "business_rules": {
+      "callback_hours": {"days": [0, 1, 2, 3, 4, 5], "start": "09:30", "end": "18:30", "timezone": "Asia/Kolkata"},
+      "rules_source": "knowledge base records with category=eligibility_rule, product=business_loan, status=current"
+    }
+  },
+  "vapi": {
+    "name": "Kosha Business Loan Qualifier",
+    "firstMessage": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality. Is now a good time to answer a few quick questions?",
+    "transcriber": {"provider": "deepgram", "model": "nova-3", "language": "en", "keyterm": ["CIBIL", "Udyam", "GST", "EMI", "lakh", "crore", "foreclosure", "Kosha"]},
+    "voice": {"provider": "11labs", "voiceId": "21m00Tcm4TlvDq8ikWAM", "model": "eleven_flash_v2_5"},
+    "model": {
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "temperature": 0.2,
+      "systemPrompt": "You are Asha, an automated voice assistant for Kosha Capital (a demo NBFC). Goal: qualify the caller for the Kosha Business Growth Loan.\n\nFLOW (one short question per turn, max 2 sentences per reply):\n1. Confirm it is a good time. If not, offer a callback and end politely.\n2. Collect: years in business, annual turnover (convert monthly to annual and confirm), loan amount, purpose, approximate CIBIL score (unknown is acceptable), any 90+ day missed payment in last 12 months, business registration (GST/Udyam/shop licence).\n3. If the caller gives a value that conflicts with an earlier one, read both back and ask which is correct before continuing.\n4. Call check_eligibility with the collected fields. Report the result in plain words and always add: this is a preliminary check, not an approval; the final decision is subject to credit assessment.\n5. Offer a relationship manager callback; if accepted, collect day/time and call schedule_callback.\n\nGROUNDING RULES:\n- For ANY question or objection about the product, fees, policy, documents, eligibility, or the company, call kb_search first and answer ONLY from the returned records. Do not use your own knowledge.\n- If kb_search returns status INSUFFICIENT_EVIDENCE, say you don't have verified information on that and offer a relationship manager. Never guess numbers.\n- Never guarantee approval, a rate, or a disbursal date.\n- If the caller asks for a human, a manager, or repeats frustration twice, call transfer_to_human immediately.\n- Do not ask for PAN, Aadhaar, or bank details on this call.",
+      "tools": [
+        {"type": "function", "function": {"name": "kb_search", "description": "Search Kosha's approved knowledge base. Use for every product, policy, fee, document, objection or FAQ question.", "parameters": {"type": "object", "properties": {"query": {"type": "string", "description": "The caller's question in their own words"}}, "required": ["query"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools"}},
+        {"type": "function", "function": {"name": "check_eligibility", "description": "Evaluate preliminary eligibility against current credit policy rules from the knowledge base.", "parameters": {"type": "object", "properties": {"business_vintage_years": {"type": "number"}, "annual_turnover_inr": {"type": "number"}, "loan_amount_inr": {"type": "number"}, "loan_purpose": {"type": "string"}, "credit_score": {"type": "number", "description": "omit if unknown"}, "recent_default": {"type": "boolean"}, "business_registered": {"type": "boolean"}}, "required": ["business_vintage_years", "annual_turnover_inr", "loan_amount_inr"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools"}},
+        {"type": "function", "function": {"name": "schedule_callback", "description": "Schedule a relationship manager callback and create the CRM lead summary.", "parameters": {"type": "object", "properties": {"preferred_time": {"type": "string", "description": "Caller's preferred day/time in their words"}, "summary": {"type": "string", "description": "One-paragraph qualification summary without PII"}}, "required": ["preferred_time", "summary"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools"}},
+        {"type": "function", "function": {"name": "transfer_to_human", "description": "Escalate to a human relationship manager with a handoff summary.", "parameters": {"type": "object", "properties": {"reason": {"type": "string"}, "summary": {"type": "string"}}, "required": ["reason"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools"}}
+      ]
+    },
+    "serverUrl": "{{PUBLIC_BASE_URL}}/api/vapi/events",
+    "endCallPhrases": ["goodbye", "have a good day"],
+    "recordingEnabled": true,
+    "maxDurationSeconds": 600
+  }
+}

@@ -1,0 +1,27 @@
+{"type": "started", "mode": "replay", "asr": "vosk-small-en-us-0.15", "t_wall_rel_s": 0.0}
+{"type": "replay_started", "duration_s": 36.9, "speed": 1.0, "t_wall_rel_s": 0.32}
+{"type": "transcript", "speaker": "agent", "text": "hello", "final": false, "t_stream": 2.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 3.15}
+{"type": "transcript", "speaker": "agent", "text": "hello this is close your capital", "final": false, "t_stream": 3.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 3.97}
+{"type": "transcript", "speaker": "agent", "text": "hello this is close your capital", "final": true, "t_stream": 2.79, "asr_conf": 1.0, "asr_lag_ms": 1021.7, "t_wall_rel_s": 4.14}
+{"type": "topic", "from": null, "to": "small_talk", "t_stream": 2.79, "speaker": "agent", "t_wall_rel_s": 4.14}
+{"type": "transcript", "speaker": "agent", "text": "this call is", "final": false, "t_stream": 5.7, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 6.08}
+{"type": "transcript", "speaker": "agent", "text": "this call is reported for quality", "final": true, "t_stream": 5.46, "asr_conf": 0.843, "asr_lag_ms": 938.6, "t_wall_rel_s": 6.76}
+{"type": "transcript", "speaker": "customer", "text": "hello", "final": true, "t_stream": 7.44, "asr_conf": 1.0, "asr_lag_ms": 974.6, "t_wall_rel_s": 8.79}
+{"type": "transcript", "speaker": "customer", "text": "selling", "final": false, "t_stream": 10.3, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 10.74}
+{"type": "transcript", "speaker": "customer", "text": "selling the line is", "final": false, "t_stream": 11.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 11.55}
+{"type": "transcript", "speaker": "customer", "text": "selling the line is very that", "final": true, "t_stream": 10.38, "asr_conf": 0.742, "asr_lag_ms": 1137.9, "t_wall_rel_s": 11.86}
+{"type": "transcript", "speaker": "agent", "text": "when you hear me now", "final": true, "t_stream": 12.9, "asr_conf": 0.955, "asr_lag_ms": 633.7, "t_wall_rel_s": 13.95}
+{"type": "transcript", "speaker": "customer", "text": "yeah", "final": true, "t_stream": 15.33, "asr_conf": 1.0, "asr_lag_ms": 696.4, "t_wall_rel_s": 16.42}
+{"type": "transcript", "speaker": "customer", "text": "i am on", "final": false, "t_stream": 18.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 19.34}
+{"type": "transcript", "speaker": "customer", "text": "i am on his own", "final": false, "t_stream": 19.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 19.97}
+{"type": "transcript", "speaker": "customer", "text": "i am on his own the seeking this week", "final": true, "t_stream": 19.14, "asr_conf": 0.832, "asr_lag_ms": 949.3, "t_wall_rel_s": 20.47}
+{"type": "transcript", "speaker": "agent", "text": "he's this about your loan", "final": false, "t_stream": 22.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 23.18}
+{"type": "transcript", "speaker": "agent", "text": "he's this about your loan application", "final": true, "t_stream": 22.62, "asr_conf": 0.888, "asr_lag_ms": 1040.3, "t_wall_rel_s": 24.06}
+{"type": "transcript", "speaker": "customer", "text": "maybe i do not", "final": false, "t_stream": 26.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 26.75}
+{"type": "transcript", "speaker": "customer", "text": "maybe i do not know", "final": true, "t_stream": 25.89, "asr_conf": 1.0, "asr_lag_ms": 926.7, "t_wall_rel_s": 27.15}
+{"type": "transcript", "speaker": "customer", "text": "my brother", "final": false, "t_stream": 28.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 29.14}
+{"type": "transcript", "speaker": "customer", "text": "my brother handle this", "final": true, "t_stream": 27.87, "asr_conf": 0.812, "asr_lag_ms": 1124.7, "t_wall_rel_s": 29.34}
+{"type": "transcript", "speaker": "agent", "text": "hey no problem at all", "final": true, "t_stream": 30.54, "asr_conf": 0.881, "asr_lag_ms": 838.9, "t_wall_rel_s": 31.76}
+{"type": "transcript", "speaker": "customer", "text": "him okay", "final": true, "t_stream": 33.3, "asr_conf": 0.625, "asr_lag_ms": 1034.1, "t_wall_rel_s": 34.65}
+{"type": "transcript", "speaker": "customer", "text": "so it alone", "final": true, "t_stream": 35.43, "asr_conf": 0.787, "asr_lag_ms": 293.3, "t_wall_rel_s": 36.11}
+{"type": "transcript", "speaker": "agent", "text": "huh", "final": true, "t_stream": 36.9, "asr_conf": 0.514, "asr_lag_ms": 51.7, "t_wall_rel_s": 37.27}

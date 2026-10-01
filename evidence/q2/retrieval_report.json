@@ -1,0 +1,1045 @@
+{
+  "summary": {
+    "queries": 18,
+    "correct": 17,
+    "partially_correct": 1,
+    "incorrect": 0,
+    "out_of_scope_refusals": "3/3",
+    "latency_ms_p50": 0.38,
+    "latency_ms_p95": 0.58,
+    "embedder": "local-hash-ngram-4096",
+    "threshold": 0.4,
+    "kb_version": "1b1460816e"
+  },
+  "rows": [
+    {
+      "id": "Q01",
+      "type": "product",
+      "market": "IN",
+      "query": "How much can I borrow and for how long?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_loan_amount_and_tenure_38fbb2",
+        "title": "Loan Amount and Tenure",
+        "content": "The Kosha Business Growth Loan is an unsecured term loan for MSMEs, proprietors, partnership firms and private limited companies. Loan amounts range from Rs. 1,00,000 (1 lakh) to Rs. 50,00,000 (50 lakh). Repayment tenure ranges from 12 to 60 months, repaid through fixed monthly instalments.",
+        "category": "product_feature",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "https://kosha-demo.example/business-loan",
+        "source_locator": "business-loan.html#h2-1",
+        "version": "2026.07",
+        "status": "current",
+        "score": 0.7331,
+        "confidence": 0.466,
+        "bm25": 12.93,
+        "dense": 0.397,
+        "term_coverage": 0.341,
+        "citation": "[kb_in_loan_amount_and_tenure_38fbb2] Kosha Business Growth Loan > Loan Amount and Tenure (website section, v2026.07, business-loan.html#h2-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_loan_amount_and_tenure_38fbb2",
+          "title": "Loan Amount and Tenure",
+          "confidence": 0.466,
+          "score": 0.7331
+        },
+        {
+          "record_id": "kb_in_i_already_have_a_loan_1b85e2",
+          "title": "I already have a loan",
+          "confidence": 0.283,
+          "score": 0.6295
+        },
+        {
+          "record_id": "kb_in_bl_elig_05_a58922",
+          "title": "BL-ELIG-05",
+          "confidence": 0.271,
+          "score": 0.6156
+        }
+      ],
+      "answer": "The Kosha Business Growth Loan is an unsecured term loan for MSMEs, proprietors, partnership firms and private limited companies. Loan amounts range from Rs.",
+      "citations": [
+        "[kb_in_loan_amount_and_tenure_38fbb2] Kosha Business Growth Loan > Loan Amount and Tenure (website section, v2026.07, business-loan.html#h2-1)"
+      ],
+      "shared_terms": [],
+      "latency_ms": 1.916500012157485,
+      "note": ""
+    },
+    {
+      "id": "Q02",
+      "type": "product",
+      "market": "IN",
+      "query": "Do I need to pledge my property or gold?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_no_collateral_required_7782c1",
+        "title": "No Collateral Required",
+        "content": "The Business Growth Loan does not require property, gold or any other collateral. A personal guarantee from the promoter or proprietor is required.",
+        "category": "product_feature",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "https://kosha-demo.example/business-loan",
+        "source_locator": "business-loan.html#h2-3",
+        "version": "2026.07",
+        "status": "current",
+        "score": 0.7733,
+        "confidence": 0.547,
+        "bm25": 19.255,
+        "dense": 0.462,
+        "term_coverage": 0.445,
+        "citation": "[kb_in_no_collateral_required_7782c1] Kosha Business Growth Loan > No Collateral Required (website section, v2026.07, business-loan.html#h2-3)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_no_collateral_required_7782c1",
+          "title": "No Collateral Required",
+          "confidence": 0.547,
+          "score": 0.7733
+        },
+        {
+          "record_id": "kb_in_the_interest_rate_is_too_high_d08543",
+          "title": "The interest rate is too high",
+          "confidence": 0.229,
+          "score": 0.6063
+        },
+        {
+          "record_id": "kb_in_decision_1cfd8d",
+          "title": "Decision",
+          "confidence": 0.212,
+          "score": 0.5858
+        }
+      ],
+      "answer": "The Business Growth Loan does not require property, gold or any other collateral. A personal guarantee from the promoter or proprietor is required.",
+      "citations": [
+        "[kb_in_no_collateral_required_7782c1] Kosha Business Growth Loan > No Collateral Required (website section, v2026.07, business-loan.html#h2-3)"
+      ],
+      "shared_terms": [
+        "gold",
+        "property"
+      ],
+      "latency_ms": 0.5558000120799989,
+      "note": ""
+    },
+    {
+      "id": "Q03",
+      "type": "policy",
+      "market": "IN",
+      "query": "What is the foreclosure charge if I close the loan early?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_can_i_prepay_or_foreclose_my_loa_9ef140",
+        "title": "Can I prepay or foreclose my loan",
+        "content": "Yes. You can foreclose the loan after paying 6 EMIs. A foreclosure charge of 4% of the outstanding principal applies. Part-prepayment is allowed once a year up to 25% of the outstanding principal with a 2% charge on the prepaid amount.",
+        "category": "faq",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "https://kosha-demo.example/faq",
+        "source_locator": "business-loan-faq.html#h2-2",
+        "version": "2026.07",
+        "status": "current",
+        "score": 0.8045,
+        "confidence": 0.609,
+        "bm25": 16.201,
+        "dense": 0.65,
+        "term_coverage": 0.452,
+        "citation": "[kb_in_can_i_prepay_or_foreclose_my_loa_9ef140] Frequently Asked Questions - Business Loan > Can I prepay or foreclose my loan (website section, v2026.07, business-loan-faq.html#h2-2)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_can_i_prepay_or_foreclose_my_loa_9ef140",
+          "title": "Can I prepay or foreclose my loan",
+          "confidence": 0.609,
+          "score": 0.8045
+        },
+        {
+          "record_id": "kb_in_part_prepayment_charge_914166",
+          "title": "Part-prepayment Charge",
+          "confidence": 0.473,
+          "score": 0.7244
+        },
+        {
+          "record_id": "kb_in_foreclosure_charge_426344",
+          "title": "Foreclosure Charge",
+          "confidence": 0.449,
+          "score": 0.7124
+        }
+      ],
+      "answer": "You can foreclose the loan after paying 6 EMIs. A foreclosure charge of 4% of the outstanding principal applies.",
+      "citations": [
+        "[kb_in_can_i_prepay_or_foreclose_my_loa_9ef140] Frequently Asked Questions - Business Loan > Can I prepay or foreclose my loan (website section, v2026.07, business-loan-faq.html#h2-2)"
+      ],
+      "shared_terms": [
+        "charge",
+        "foreclosure",
+        "loan"
+      ],
+      "latency_ms": 0.540899985935539,
+      "note": "Must return the 2026 FAQ (4% after 6 EMIs), not the superseded 2025 page (5% after 12 EMIs)."
+    },
+    {
+      "id": "Q04",
+      "type": "policy",
+      "market": "IN",
+      "query": "What is the penalty for a missed EMI?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_what_happens_if_i_miss_an_emi_3db421",
+        "title": "What happens if I miss an EMI",
+        "content": "A late payment charge of 2% per month is levied on the overdue instalment amount, plus a cheque or NACH bounce charge of Rs. 500 per instance. Missed monthly instalments are reported to credit bureaus and can lower your credit score.",
+        "category": "faq",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "https://kosha-demo.example/faq",
+        "source_locator": "business-loan-faq.html#h2-3",
+        "version": "2026.07",
+        "status": "current",
+        "score": 0.8195,
+        "confidence": 0.639,
+        "bm25": 23.442,
+        "dense": 0.589,
+        "term_coverage": 0.548,
+        "citation": "[kb_in_what_happens_if_i_miss_an_emi_3db421] Frequently Asked Questions - Business Loan > What happens if I miss an EMI (website section, v2026.07, business-loan-faq.html#h2-3)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_what_happens_if_i_miss_an_emi_3db421",
+          "title": "What happens if I miss an EMI",
+          "confidence": 0.639,
+          "score": 0.8195
+        },
+        {
+          "record_id": "kb_in_late_payment_charge_0f2283",
+          "title": "Late Payment Charge",
+          "confidence": 0.426,
+          "score": 0.7047
+        },
+        {
+          "record_id": "kb_in_are_there_any_hidden_charges_fe8d69",
+          "title": "Are there any hidden charges",
+          "confidence": 0.361,
+          "score": 0.6607
+        }
+      ],
+      "answer": "A late payment charge of 2% per month is levied on the overdue instalment amount, plus a cheque or NACH bounce charge of Rs. Missed monthly instalments are reported to credit bureaus and can lower your credit score.",
+      "citations": [
+        "[kb_in_what_happens_if_i_miss_an_emi_3db421] Frequently Asked Questions - Business Loan > What happens if I miss an EMI (website section, v2026.07, business-loan-faq.html#h2-3)"
+      ],
+      "shared_terms": [
+        "emi",
+        "miss"
+      ],
+      "latency_ms": 0.5679999885614961,
+      "note": ""
+    },
+    {
+      "id": "Q05",
+      "type": "qualification",
+      "market": "IN",
+      "query": "How many years should my business be running to qualify?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_business_vintage_734dd3",
+        "title": "Business Vintage",
+        "content": "The business must have been operating for a minimum of 2 years.",
+        "category": "eligibility_rule",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/credit_policy_v2.pdf",
+        "source_locator": "credit_policy_v2.pdf#page-1",
+        "version": "2.0",
+        "status": "current",
+        "score": 0.7359,
+        "confidence": 0.472,
+        "bm25": 10.206,
+        "dense": 0.647,
+        "term_coverage": 0.165,
+        "citation": "[kb_in_business_vintage_734dd3] Kosha Capital - Business Loan Credit Policy > Business Vintage (policy pdf, v2.0, credit_policy_v2.pdf#page-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_business_vintage_734dd3",
+          "title": "Business Vintage",
+          "confidence": 0.472,
+          "score": 0.7359
+        },
+        {
+          "record_id": "kb_in_form_fields_66168c",
+          "title": "Form Fields",
+          "confidence": 0.339,
+          "score": 0.6497
+        },
+        {
+          "record_id": "kb_in_who_can_become_a_partner_94cd2a",
+          "title": "Who Can Become a Partner",
+          "confidence": 0.329,
+          "score": 0.6486
+        }
+      ],
+      "answer": "The business must have been operating for a minimum of 2 years.",
+      "citations": [
+        "[kb_in_business_vintage_734dd3] Kosha Capital - Business Loan Credit Policy > Business Vintage (policy pdf, v2.0, credit_policy_v2.pdf#page-1)"
+      ],
+      "shared_terms": [
+        "busines",
+        "year"
+      ],
+      "latency_ms": 0.5757000180892646,
+      "note": "Superseded v1 policy says 3 years; current answer is 2 years."
+    },
+    {
+      "id": "Q06",
+      "type": "qualification",
+      "market": "IN",
+      "query": "What minimum CIBIL score do you need?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_credit_score_45a47b",
+        "title": "Credit Score",
+        "content": "The applicant must have a CIBIL score of 700 or above.",
+        "category": "eligibility_rule",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/credit_policy_v2.pdf",
+        "source_locator": "credit_policy_v2.pdf#page-1",
+        "version": "2.0",
+        "status": "current",
+        "score": 0.8277,
+        "confidence": 0.655,
+        "bm25": 11.649,
+        "dense": 0.683,
+        "term_coverage": 0.576,
+        "citation": "[kb_in_credit_score_45a47b] Kosha Capital - Business Loan Credit Policy > Credit Score (policy pdf, v2.0, credit_policy_v2.pdf#page-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_credit_score_45a47b",
+          "title": "Credit Score",
+          "confidence": 0.655,
+          "score": 0.8277
+        },
+        {
+          "record_id": "kb_in_bl_elig_03_078352",
+          "title": "BL-ELIG-03",
+          "confidence": 0.573,
+          "score": 0.7743
+        },
+        {
+          "record_id": "kb_in_my_credit_score_is_low_ea944b",
+          "title": "My credit score is low",
+          "confidence": 0.565,
+          "score": 0.7704
+        }
+      ],
+      "answer": "The applicant must have a CIBIL score of 700 or above.",
+      "citations": [
+        "[kb_in_credit_score_45a47b] Kosha Capital - Business Loan Credit Policy > Credit Score (policy pdf, v2.0, credit_policy_v2.pdf#page-1)",
+        "[kb_in_bl_elig_03_078352] Eligibility Rules > BL-ELIG-03 (policy table, v2.0, eligibility_rules.csv#row-4)"
+      ],
+      "shared_terms": [
+        "cibil",
+        "score"
+      ],
+      "latency_ms": 0.4352999967522919,
+      "note": ""
+    },
+    {
+      "id": "Q07",
+      "type": "faq",
+      "market": "IN",
+      "query": "What documents are required for the application?",
+      "status": "OK",
+      "verdict": "partially correct",
+      "expected_rank": 3,
+      "top": {
+        "record_id": "kb_in_i_don_t_want_to_share_my_documen_b06029",
+        "title": "I don't want to share my documents",
+        "content": "That is a fair concern. Your documents are used only for KYC and credit assessment, stored in encrypted form, and shared only with credit bureaus and regulators as required by law. You can stop the application at any time.",
+        "category": "objection_handling",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/objection_handling.md",
+        "source_locator": "objection_handling.md#sec-2",
+        "version": "2.0",
+        "status": "current",
+        "score": 0.8127,
+        "confidence": 0.625,
+        "bm25": 13.514,
+        "dense": 0.557,
+        "term_coverage": 0.594,
+        "citation": "[kb_in_i_don_t_want_to_share_my_documen_b06029] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I don't want to share my documents (internal playbook, v2.0, objection_handling.md#sec-2)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_i_don_t_want_to_share_my_documen_b06029",
+          "title": "I don't want to share my documents",
+          "confidence": 0.625,
+          "score": 0.8127
+        },
+        {
+          "record_id": "kb_in_how_is_my_data_used_a50817",
+          "title": "How is my data used",
+          "confidence": 0.491,
+          "score": 0.7331
+        },
+        {
+          "record_id": "kb_in_what_documents_do_i_need_to_appl_9536d7",
+          "title": "What documents do I need to apply",
+          "confidence": 0.425,
+          "score": 0.7004
+        }
+      ],
+      "answer": "Your documents are used only for KYC and credit assessment, stored in encrypted form, and shared only with credit bureaus and regulators as required by law. You can stop the application at any time.",
+      "citations": [
+        "[kb_in_i_don_t_want_to_share_my_documen_b06029] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I don't want to share my documents (internal playbook, v2.0, objection_handling.md#sec-2)"
+      ],
+      "shared_terms": [
+        "application",
+        "document",
+        "requir"
+      ],
+      "latency_ms": 0.43620000360533595,
+      "note": ""
+    },
+    {
+      "id": "Q08",
+      "type": "faq",
+      "market": "IN",
+      "query": "Is a GST certificate mandatory?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_whether_a_gst_certificate_is_man_d04541",
+        "title": "Whether a GST certificate is mandatory",
+        "content": "Question: whether a GST certificate is mandatory. Answer: any one business registration proof is accepted - GST certificate, Udyam registration or shop and establishment licence.",
+        "category": "faq",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/call_notes_export.txt",
+        "source_locator": "call_notes_export.txt#note-1",
+        "version": "2026.08",
+        "status": "current",
+        "score": 0.9262,
+        "confidence": 0.852,
+        "bm25": 15.417,
+        "dense": 0.725,
+        "term_coverage": 1.0,
+        "citation": "[kb_in_whether_a_gst_certificate_is_man_d04541] CRM EXPORT - FAQ CANDIDATES FROM CALL NOTES (FAKE DATA) > Whether a GST certificate is mandatory (CRM export, v2026.08, call_notes_export.txt#note-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_whether_a_gst_certificate_is_man_d04541",
+          "title": "Whether a GST certificate is mandatory",
+          "confidence": 0.852,
+          "score": 0.9262
+        },
+        {
+          "record_id": "kb_in_what_documents_do_i_need_to_appl_9536d7",
+          "title": "What documents do I need to apply",
+          "confidence": 0.475,
+          "score": 0.7294
+        },
+        {
+          "record_id": "kb_in_if_a_co_applicant_is_required_315d68",
+          "title": "If a co-applicant is required",
+          "confidence": 0.307,
+          "score": 0.6337
+        }
+      ],
+      "answer": "Question: whether a GST certificate is mandatory. Answer: any one business registration proof is accepted - GST certificate, Udyam registration or shop and establishment licence.",
+      "citations": [
+        "[kb_in_whether_a_gst_certificate_is_man_d04541] CRM EXPORT - FAQ CANDIDATES FROM CALL NOTES (FAKE DATA) > Whether a GST certificate is mandatory (CRM export, v2026.08, call_notes_export.txt#note-1)"
+      ],
+      "shared_terms": [
+        "certificate",
+        "gst",
+        "mandatory"
+      ],
+      "latency_ms": 0.34799997229129076,
+      "note": ""
+    },
+    {
+      "id": "Q09",
+      "type": "objection",
+      "market": "IN",
+      "query": "Your interest rate is too high",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_the_interest_rate_is_too_high_d08543",
+        "title": "The interest rate is too high",
+        "content": "I understand the rate matters. Our rates are risk-based and start at 14% per annum on a reducing balance, and no collateral is required. You will see the full cost in the Key Fact Statement before you sign, so you can compare offers. We cannot promise a specific rate before the credit assessment.",
+        "category": "objection_handling",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/objection_handling.md",
+        "source_locator": "objection_handling.md#sec-1",
+        "version": "2.0",
+        "status": "current",
+        "score": 0.9828,
+        "confidence": 0.787,
+        "bm25": 12.296,
+        "dense": 0.566,
+        "term_coverage": 1.0,
+        "citation": "[kb_in_the_interest_rate_is_too_high_d08543] Kosha Capital - Business Loan Objection Handling Playbook (internal) > The interest rate is too high (internal playbook, v2.0, objection_handling.md#sec-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_the_interest_rate_is_too_high_d08543",
+          "title": "The interest rate is too high",
+          "confidence": 0.787,
+          "score": 0.9828
+        },
+        {
+          "record_id": "kb_in_interest_rate_7479d5",
+          "title": "Interest Rate",
+          "confidence": 0.542,
+          "score": 0.763
+        },
+        {
+          "record_id": "kb_in_women_entrepreneurs_04841f",
+          "title": "Women Entrepreneurs",
+          "confidence": 0.449,
+          "score": 0.7081
+        }
+      ],
+      "answer": "I understand the rate matters. Our rates are risk-based and start at 14% per annum on a reducing balance, and no collateral is required.",
+      "citations": [
+        "[kb_in_the_interest_rate_is_too_high_d08543] Kosha Capital - Business Loan Objection Handling Playbook (internal) > The interest rate is too high (internal playbook, v2.0, objection_handling.md#sec-1)"
+      ],
+      "shared_terms": [
+        "high",
+        "interest",
+        "rate"
+      ],
+      "latency_ms": 0.37850000080652535,
+      "note": ""
+    },
+    {
+      "id": "Q10",
+      "type": "objection",
+      "market": "IN",
+      "query": "I am worried there will be hidden charges",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_i_am_worried_about_hidden_charge_804c57",
+        "title": "I am worried about hidden charges",
+        "content": "There are no hidden charges. Every charge is listed in the Key Fact Statement before you sign. The processing fee is up to 2% plus GST, and foreclosure costs 4% of the outstanding principal after 6 EMIs.",
+        "category": "objection_handling",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/objection_handling.md",
+        "source_locator": "objection_handling.md#sec-4",
+        "version": "2.0",
+        "status": "current",
+        "score": 0.9974,
+        "confidence": 0.813,
+        "bm25": 15.778,
+        "dense": 0.612,
+        "term_coverage": 1.0,
+        "citation": "[kb_in_i_am_worried_about_hidden_charge_804c57] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I am worried about hidden charges (internal playbook, v2.0, objection_handling.md#sec-4)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_i_am_worried_about_hidden_charge_804c57",
+          "title": "I am worried about hidden charges",
+          "confidence": 0.813,
+          "score": 0.9974
+        },
+        {
+          "record_id": "kb_in_are_there_any_hidden_charges_fe8d69",
+          "title": "Are there any hidden charges",
+          "confidence": 0.54,
+          "score": 0.7618
+        },
+        {
+          "record_id": "kb_in_form_fields_66168c",
+          "title": "Form Fields",
+          "confidence": 0.009,
+          "score": 0.4494
+        }
+      ],
+      "answer": "There are no hidden charges. Every charge is listed in the Key Fact Statement before you sign.",
+      "citations": [
+        "[kb_in_i_am_worried_about_hidden_charge_804c57] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I am worried about hidden charges (internal playbook, v2.0, objection_handling.md#sec-4)"
+      ],
+      "shared_terms": [
+        "charg",
+        "hidden",
+        "worri"
+      ],
+      "latency_ms": 0.35920002846978605,
+      "note": ""
+    },
+    {
+      "id": "Q11",
+      "type": "product",
+      "market": "IN",
+      "query": "What support do branch partners get?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_in_branch_partnership_benefits_6a3035",
+        "title": "Branch Partnership Benefits",
+        "content": "Operational, marketing, and technology support is provided to branch partners. Partners receive co-branded marketing material, access to the Kosha partner portal for lead tracking, and training for their staff.",
+        "category": "partnership_benefits",
+        "product": "branch_partnership",
+        "market": "IN",
+        "source_uri": "https://kosha-demo.example/partners",
+        "source_locator": "branch-partnership.html#h2-1",
+        "version": "2026.07",
+        "status": "current",
+        "score": 0.8919,
+        "confidence": 0.784,
+        "bm25": 11.627,
+        "dense": 0.565,
+        "term_coverage": 1.0,
+        "citation": "[kb_in_branch_partnership_benefits_6a3035] Branch Partnership Program > Branch Partnership Benefits (website section, v2026.07, branch-partnership.html#h2-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_branch_partnership_benefits_6a3035",
+          "title": "Branch Partnership Benefits",
+          "confidence": 0.784,
+          "score": 0.8919
+        },
+        {
+          "record_id": "kb_in_partner_commission_aa4663",
+          "title": "Partner Commission",
+          "confidence": 0.523,
+          "score": 0.7492
+        },
+        {
+          "record_id": "kb_in_who_can_become_a_partner_94cd2a",
+          "title": "Who Can Become a Partner",
+          "confidence": 0.521,
+          "score": 0.7485
+        }
+      ],
+      "answer": "Operational, marketing, and technology support is provided to branch partners. Partners receive co-branded marketing material, access to the Kosha partner portal for lead tracking, and training for their staff.",
+      "citations": [
+        "[kb_in_branch_partnership_benefits_6a3035] Branch Partnership Program > Branch Partnership Benefits (website section, v2026.07, branch-partnership.html#h2-1)"
+      ],
+      "shared_terms": [
+        "branch",
+        "partner",
+        "support"
+      ],
+      "latency_ms": 0.367300002835691,
+      "note": ""
+    },
+    {
+      "id": "Q12",
+      "type": "out_of_scope",
+      "market": "IN",
+      "query": "Do you offer home loans for flats in Pune?",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "verdict": "correct",
+      "expected_rank": null,
+      "top": {
+        "record_id": "kb_in_i_already_have_a_loan_1b85e2",
+        "title": "I already have a loan",
+        "content": "Having an existing loan does not automatically disqualify you. Your current EMIs are considered when we assess repayment capacity. We do not offer balance transfer or debt consolidation.",
+        "category": "objection_handling",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/objection_handling.md",
+        "source_locator": "objection_handling.md#sec-6",
+        "version": "2.0",
+        "status": "current",
+        "score": 0.6446,
+        "confidence": 0.289,
+        "bm25": 5.233,
+        "dense": 0.26,
+        "term_coverage": 0.142,
+        "citation": "[kb_in_i_already_have_a_loan_1b85e2] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I already have a loan (internal playbook, v2.0, objection_handling.md#sec-6)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_i_already_have_a_loan_1b85e2",
+          "title": "I already have a loan",
+          "confidence": 0.289,
+          "score": 0.6446
+        },
+        {
+          "record_id": "kb_in_i_already_have_a_loan_with_a_ban_79ef52",
+          "title": "I already have a loan with a bank. Can I still apply",
+          "confidence": 0.282,
+          "score": 0.6326
+        },
+        {
+          "record_id": "kb_in_excluded_industries_015b57",
+          "title": "Excluded Industries",
+          "confidence": 0.252,
+          "score": 0.6058
+        }
+      ],
+      "answer": "I don't have verified information about that in our approved material, so I won't guess.",
+      "citations": [],
+      "shared_terms": [
+        "loan",
+        "offer"
+      ],
+      "latency_ms": 0.3755999787244946,
+      "note": "Not in the corpus; must return INSUFFICIENT_EVIDENCE."
+    },
+    {
+      "id": "Q13",
+      "type": "out_of_scope",
+      "market": "IN",
+      "query": "What is today's gold rate?",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "verdict": "correct",
+      "expected_rank": null,
+      "top": {
+        "record_id": "kb_in_the_interest_rate_is_too_high_d08543",
+        "title": "The interest rate is too high",
+        "content": "I understand the rate matters. Our rates are risk-based and start at 14% per annum on a reducing balance, and no collateral is required. You will see the full cost in the Key Fact Statement before you sign, so you can compare offers. We cannot promise a specific rate before the credit assessment.",
+        "category": "objection_handling",
+        "product": "business_loan",
+        "market": "IN",
+        "source_uri": "data/raw/docs/objection_handling.md",
+        "source_locator": "objection_handling.md#sec-1",
+        "version": "2.0",
+        "status": "current",
+        "score": 0.6525,
+        "confidence": 0.313,
+        "bm25": 4.344,
+        "dense": 0.249,
+        "term_coverage": 0.24,
+        "citation": "[kb_in_the_interest_rate_is_too_high_d08543] Kosha Capital - Business Loan Objection Handling Playbook (internal) > The interest rate is too high (internal playbook, v2.0, objection_handling.md#sec-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_in_the_interest_rate_is_too_high_d08543",
+          "title": "The interest rate is too high",
+          "confidence": 0.313,
+          "score": 0.6525
+        },
+        {
+          "record_id": "kb_in_no_collateral_required_7782c1",
+          "title": "No Collateral Required",
+          "confidence": 0.318,
+          "score": 0.6509
+        },
+        {
+          "record_id": "kb_in_interest_rate_7479d5",
+          "title": "Interest Rate",
+          "confidence": 0.301,
+          "score": 0.6382
+        }
+      ],
+      "answer": "I don't have verified information about that in our approved material, so I won't guess.",
+      "citations": [],
+      "shared_terms": [
+        "rate"
+      ],
+      "latency_ms": 0.32320001628249884,
+      "note": ""
+    },
+    {
+      "id": "Q14",
+      "type": "faq",
+      "market": "PH",
+      "query": "What happens if I miss my premium payment, will the policy lapse?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_ph_grace_period_and_lapse_81cf0d",
+        "title": "Grace Period and Lapse",
+        "content": "There is a 31-day grace period after the premium due date. If the premium is still unpaid after the grace period, the policy lapses and coverage stops. A lapsed policy can be reinstated within 2 years by paying the back premiums and submitting a health declaration.",
+        "category": "product_feature",
+        "product": "life_insurance",
+        "market": "PH",
+        "source_uri": "https://lumina-demo.example/protect-plus",
+        "source_locator": "lumina-protect-plus.html#h2-6",
+        "version": "2026.08",
+        "status": "current",
+        "score": 0.7138,
+        "confidence": 0.428,
+        "bm25": 18.554,
+        "dense": 0.398,
+        "term_coverage": 0.206,
+        "citation": "[kb_ph_grace_period_and_lapse_81cf0d] Lumina Protect Plus - Term Life Insurance > Grace Period and Lapse (website section, v2026.08, lumina-protect-plus.html#h2-6)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_ph_grace_period_and_lapse_81cf0d",
+          "title": "Grace Period and Lapse",
+          "confidence": 0.428,
+          "score": 0.7138
+        },
+        {
+          "record_id": "kb_ph_payment_modes_80afcd",
+          "title": "Payment Modes",
+          "confidence": 0.339,
+          "score": 0.6614
+        },
+        {
+          "record_id": "kb_ph_free_look_period_875f7a",
+          "title": "Free Look Period",
+          "confidence": 0.283,
+          "score": 0.6213
+        }
+      ],
+      "answer": "If the premium is still unpaid after the grace period, the policy lapses and coverage stops. A lapsed policy can be reinstated within 2 years by paying the back premiums and submitting a health declaration.",
+      "citations": [
+        "[kb_ph_grace_period_and_lapse_81cf0d] Lumina Protect Plus - Term Life Insurance > Grace Period and Lapse (website section, v2026.08, lumina-protect-plus.html#h2-6)"
+      ],
+      "shared_terms": [
+        "lapse",
+        "policy",
+        "premium"
+      ],
+      "latency_ms": 0.5657000001519918,
+      "note": ""
+    },
+    {
+      "id": "Q15",
+      "type": "objection",
+      "market": "PH",
+      "query": "I already have an HMO, why do I need life insurance?",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_ph_i_already_have_an_hmo_3650b9",
+        "title": "I already have an HMO",
+        "content": "An HMO pays hospital and medical bills while you are alive. Life insurance gives a cash benefit to your beneficiaries if you pass away. They serve different needs and work well together.",
+        "category": "objection_handling",
+        "product": "life_insurance",
+        "market": "PH",
+        "source_uri": "data/raw/ph/ph_faq_objections.md",
+        "source_locator": "ph_faq_objections.md#sec-5",
+        "version": "1.1",
+        "status": "current",
+        "score": 0.8936,
+        "confidence": 0.787,
+        "bm25": 19.07,
+        "dense": 0.516,
+        "term_coverage": 1.0,
+        "citation": "[kb_ph_i_already_have_an_hmo_3650b9] Lumina Life (DEMO) - Bank Referral Call Guide and FAQ > I already have an HMO (internal playbook, v1.1, ph_faq_objections.md#sec-5)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_ph_i_already_have_an_hmo_3650b9",
+          "title": "I already have an HMO",
+          "confidence": 0.787,
+          "score": 0.8936
+        },
+        {
+          "record_id": "kb_ph_coverage_056f72",
+          "title": "Coverage",
+          "confidence": 0.361,
+          "score": 0.6643
+        },
+        {
+          "record_id": "kb_ph_do_i_need_a_medical_exam_f3dcf2",
+          "title": "Do I need a medical exam",
+          "confidence": 0.344,
+          "score": 0.6638
+        }
+      ],
+      "answer": "An HMO pays hospital and medical bills while you are alive. Life insurance gives a cash benefit to your beneficiaries if you pass away.",
+      "citations": [
+        "[kb_ph_i_already_have_an_hmo_3650b9] Lumina Life (DEMO) - Bank Referral Call Guide and FAQ > I already have an HMO (internal playbook, v1.1, ph_faq_objections.md#sec-5)"
+      ],
+      "shared_terms": [
+        "already",
+        "hmo",
+        "insurance",
+        "life",
+        "need"
+      ],
+      "latency_ms": 0.3147000097669661,
+      "note": ""
+    },
+    {
+      "id": "Q16",
+      "type": "policy",
+      "market": "ID",
+      "query": "berapa denda keterlambatan angsuran",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_id_berapa_denda_keterlambatan_066da6",
+        "title": "Berapa denda keterlambatan",
+        "content": "Denda keterlambatan adalah 0,2% per hari dari angsuran yang tertunggak, dihitung mulai 1 hari setelah tanggal jatuh tempo. Tidak ada masa tenggang.",
+        "category": "faq",
+        "product": "motor_financing",
+        "market": "ID",
+        "source_uri": "https://sinar-demo.example/faq",
+        "source_locator": "sinar-pembiayaan-faq.html#h2-3",
+        "version": "2026.08",
+        "status": "current",
+        "score": 0.7486,
+        "confidence": 0.497,
+        "bm25": 15.849,
+        "dense": 0.537,
+        "term_coverage": 0.274,
+        "citation": "[kb_id_berapa_denda_keterlambatan_066da6] Pertanyaan Umum Pembiayaan Motor > Berapa denda keterlambatan (website section, v2026.08, sinar-pembiayaan-faq.html#h2-3)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_id_berapa_denda_keterlambatan_066da6",
+          "title": "Berapa denda keterlambatan",
+          "confidence": 0.497,
+          "score": 0.7486
+        },
+        {
+          "record_id": "kb_id_dendanya_kok_besar_591afd",
+          "title": "Dendanya kok besar",
+          "confidence": 0.399,
+          "score": 0.6911
+        },
+        {
+          "record_id": "kb_id_bagaimana_cara_membayar_cicilan_b46fad",
+          "title": "Bagaimana cara membayar cicilan",
+          "confidence": 0.329,
+          "score": 0.6409
+        }
+      ],
+      "answer": "Denda keterlambatan adalah 0,2% per hari dari angsuran yang tertunggak, dihitung mulai 1 hari setelah tanggal jatuh tempo. Tidak ada masa tenggang.",
+      "citations": [
+        "[kb_id_berapa_denda_keterlambatan_066da6] Pertanyaan Umum Pembiayaan Motor > Berapa denda keterlambatan (website section, v2026.08, sinar-pembiayaan-faq.html#h2-3)",
+        "[kb_id_dendanya_kok_besar_591afd] Sinar Multifinance (DEMO) - Panduan Panggilan Pengingat Angsuran > Dendanya kok besar (internal playbook, v1.0, id_reminder_playbook.md#sec-2)"
+      ],
+      "shared_terms": [
+        "angsuran",
+        "denda",
+        "keterlambatan"
+      ],
+      "latency_ms": 0.36249999538995326,
+      "note": ""
+    },
+    {
+      "id": "Q17",
+      "type": "faq",
+      "market": "ID",
+      "query": "saya sudah bayar kok masih ditagih",
+      "status": "OK",
+      "verdict": "correct",
+      "expected_rank": 1,
+      "top": {
+        "record_id": "kb_id_saya_sudah_bayar_kenapa_masih_di_434a5d",
+        "title": "Saya sudah bayar, kenapa masih ditagih",
+        "content": "Pembayaran melalui virtual account biasanya tercatat dalam 1x24 jam, dan pembayaran melalui gerai ritel dalam 2x24 jam. Simpan bukti pembayaran. Jika setelah itu status belum berubah, hubungi layanan pelanggan dengan menyertakan bukti bayar.",
+        "category": "faq",
+        "product": "motor_financing",
+        "market": "ID",
+        "source_uri": "https://sinar-demo.example/faq",
+        "source_locator": "sinar-pembiayaan-faq.html#h2-5",
+        "version": "2026.08",
+        "status": "current",
+        "score": 0.8859,
+        "confidence": 0.772,
+        "bm25": 15.742,
+        "dense": 0.493,
+        "term_coverage": 1.0,
+        "citation": "[kb_id_saya_sudah_bayar_kenapa_masih_di_434a5d] Pertanyaan Umum Pembiayaan Motor > Saya sudah bayar, kenapa masih ditagih (website section, v2026.08, sinar-pembiayaan-faq.html#h2-5)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_id_saya_sudah_bayar_kenapa_masih_di_434a5d",
+          "title": "Saya sudah bayar, kenapa masih ditagih",
+          "confidence": 0.772,
+          "score": 0.8859
+        },
+        {
+          "record_id": "kb_id_belum_gajian_7894bb",
+          "title": "Belum gajian",
+          "confidence": 0.027,
+          "score": 0.5014
+        },
+        {
+          "record_id": "kb_id_bagaimana_cara_membayar_cicilan_b46fad",
+          "title": "Bagaimana cara membayar cicilan",
+          "confidence": 0.041,
+          "score": 0.4807
+        }
+      ],
+      "answer": "Pembayaran melalui virtual account biasanya tercatat dalam 1x24 jam, dan pembayaran melalui gerai ritel dalam 2x24 jam. Jika setelah itu status belum berubah, hubungi layanan pelanggan dengan menyertakan bukti bayar.",
+      "citations": [
+        "[kb_id_saya_sudah_bayar_kenapa_masih_di_434a5d] Pertanyaan Umum Pembiayaan Motor > Saya sudah bayar, kenapa masih ditagih (website section, v2026.08, sinar-pembiayaan-faq.html#h2-5)"
+      ],
+      "shared_terms": [
+        "bayar",
+        "ditagih",
+        "masih"
+      ],
+      "latency_ms": 0.22409998928196728,
+      "note": ""
+    },
+    {
+      "id": "Q18",
+      "type": "out_of_scope",
+      "market": "ID",
+      "query": "berapa harga emas hari ini",
+      "status": "INSUFFICIENT_EVIDENCE",
+      "verdict": "correct",
+      "expected_rank": null,
+      "top": {
+        "record_id": "kb_id_berapa_dp_dan_tenor_yang_tersedi_cd1e17",
+        "title": "Berapa DP dan tenor yang tersedia",
+        "content": "Uang muka (DP) minimal 15% dari harga motor. Tenor pembiayaan tersedia 6, 12, 18, 24, 30 dan 36 bulan.",
+        "category": "faq",
+        "product": "motor_financing",
+        "market": "ID",
+        "source_uri": "https://sinar-demo.example/faq",
+        "source_locator": "sinar-pembiayaan-faq.html#h2-1",
+        "version": "2026.08",
+        "status": "current",
+        "score": 0.6478,
+        "confidence": 0.296,
+        "bm25": 3.992,
+        "dense": 0.107,
+        "term_coverage": 0.333,
+        "citation": "[kb_id_berapa_dp_dan_tenor_yang_tersedi_cd1e17] Pertanyaan Umum Pembiayaan Motor > Berapa DP dan tenor yang tersedia (website section, v2026.08, sinar-pembiayaan-faq.html#h2-1)"
+      },
+      "top3": [
+        {
+          "record_id": "kb_id_berapa_dp_dan_tenor_yang_tersedi_cd1e17",
+          "title": "Berapa DP dan tenor yang tersedia",
+          "confidence": 0.296,
+          "score": 0.6478
+        },
+        {
+          "record_id": "kb_id_belum_gajian_7894bb",
+          "title": "Belum gajian",
+          "confidence": 0.006,
+          "score": 0.4796
+        },
+        {
+          "record_id": "kb_id_etika_penagihan_wajib_9141ab",
+          "title": "Etika penagihan (wajib)",
+          "confidence": 0.012,
+          "score": 0.4751
+        }
+      ],
+      "answer": "Mohon maaf, informasi tersebut tidak tersedia di materi resmi kami, jadi saya tidak bisa memastikannya.",
+      "citations": [],
+      "shared_terms": [
+        "harga"
+      ],
+      "latency_ms": 0.2046999870799482,
+      "note": ""
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "rt_cross_sell",
+  "duration_s": 62.41,
+  "sample_rate": 16000,
+  "channels": {
+    "0": "agent",
+    "1": "customer"
+  },
+  "noise_snr_db": 28,
+  "segments": [
+    {
+      "speaker": "agent",
+      "text": "Good morning, this is Rahul from Kosha General Insurance. This call is recorded for quality and training purposes. Am I speaking with Mister Mehta?",
+      "start_s": 0.5,
+      "end_s": 11.54
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, speaking.",
+      "start_s": 12.24,
+      "end_s": 14.5
+    },
+    {
+      "speaker": "agent",
+      "text": "I am calling about the renewal of your car insurance policy, which expires on the fifteenth.",
+      "start_s": 15.2,
+      "end_s": 21.31
+    },
+    {
+      "speaker": "customer",
+      "text": "Right, I wanted to renew it. Actually my wife also bought a second car last month, a small hatchback.",
+      "start_s": 22.01,
+      "end_s": 30.12
+    },
+    {
+      "speaker": "agent",
+      "text": "Okay. So for your policy, the renewal premium is eleven thousand four hundred rupees.",
+      "start_s": 30.82,
+      "end_s": 37.87
+    },
+    {
+      "speaker": "customer",
+      "text": "Fine. Can I pay online?",
+      "start_s": 38.57,
+      "end_s": 41.91
+    },
+    {
+      "speaker": "agent",
+      "text": "Yes, I will send you a payment link by message.",
+      "start_s": 42.61,
+      "end_s": 46.46
+    },
+    {
+      "speaker": "customer",
+      "text": "Also my son just got his driving licence and he will use the car sometimes.",
+      "start_s": 47.16,
+      "end_s": 52.255
+    },
+    {
+      "speaker": "agent",
+      "text": "Noted. Is there anything else I can help you with today?",
+      "start_s": 52.955,
+      "end_s": 57.47
+    },
+    {
+      "speaker": "customer",
+      "text": "No, that is all. Thank you.",
+      "start_s": 58.17,
+      "end_s": 61.715
+    }
+  ]
+}

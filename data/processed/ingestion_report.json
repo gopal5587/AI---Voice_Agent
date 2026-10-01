@@ -1,0 +1,298 @@
+{
+  "built_at": "2026-10-01T15:01:27+00:00",
+  "sources": [
+    {
+      "source_id": "web_business_loan",
+      "path": "web/business-loan.html",
+      "status": "ok",
+      "sections": 5,
+      "boilerplate_blocks_removed": 5,
+      "version": "2026.07",
+      "effective_from": null,
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "web_business_loan_faq",
+      "path": "web/business-loan-faq.html",
+      "status": "ok",
+      "sections": 8,
+      "boilerplate_blocks_removed": 4,
+      "version": "2026.07",
+      "effective_from": "2026-07-15",
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "web_business_loan_faq_2025",
+      "path": "web/business-loan-faq-2025.html",
+      "status": "ok",
+      "sections": 4,
+      "boilerplate_blocks_removed": 4,
+      "version": "2025.11",
+      "effective_from": "2025-11-02",
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "web_branch_partnership",
+      "path": "web/branch-partnership.html",
+      "status": "ok",
+      "sections": 4,
+      "boilerplate_blocks_removed": 4,
+      "version": "2026.07",
+      "effective_from": null,
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "doc_eligibility_rules",
+      "path": "docs/eligibility_rules.csv",
+      "status": "ok",
+      "sections": 7,
+      "boilerplate_blocks_removed": 0,
+      "version": "2.0",
+      "effective_from": null,
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "doc_fees_charges",
+      "path": "docs/fees_and_charges.csv",
+      "status": "ok",
+      "sections": 6,
+      "boilerplate_blocks_removed": 0,
+      "version": "2.0",
+      "effective_from": null,
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "doc_objection_playbook",
+      "path": "docs/objection_handling.md",
+      "status": "ok",
+      "sections": 7,
+      "boilerplate_blocks_removed": 0,
+      "version": "2.0",
+      "effective_from": "2026-07-01",
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "doc_application_form",
+      "path": "docs/application_form.html",
+      "status": "ok",
+      "sections": 1,
+      "boilerplate_blocks_removed": 0,
+      "version": "1.0",
+      "effective_from": null,
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "doc_call_notes",
+      "path": "docs/call_notes_export.txt",
+      "status": "ok",
+      "sections": 3,
+      "boilerplate_blocks_removed": 0,
+      "version": "2026.08",
+      "effective_from": null,
+      "pii_redactions": {
+        "EMAIL": 1,
+        "PHONE": 2,
+        "NAME": 2,
+        "PAN": 1,
+        "AADHAAR": 1
+      }
+    },
+    {
+      "source_id": "doc_credit_policy_v1",
+      "path": "docs/credit_policy_v1.pdf",
+      "status": "ok",
+      "sections": 3,
+      "boilerplate_blocks_removed": 1,
+      "version": "1.0",
+      "effective_from": "2025-01-01",
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "doc_credit_policy_v2",
+      "path": "docs/credit_policy_v2.pdf",
+      "status": "ok",
+      "sections": 6,
+      "boilerplate_blocks_removed": 1,
+      "version": "2.0",
+      "effective_from": "2026-07-01",
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "doc_brochure",
+      "path": "docs/brochure_corrupted.pdf",
+      "status": "extraction_failed",
+      "error": "unreadable PDF: PdfStreamError: Stream has ended unexpectedly"
+    },
+    {
+      "source_id": "ph_web_protect_plus",
+      "path": "ph/lumina-protect-plus.html",
+      "status": "ok",
+      "sections": 7,
+      "boilerplate_blocks_removed": 3,
+      "version": "2026.08",
+      "effective_from": null,
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "ph_call_guide",
+      "path": "ph/ph_faq_objections.md",
+      "status": "ok",
+      "sections": 9,
+      "boilerplate_blocks_removed": 0,
+      "version": "1.1",
+      "effective_from": "2026-08-01",
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "id_web_faq",
+      "path": "id/sinar-pembiayaan-faq.html",
+      "status": "ok",
+      "sections": 6,
+      "boilerplate_blocks_removed": 3,
+      "version": "2026.08",
+      "effective_from": null,
+      "pii_redactions": {}
+    },
+    {
+      "source_id": "id_reminder_playbook",
+      "path": "id/id_reminder_playbook.md",
+      "status": "ok",
+      "sections": 6,
+      "boilerplate_blocks_removed": 0,
+      "version": "1.0",
+      "effective_from": "2026-08-15",
+      "pii_redactions": {}
+    }
+  ],
+  "unregistered_files": [],
+  "duplicates": [
+    {
+      "removed": "kb_in_uses_of_the_loan_d83261",
+      "locator": "business-loan-faq.html#h2-8",
+      "duplicate_of": "kb_in_uses_of_the_loan_408b19",
+      "type": "exact"
+    },
+    {
+      "removed": "kb_in_permitted_uses_for_referred_loan_ccaaf8",
+      "locator": "branch-partnership.html#h2-3",
+      "duplicate_of": "kb_in_uses_of_the_loan_408b19",
+      "type": "near",
+      "similarity": 0.842
+    },
+    {
+      "removed": "kb_in_what_documents_do_i_need_to_appl_203960",
+      "locator": "business-loan-faq-2025.html#h2-1",
+      "duplicate_of": "kb_in_what_documents_do_i_need_to_appl_9536d7",
+      "type": "exact"
+    },
+    {
+      "removed": "kb_in_what_happens_if_i_miss_an_emi_c5cbe5",
+      "locator": "business-loan-faq-2025.html#h2-3",
+      "duplicate_of": "kb_in_what_happens_if_i_miss_an_emi_3db421",
+      "type": "exact"
+    }
+  ],
+  "version_conflicts": [
+    {
+      "topic": "Can I prepay or foreclose my loan",
+      "old": {
+        "record_id": "kb_in_can_i_prepay_or_foreclose_my_loa_6806b9",
+        "version": "2025.11",
+        "content": "Yes. You can foreclose the loan after paying 12 EMIs. A foreclosure charge of 5% of the outstanding principal applies."
+      },
+      "new": {
+        "record_id": "kb_in_can_i_prepay_or_foreclose_my_loa_9ef140",
+        "version": "2026.07",
+        "content": "Yes. You can foreclose the loan after paying 6 EMIs. A foreclosure charge of 4% of the outstanding principal applies. Part-prepayment is allowed once a year up to 25% of the outstanding principal with a 2% charge on the prepaid amount."
+      }
+    },
+    {
+      "topic": "How can I speak to a person",
+      "old": {
+        "record_id": "kb_in_how_can_i_speak_to_a_person_34b8b6",
+        "version": "2025.11",
+        "content": "A relationship manager can call you back within 1 business day. Callbacks are available Monday to Saturday, 9:30 AM to 6:30 PM IST."
+      },
+      "new": {
+        "record_id": "kb_in_how_can_i_speak_to_a_person_f9dd4c",
+        "version": "2026.07",
+        "content": "A relationship manager can call you back within 1 business day. Callbacks are available Monday to Saturday, 9:30 AM to 6:30 PM IST. You can also email support@kosha-demo.example."
+      }
+    },
+    {
+      "topic": "Business Vintage",
+      "old": {
+        "record_id": "kb_in_business_vintage_3e5198",
+        "version": "1.0",
+        "content": "The business must have been operating for a minimum of 3 years."
+      },
+      "new": {
+        "record_id": "kb_in_business_vintage_734dd3",
+        "version": "2.0",
+        "content": "The business must have been operating for a minimum of 2 years."
+      }
+    },
+    {
+      "topic": "Credit Score",
+      "old": {
+        "record_id": "kb_in_credit_score_e4ef65",
+        "version": "1.0",
+        "content": "The applicant must have a CIBIL score of 685 or above."
+      },
+      "new": {
+        "record_id": "kb_in_credit_score_45a47b",
+        "version": "2.0",
+        "content": "The applicant must have a CIBIL score of 700 or above."
+      }
+    },
+    {
+      "topic": "Turnover",
+      "old": {
+        "record_id": "kb_in_turnover_074575",
+        "version": "1.0",
+        "content": "Minimum annual turnover of Rs. 10 lakh."
+      },
+      "new": {
+        "record_id": "kb_in_turnover_35d2ef",
+        "version": "2.0",
+        "content": "Minimum annual turnover of Rs. 12 lakh."
+      }
+    }
+  ],
+  "quality_flags": [
+    {
+      "source_id": "doc_fees_charges",
+      "locator": "fees_and_charges.csv#row-3",
+      "issue": "suspicious_value",
+      "detail": "'Processing fee' = '25%' exceeds 10% sanity bound"
+    },
+    {
+      "source_id": "doc_fees_charges",
+      "locator": "fees_and_charges.csv#row-3",
+      "issue": "conflicting_duplicate_row",
+      "detail": "'Processing fee' = '25%' conflicts with fees_and_charges.csv#row-2; kept first occurrence"
+    },
+    {
+      "source_id": "doc_fees_charges",
+      "locator": "fees_and_charges.csv#row-9",
+      "issue": "missing_value",
+      "detail": "'Documentation Charge' has no amount"
+    }
+  ],
+  "summary": {
+    "kb_version": "1b1460816e",
+    "records_total": 78,
+    "records_current": 73,
+    "records_superseded": 5,
+    "sources_ok": 15,
+    "sources_failed": 1,
+    "duplicates_removed": 4,
+    "pii_redactions": 7,
+    "quality_flags": 3,
+    "changes_vs_previous_build": {
+      "added": 0,
+      "removed": 1,
+      "changed": 0
+    }
+  }
+}

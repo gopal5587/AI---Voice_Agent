@@ -1,0 +1,55 @@
+{"type": "started", "mode": "replay", "asr": "vosk-small-en-us-0.15", "t_wall_rel_s": 0.0}
+{"type": "replay_started", "duration_s": 51.48, "speed": 1.0, "t_wall_rel_s": 0.61}
+{"type": "transcript", "speaker": "agent", "text": "hello this is", "final": false, "t_stream": 2.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 3.47}
+{"type": "transcript", "speaker": "agent", "text": "hello this is know how from", "final": false, "t_stream": 3.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 4.44}
+{"type": "transcript", "speaker": "agent", "text": "hello this is know how from coach capital", "final": false, "t_stream": 4.5, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 5.14}
+{"type": "transcript", "speaker": "agent", "text": "hello this is know how from coach capital this call", "final": false, "t_stream": 5.7, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 6.36}
+{"type": "transcript", "speaker": "agent", "text": "hello this is know how from coach capital this call is recorded", "final": true, "t_stream": 5.37, "asr_conf": 0.838, "asr_lag_ms": 1060.2, "t_wall_rel_s": 7.08}
+{"type": "topic", "from": null, "to": "small_talk", "t_stream": 5.37, "speaker": "agent", "t_wall_rel_s": 7.08}
+{"type": "transcript", "speaker": "agent", "text": "i'm calling about your", "final": false, "t_stream": 8.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 9.1}
+{"type": "transcript", "speaker": "agent", "text": "i'm calling about your monthly", "final": false, "t_stream": 9.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 10.28}
+{"type": "transcript", "speaker": "agent", "text": "i'm calling about your monthly installments that was", "final": false, "t_stream": 10.3, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 10.96}
+{"type": "transcript", "speaker": "agent", "text": "i'm calling about your monthly installment that was due on the fifth", "final": true, "t_stream": 9.57, "asr_conf": 0.9, "asr_lag_ms": 913.2, "t_wall_rel_s": 11.13}
+{"type": "topic", "from": "small_talk", "to": "payment", "t_stream": 9.57, "speaker": "agent", "t_wall_rel_s": 11.13}
+{"type": "transcript", "speaker": "customer", "text": "hi already told", "final": false, "t_stream": 13.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 14.08}
+{"type": "transcript", "speaker": "customer", "text": "hi already told your colleague yesterday", "final": false, "t_stream": 14.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 15.11}
+{"type": "transcript", "speaker": "customer", "text": "hi already told your colleague yesterday i will pay next", "final": false, "t_stream": 15.3, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 15.97}
+{"type": "transcript", "speaker": "customer", "text": "hi already told your colleague yesterday i will pay next week", "final": true, "t_stream": 15.0, "asr_conf": 1.0, "asr_lag_ms": 725.8, "t_wall_rel_s": 16.44}
+{"type": "transcript", "speaker": "agent", "text": "i understand", "final": false, "t_stream": 18.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 18.84}
+{"type": "transcript", "speaker": "agent", "text": "i understand", "final": true, "t_stream": 17.43, "asr_conf": 0.868, "asr_lag_ms": 931.7, "t_wall_rel_s": 19.05}
+{"type": "transcript", "speaker": "agent", "text": "but the installment is", "final": false, "t_stream": 20.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 21.04}
+{"type": "transcript", "speaker": "agent", "text": "but the installment is overdue and lay charges", "final": false, "t_stream": 21.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 22.25}
+{"type": "transcript", "speaker": "agent", "text": "but the installment is overdue and lay charges are applying", "final": true, "t_stream": 21.93, "asr_conf": 1.0, "asr_lag_ms": 1032.5, "t_wall_rel_s": 23.65}
+{"type": "transcript", "speaker": "customer", "text": "hi this is ridiculous", "final": true, "t_stream": 24.66, "asr_conf": 0.861, "asr_lag_ms": 724.3, "t_wall_rel_s": 26.04}
+{"type": "topic", "from": "payment", "to": "complaint", "t_stream": 24.66, "speaker": "customer", "t_wall_rel_s": 26.04}
+{"type": "nudge", "id": "8078d708", "kind": "frustration", "topic": "rising", "priority": 1, "title": "Rising frustration", "message": "Customer frustration is rising. Pause the script, acknowledge the concern, and summarize what you will do next.", "confidence": 0.69, "evidence": ["ridiculous"], "t_stream": 24.66, "expires_in_s": 40.0, "source": "rule", "latency": {"asr_ms": 724.3, "signal_ms": 0.34, "llm_ms": null, "nudge_ms": 0.13, "t_ref_wall": 1790867344.7305577, "t_sent_wall": 1790867345.4553342}, "t_wall_rel_s": 26.04}
+{"type": "transcript", "speaker": "customer", "text": "how many times do", "final": false, "t_stream": 27.3, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 27.97}
+{"type": "transcript", "speaker": "customer", "text": "how many times do i have to explain", "final": false, "t_stream": 28.5, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 29.16}
+{"type": "transcript", "speaker": "customer", "text": "how many times do i have to explain the same thing", "final": true, "t_stream": 28.17, "asr_conf": 1.0, "asr_lag_ms": 1022.4, "t_wall_rel_s": 29.84}
+{"type": "suppressed", "kind": "frustration", "topic": "rising", "reason": "duplicate", "confidence": 1.0, "asr_conf": 1.0, "evidence": "how many times, same thing", "t_stream": 28.17, "grouped_into": "8078d708", "t_wall_rel_s": 29.84}
+{"type": "transcript", "speaker": "agent", "text": "he served as", "final": false, "t_stream": 31.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 32.07}
+{"type": "transcript", "speaker": "agent", "text": "he served as per our policy i", "final": false, "t_stream": 32.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 33.49}
+{"type": "transcript", "speaker": "agent", "text": "he served as per our policy i need to remind you", "final": true, "t_stream": 33.27, "asr_conf": 1.0, "asr_lag_ms": 1019.8, "t_wall_rel_s": 34.93}
+{"type": "topic", "from": "complaint", "to": "renewal", "t_stream": 33.27, "speaker": "agent", "t_wall_rel_s": 34.94}
+{"type": "transcript", "speaker": "customer", "text": "i lost my job last", "final": false, "t_stream": 36.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 37.6}
+{"type": "transcript", "speaker": "customer", "text": "i lost my job last month and i simply cannot pay", "final": false, "t_stream": 38.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 39.05}
+{"type": "nudge", "id": "cc69c3cd", "kind": "payment_difficulty", "topic": "hardship", "priority": 1, "title": "Payment difficulty", "message": "Payment difficulty disclosed. Offer the approved payment-support / restructuring callback; do not push for payment now.", "confidence": 0.81, "evidence": ["lost my job"], "t_stream": 38.4, "expires_in_s": 60.0, "source": "rule-partial", "latency": {"asr_ms": 2637.1, "signal_ms": 0.28, "llm_ms": null, "nudge_ms": 0.05, "t_ref_wall": 1790867355.8305576, "t_sent_wall": 1790867358.46795}, "t_wall_rel_s": 39.05}
+{"type": "transcript", "speaker": "customer", "text": "i lost my job last month and i simply cannot pay right now", "final": true, "t_stream": 38.22, "asr_conf": 0.986, "asr_lag_ms": 818.1, "t_wall_rel_s": 39.73}
+{"type": "topic", "from": "renewal", "to": "payment", "t_stream": 38.22, "speaker": "customer", "t_wall_rel_s": 39.73}
+{"type": "suppressed", "kind": "payment_difficulty", "topic": "hardship", "reason": "duplicate", "confidence": 0.888, "asr_conf": 0.986, "evidence": "lost my job", "t_stream": 38.22, "grouped_into": "cc69c3cd", "t_wall_rel_s": 39.73}
+{"type": "transcript", "speaker": "customer", "text": "you people keep calling", "final": false, "t_stream": 41.0, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 41.67}
+{"type": "transcript", "speaker": "customer", "text": "you people keep calling me again and again", "final": true, "t_stream": 41.19, "asr_conf": 1.0, "asr_lag_ms": 831.0, "t_wall_rel_s": 42.65}
+{"type": "suppressed", "kind": "frustration", "topic": "rising", "reason": "duplicate", "confidence": 1.0, "asr_conf": 1.0, "evidence": "again and again, keep calling", "t_stream": 41.19, "grouped_into": "8078d708", "t_wall_rel_s": 42.65}
+{"type": "transcript", "speaker": "agent", "text": "how can you pay", "final": false, "t_stream": 44.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 45.49}
+{"type": "transcript", "speaker": "agent", "text": "how can you pay at least half of", "final": false, "t_stream": 45.3, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 45.97}
+{"type": "transcript", "speaker": "agent", "text": "how can you pay at least half of the amount today", "final": true, "t_stream": 44.94, "asr_conf": 0.97, "asr_lag_ms": 838.3, "t_wall_rel_s": 46.45}
+{"type": "transcript", "speaker": "customer", "text": "are", "final": false, "t_stream": 47.5, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 48.16}
+{"type": "transcript", "speaker": "customer", "text": "are you even listening to me", "final": true, "t_stream": 47.88, "asr_conf": 1.0, "asr_lag_ms": 818.6, "t_wall_rel_s": 49.33}
+{"type": "topic", "from": "payment", "to": "complaint", "t_stream": 47.88, "speaker": "customer", "t_wall_rel_s": 49.33}
+{"type": "suppressed", "kind": "frustration", "topic": "rising", "reason": "duplicate", "confidence": 1.0, "asr_conf": 1.0, "evidence": "are you even listening", "t_stream": 47.88, "grouped_into": "8078d708", "t_wall_rel_s": 49.33}
+{"type": "transcript", "speaker": "customer", "text": "this is so frustrating", "final": false, "t_stream": 50.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 51.24}
+{"type": "transcript", "speaker": "customer", "text": "this is so frustrating", "final": true, "t_stream": 50.04, "asr_conf": 1.0, "asr_lag_ms": 726.9, "t_wall_rel_s": 51.44}
+{"type": "suppressed", "kind": "frustration", "topic": "rising", "reason": "duplicate", "confidence": 1.0, "asr_conf": 1.0, "evidence": "frustrat", "t_stream": 50.04, "grouped_into": "8078d708", "t_wall_rel_s": 51.44}
+{"type": "transcript", "speaker": "agent", "text": "huh", "final": true, "t_stream": 51.48, "asr_conf": 0.643, "asr_lag_ms": 50.1, "t_wall_rel_s": 52.14}
+{"type": "nudge_closed", "id": "8078d708", "status": "open_at_call_end", "t_wall_rel_s": 52.47}
+{"type": "nudge_closed", "id": "cc69c3cd", "status": "open_at_call_end", "t_wall_rel_s": 52.47}

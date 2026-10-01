@@ -1,0 +1,967 @@
+[
+  {
+    "id": "q1_01_cooperative",
+    "title": "Cooperative customer, multi-detail answer, pre-qualified, callback scheduled",
+    "agent": "business_loan",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "pre_qualified",
+      "failed_rules": [],
+      "unverified_rules": [],
+      "passed_rules": [
+        "BL-ELIG-01",
+        "BL-ELIG-02",
+        "BL-ELIG-03",
+        "BL-ELIG-05",
+        "BL-ELIG-06",
+        "BL-ELIG-07"
+      ],
+      "excluded_purpose": null,
+      "rules_version": "1b1460816e",
+      "disclaimer": "Preliminary check only, not an approval; final decision subject to credit assessment."
+    },
+    "actions": [
+      "eligibility_check",
+      "callback_scheduled",
+      "crm_summary"
+    ],
+    "slots": {
+      "consent": true,
+      "business_vintage_years": 7.0,
+      "annual_turnover_inr": 3600000.0,
+      "loan_amount_inr": 1500000.0,
+      "loan_purpose": "equipment",
+      "credit_score": 745.0,
+      "recent_default": false,
+      "business_registered": true,
+      "callback_wanted": true,
+      "callback_time": "2026-10-02 11:00"
+    },
+    "dialects": [],
+    "lang_final": "en",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 0,
+      "questions": 0
+    },
+    "retrievals": [],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality. Is now a good time to answer a few quick questions to check your eligibility?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes, go ahead."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How many years has your business been operating?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.59
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "We've been running the shop since 2019."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.2
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Our turnover is about 3 lakh a month and I need around 15 lakh."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Noted, that's about 36 lakh rupees a year. What will you mainly use the loan for?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.79
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "To buy a new packaging machine."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Do you know your approximate CIBIL credit score? It's fine if you don't.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.24
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "It's around 745."
+      },
+      {
+        "speaker": "BOT",
+        "text": "In the last 12 months, have you missed any loan payment by more than 90 days?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.53
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "No, never."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Is your business registered, for example with GST, Udyam, or a shop and establishment licence?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.07
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes, we have GST registration."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Thank you. Based on what you've shared, you appear to meet our preliminary criteria. Please note this is a preliminary check only, not an approval. The final decision is subject to credit assessment. Would you like a relationship manager to call you back to take this forward?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 29.32
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes please."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What day and time works best for the callback?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.09
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Tomorrow at 11 am."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Done. I've scheduled a callback with a relationship manager for Friday 2 October at 11:00 AM India time. Thank you for your time. Goodbye.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 6.57
+      }
+    ]
+  },
+  {
+    "id": "q1_02_objection",
+    "title": "Objections (rate too high, hidden charges, documents) answered from the KB with citations",
+    "agent": "business_loan",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "pre_qualified",
+      "failed_rules": [],
+      "unverified_rules": [],
+      "passed_rules": [
+        "BL-ELIG-01",
+        "BL-ELIG-02",
+        "BL-ELIG-03",
+        "BL-ELIG-05",
+        "BL-ELIG-06",
+        "BL-ELIG-07"
+      ],
+      "excluded_purpose": null,
+      "rules_version": "1b1460816e",
+      "disclaimer": "Preliminary check only, not an approval; final decision subject to credit assessment."
+    },
+    "actions": [
+      "eligibility_check",
+      "crm_summary"
+    ],
+    "slots": {
+      "consent": true,
+      "business_vintage_years": 4.0,
+      "annual_turnover_inr": 6000000.0,
+      "loan_amount_inr": 2500000.0,
+      "loan_purpose": "working_capital",
+      "credit_score": 712.0,
+      "recent_default": false,
+      "business_registered": true,
+      "callback_wanted": false
+    },
+    "dialects": [],
+    "lang_final": "en",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 4,
+      "questions": 0
+    },
+    "retrievals": [
+      {
+        "query": "interest rate too high",
+        "status": "OK",
+        "record_ids": [
+          "kb_in_the_interest_rate_is_too_high_d08543"
+        ],
+        "top_confidence": 0.787
+      },
+      {
+        "query": "I am worried there will be hidden charges.",
+        "status": "OK",
+        "record_ids": [
+          "kb_in_i_am_worried_about_hidden_charge_804c57"
+        ],
+        "top_confidence": 0.813
+      },
+      {
+        "query": "I don't want to share my documents with you people.",
+        "status": "OK",
+        "record_ids": [
+          "kb_in_i_don_t_want_to_share_my_documen_b06029"
+        ],
+        "top_confidence": 0.629
+      },
+      {
+        "query": "I need time to think",
+        "status": "OK",
+        "record_ids": [
+          "kb_in_i_need_time_to_think_b1948c"
+        ],
+        "top_confidence": 0.814
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality. Is now a good time to answer a few quick questions to check your eligibility?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Okay, but honestly your interest rate is too high."
+      },
+      {
+        "speaker": "BOT",
+        "text": "I understand the rate matters. Our rates are risk-based and start at 14% per annum on a reducing balance, and no collateral is required. How many years has your business been operating?",
+        "intent": "objection",
+        "citations": [
+          "[kb_in_the_interest_rate_is_too_high_d08543] Kosha Capital - Business Loan Objection Handling Playbook (internal) > The interest rate is too high (internal playbook, v2.0, objection_handling.md#sec-1)"
+        ],
+        "lang": "en",
+        "latency_ms": 1.99
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "About four years."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.5
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Roughly 60 lakh annual turnover."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How much would you like to borrow?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.09
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "I am worried there will be hidden charges."
+      },
+      {
+        "speaker": "BOT",
+        "text": "There are no hidden charges. Every charge is listed in the Key Fact Statement before you sign. How much would you like to borrow?",
+        "intent": "objection",
+        "citations": [
+          "[kb_in_i_am_worried_about_hidden_charge_804c57] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I am worried about hidden charges (internal playbook, v2.0, objection_handling.md#sec-4)"
+        ],
+        "lang": "en",
+        "latency_ms": 0.82
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "25 lakh."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What will you mainly use the loan for?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.09
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Working capital for salaries."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Do you know your approximate CIBIL credit score? It's fine if you don't.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.07
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "I don't want to share my documents with you people."
+      },
+      {
+        "speaker": "BOT",
+        "text": "That is a fair concern. Your documents are used only for KYC and credit assessment, stored in encrypted form, and shared only with credit bureaus and regulators as required by law. Do you know your approximate CIBIL credit score? It's fine if you don't.",
+        "intent": "objection",
+        "citations": [
+          "[kb_in_i_don_t_want_to_share_my_documen_b06029] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I don't want to share my documents (internal playbook, v2.0, objection_handling.md#sec-2)"
+        ],
+        "lang": "en",
+        "latency_ms": 0.78
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "It is 712."
+      },
+      {
+        "speaker": "BOT",
+        "text": "In the last 12 months, have you missed any loan payment by more than 90 days?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.06
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "No."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Is your business registered, for example with GST, Udyam, or a shop and establishment licence?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.05
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes, Udyam registered."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Thank you. Based on what you've shared, you appear to meet our preliminary criteria. Please note this is a preliminary check only, not an approval. The final decision is subject to credit assessment. Would you like a relationship manager to call you back to take this forward?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.35
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "No, I'll think about it."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Okay, no callback then. You can reach us any time at support@kosha-demo.example. Of course, take your time. I can schedule a callback with a relationship manager at a time that suits you, with no obligation. Thank you for your time. Goodbye.",
+        "intent": "objection",
+        "citations": [
+          "[kb_in_i_need_time_to_think_b1948c] Kosha Capital - Business Loan Objection Handling Playbook (internal) > I need time to think (internal playbook, v2.0, objection_handling.md#sec-3)"
+        ],
+        "lang": "en",
+        "latency_ms": 1.04
+      }
+    ]
+  },
+  {
+    "id": "q1_03_incomplete_conflicting",
+    "title": "Incomplete (unknown credit score) and conflicting (vintage) details; ends in needs_review / policy fail",
+    "agent": "business_loan",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "not_eligible",
+      "failed_rules": [
+        {
+          "rule_id": "BL-ELIG-01",
+          "description": "Business must have been operating for at least 2 years"
+        }
+      ],
+      "unverified_rules": [
+        {
+          "rule_id": "BL-ELIG-03",
+          "description": "Applicant CIBIL credit score must be 700 or higher"
+        }
+      ],
+      "passed_rules": [
+        "BL-ELIG-02",
+        "BL-ELIG-05",
+        "BL-ELIG-06",
+        "BL-ELIG-07"
+      ],
+      "excluded_purpose": null,
+      "rules_version": "1b1460816e",
+      "disclaimer": "Preliminary check only, not an approval; final decision subject to credit assessment."
+    },
+    "actions": [
+      "eligibility_check",
+      "crm_summary"
+    ],
+    "slots": {
+      "consent": true,
+      "business_vintage_years": 1.0,
+      "annual_turnover_inr": 1800000.0,
+      "loan_amount_inr": 1000000.0,
+      "loan_purpose": "inventory",
+      "credit_score": "unknown",
+      "recent_default": false,
+      "business_registered": true,
+      "callback_wanted": false
+    },
+    "dialects": [],
+    "lang_final": "en",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 0,
+      "questions": 0
+    },
+    "retrievals": [],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality. Is now a good time to answer a few quick questions to check your eligibility?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Sure."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How many years has your business been operating?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.06
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Five years."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.06
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Actually we started last year, so about one year in business."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Just to be sure I record this correctly: earlier I noted 5 years for years in business, and now I heard 1 year. Which one is correct?",
+        "intent": "conflict_detected",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.13
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "The second one, one year is correct."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Thanks, I've noted 1 year. What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.1
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Around 18 lakh a year."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How much would you like to borrow?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.09
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "10 lakh."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What will you mainly use the loan for?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.09
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Inventory for the festive season."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Do you know your approximate CIBIL credit score? It's fine if you don't.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.08
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "I don't know, never checked it."
+      },
+      {
+        "speaker": "BOT",
+        "text": "In the last 12 months, have you missed any loan payment by more than 90 days?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.07
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "No."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Is your business registered, for example with GST, Udyam, or a shop and establishment licence?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.05
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Hmm."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sorry, I didn't quite catch that. Is your business registered, for example with GST, Udyam, or a shop and establishment licence?",
+        "intent": "reprompt",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.05
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes, shop and establishment licence."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Thank you for sharing these details. Based on our current policy, we may not be able to proceed right now because: business must have been operating for at least 2 years. Please note this is a preliminary check only, not an approval. The final decision is subject to credit assessment. Would you like a relationship manager to call you back to take this forward?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.38
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "No thanks."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Okay, no callback then. You can reach us any time at support@kosha-demo.example. Thank you for your time. Goodbye.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.31
+      }
+    ]
+  },
+  {
+    "id": "q1_04_out_of_scope",
+    "title": "Out-of-scope and unsupported questions trigger the safe fallback (no invented answer)",
+    "agent": "business_loan",
+    "passed": true,
+    "failures": [],
+    "stage": "collecting",
+    "outcome": null,
+    "actions": [],
+    "slots": {
+      "consent": true,
+      "business_vintage_years": 3.0
+    },
+    "dialects": [],
+    "lang_final": "en",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 2,
+      "objections": 0,
+      "questions": 3
+    },
+    "retrievals": [
+      {
+        "query": "Do you also offer home loans for flats in Pune?",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "record_ids": [],
+        "top_confidence": 0.289
+      },
+      {
+        "query": "What is today's gold rate?",
+        "status": "INSUFFICIENT_EVIDENCE",
+        "record_ids": [],
+        "top_confidence": 0.313
+      },
+      {
+        "query": "Fine. Can I prepay the loan early?",
+        "status": "OK",
+        "record_ids": [
+          "kb_in_can_i_prepay_or_foreclose_my_loa_9ef140"
+        ],
+        "top_confidence": 0.541
+      }
+    ],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality. Is now a good time to answer a few quick questions to check your eligibility?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How many years has your business been operating?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.05
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Do you also offer home loans for flats in Pune?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "I don't have verified information about that in our approved material, so I won't guess. A relationship manager can confirm that for you on a callback. How many years has your business been operating?",
+        "intent": "fallback",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 1.48
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Three years."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.06
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "What is today's gold rate?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "I don't have verified information about that in our approved material, so I won't guess. Since I couldn't answer that, would you like me to connect you to a relationship manager? Just say 'talk to a person' at any time. What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "fallback",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.58
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Fine. Can I prepay the loan early?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Yes. You can foreclose the loan after paying 6 EMIs. What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "question",
+        "citations": [
+          "[kb_in_can_i_prepay_or_foreclose_my_loa_9ef140] Frequently Asked Questions - Business Loan > Can I prepay or foreclose my loan (website section, v2026.07, business-loan-faq.html#h2-2)"
+        ],
+        "lang": "en",
+        "latency_ms": 0.9
+      }
+    ]
+  },
+  {
+    "id": "q1_05_human_request",
+    "title": "Customer asks for a human mid-flow; escalation with handoff summary",
+    "agent": "business_loan",
+    "passed": true,
+    "failures": [],
+    "stage": "escalated",
+    "outcome": {
+      "escalated": true,
+      "escalation_reason": "customer_requested_human"
+    },
+    "actions": [
+      "escalation"
+    ],
+    "slots": {
+      "consent": true,
+      "business_vintage_years": 6.0
+    },
+    "dialects": [],
+    "lang_final": "en",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 0,
+      "questions": 0
+    },
+    "retrievals": [],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality. Is now a good time to answer a few quick questions to check your eligibility?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How many years has your business been operating?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.05
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Six years."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.06
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Look, can I just speak to a real person please?"
+      },
+      {
+        "speaker": "BOT",
+        "text": "Sure. I'm connecting you to a relationship manager now, and I've shared your details so you won't need to repeat them. If no one is available, they will call you back within 1 business day.",
+        "intent": "escalation",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.28
+      }
+    ]
+  },
+  {
+    "id": "q1_06_excluded_purpose",
+    "title": "Policy-excluded purpose (stock trading) is declined using KB rules",
+    "agent": "business_loan",
+    "passed": true,
+    "failures": [],
+    "stage": "ended",
+    "outcome": {
+      "status": "not_eligible",
+      "failed_rules": [],
+      "unverified_rules": [],
+      "passed_rules": [
+        "BL-ELIG-01",
+        "BL-ELIG-02",
+        "BL-ELIG-03",
+        "BL-ELIG-05",
+        "BL-ELIG-06",
+        "BL-ELIG-07"
+      ],
+      "excluded_purpose": "stock market trading",
+      "rules_version": "1b1460816e",
+      "disclaimer": "Preliminary check only, not an approval; final decision subject to credit assessment."
+    },
+    "actions": [
+      "eligibility_check",
+      "crm_summary"
+    ],
+    "slots": {
+      "consent": true,
+      "business_vintage_years": 10.0,
+      "annual_turnover_inr": 20000000.0,
+      "loan_amount_inr": 5000000.0,
+      "loan_purpose": "excluded:stock market trading",
+      "credit_score": 800.0,
+      "recent_default": false,
+      "business_registered": true,
+      "callback_wanted": false
+    },
+    "dialects": [],
+    "lang_final": "en",
+    "counters": {
+      "reprompt": 0,
+      "fallback": 0,
+      "objections": 0,
+      "questions": 0
+    },
+    "retrievals": [],
+    "transcript": [
+      {
+        "speaker": "BOT",
+        "text": "Hello, this is Asha, an automated assistant from Kosha Capital, calling about your business loan enquiry. This call is recorded for quality. Is now a good time to answer a few quick questions to check your eligibility?",
+        "intent": "greeting",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": null
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How many years has your business been operating?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.05
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Ten years."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What is your approximate annual business turnover? A rough figure in lakhs is fine.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.06
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "2 crore turnover."
+      },
+      {
+        "speaker": "BOT",
+        "text": "How much would you like to borrow?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.07
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "50 lakh."
+      },
+      {
+        "speaker": "BOT",
+        "text": "What will you mainly use the loan for?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.05
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Mostly for stock market trading."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Do you know your approximate CIBIL credit score? It's fine if you don't.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.36
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "800."
+      },
+      {
+        "speaker": "BOT",
+        "text": "In the last 12 months, have you missed any loan payment by more than 90 days?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.06
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "No."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Is your business registered, for example with GST, Udyam, or a shop and establishment licence?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.12
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "Yes."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Our business loan cannot be used for stock market trading. Thank you for sharing these details. Based on our current policy, we may not be able to proceed right now because: the loan purpose is not supported. Please note this is a preliminary check only, not an approval. The final decision is subject to credit assessment. Would you like a relationship manager to call you back to take this forward?",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.39
+      },
+      {
+        "speaker": "CUSTOMER",
+        "text": "No."
+      },
+      {
+        "speaker": "BOT",
+        "text": "Okay, no callback then. You can reach us any time at support@kosha-demo.example. Thank you for your time. Goodbye.",
+        "intent": "slot",
+        "citations": [],
+        "lang": "en",
+        "latency_ms": 0.31
+      }
+    ]
+  }
+]

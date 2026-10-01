@@ -1,0 +1,59 @@
+{"type": "started", "mode": "replay", "asr": "vosk-small-en-us-0.15", "t_wall_rel_s": 0.0}
+{"type": "replay_started", "duration_s": 62.41, "speed": 1.0, "t_wall_rel_s": 0.0}
+{"type": "transcript", "speaker": "agent", "text": "good morning", "final": false, "t_stream": 2.1, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 2.16}
+{"type": "transcript", "speaker": "agent", "text": "good morning this is rahul from", "final": false, "t_stream": 3.3, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 3.37}
+{"type": "transcript", "speaker": "agent", "text": "good morning this is rahul from coastal", "final": false, "t_stream": 4.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 4.82}
+{"type": "transcript", "speaker": "agent", "text": "good morning this is rahul from coach general insurance", "final": true, "t_stream": 4.29, "asr_conf": 0.889, "asr_lag_ms": 913.6, "t_wall_rel_s": 5.21}
+{"type": "transcript", "speaker": "agent", "text": "this call is", "final": false, "t_stream": 7.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 7.25}
+{"type": "transcript", "speaker": "agent", "text": "this call is recorded for equality and training", "final": false, "t_stream": 8.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 8.42}
+{"type": "transcript", "speaker": "agent", "text": "this call is recorded for equality and training purposes", "final": true, "t_stream": 8.16, "asr_conf": 0.946, "asr_lag_ms": 918.9, "t_wall_rel_s": 9.12}
+{"type": "transcript", "speaker": "agent", "text": "am i speaking with", "final": false, "t_stream": 11.0, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 11.06}
+{"type": "transcript", "speaker": "agent", "text": "am i speaking with mr mentor", "final": true, "t_stream": 10.83, "asr_conf": 0.844, "asr_lag_ms": 1120.8, "t_wall_rel_s": 12.02}
+{"type": "transcript", "speaker": "customer", "text": "here's", "final": false, "t_stream": 14.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 14.43}
+{"type": "transcript", "speaker": "customer", "text": "he is speaking", "final": true, "t_stream": 13.77, "asr_conf": 0.779, "asr_lag_ms": 1034.2, "t_wall_rel_s": 14.84}
+{"type": "transcript", "speaker": "agent", "text": "i am calling", "final": false, "t_stream": 17.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 17.27}
+{"type": "transcript", "speaker": "agent", "text": "i'm calling about the renewal", "final": false, "t_stream": 18.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 18.26}
+{"type": "transcript", "speaker": "agent", "text": "i'm calling about the renewal of your car insurance", "final": false, "t_stream": 18.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 18.92}
+{"type": "transcript", "speaker": "agent", "text": "i'm calling about the renewal of your car insurance policy which expires", "final": false, "t_stream": 20.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 20.46}
+{"type": "transcript", "speaker": "agent", "text": "hi i'm calling about the renewal of your car insurance policy which expires on the fifteenth", "final": true, "t_stream": 20.43, "asr_conf": 0.926, "asr_lag_ms": 817.0, "t_wall_rel_s": 21.32}
+{"type": "topic", "from": null, "to": "renewal", "t_stream": 20.43, "speaker": "agent", "t_wall_rel_s": 21.32}
+{"type": "transcript", "speaker": "customer", "text": "white i", "final": false, "t_stream": 24.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 24.3}
+{"type": "transcript", "speaker": "customer", "text": "white i wanted to renew", "final": false, "t_stream": 25.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 25.48}
+{"type": "transcript", "speaker": "customer", "text": "white i wanted to renew it", "final": false, "t_stream": 25.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 25.94}
+{"type": "nudge", "id": "c6f5ea7d", "kind": "buying_signal", "topic": "ready", "priority": 2, "title": "Buying signal", "message": "Buying signal. Confirm the next step and close: payment link or application.", "confidence": 0.63, "evidence": ["i wanted to renew"], "t_stream": 25.9, "expires_in_s": 30.0, "source": "rule-partial", "latency": {"asr_ms": 2040.3, "signal_ms": 0.23, "llm_ms": null, "nudge_ms": 0.03, "t_ref_wall": 1790867342.5381186, "t_sent_wall": 1790867344.5787258}, "t_wall_rel_s": 25.94}
+{"type": "transcript", "speaker": "customer", "text": "white i wanted to renew it actually my", "final": false, "t_stream": 26.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 26.84}
+{"type": "transcript", "speaker": "customer", "text": "white i wanted to renew it actually my wife also bought a second", "final": false, "t_stream": 27.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 27.84}
+{"type": "transcript", "speaker": "customer", "text": "white i wanted to renew it actually my wife also bought a second car last month a", "final": false, "t_stream": 29.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 29.27}
+{"type": "transcript", "speaker": "customer", "text": "white i wanted to renew it actually my wife also bought a second car last month a small hatchback", "final": true, "t_stream": 29.4, "asr_conf": 1.0, "asr_lag_ms": 1016.5, "t_wall_rel_s": 30.42}
+{"type": "nudge", "id": "28c43942", "kind": "cross_sell", "topic": "multi_vehicle", "priority": 2, "title": "Missed cross-sell", "message": "Customer mentioned another vehicle. Offer the multi-vehicle discount on a second policy.", "confidence": 0.9, "evidence": ["second car"], "t_stream": 29.4, "expires_in_s": 50.0, "source": "rule", "latency": {"asr_ms": 3216.5, "signal_ms": 0.24, "llm_ms": null, "nudge_ms": 0.1, "t_ref_wall": 1790867345.8381186, "t_sent_wall": 1790867349.0549781}, "t_wall_rel_s": 30.42}
+{"type": "suppressed", "kind": "buying_signal", "topic": "ready", "reason": "duplicate", "confidence": 0.7, "asr_conf": 1.0, "evidence": "i wanted to renew", "t_stream": 29.4, "grouped_into": "c6f5ea7d", "t_wall_rel_s": 30.42}
+{"type": "transcript", "speaker": "agent", "text": "huh okay", "final": true, "t_stream": 31.35, "asr_conf": 0.691, "asr_lag_ms": 736.2, "t_wall_rel_s": 32.14}
+{"type": "transcript", "speaker": "agent", "text": "so for your", "final": false, "t_stream": 34.0, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 34.02}
+{"type": "transcript", "speaker": "agent", "text": "so for your policy the renewal", "final": false, "t_stream": 35.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 35.24}
+{"type": "transcript", "speaker": "agent", "text": "so for your policy the renewal premium is eleven", "final": false, "t_stream": 36.7, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 36.74}
+{"type": "transcript", "speaker": "agent", "text": "so for your policy the renewal premium is eleven thousand", "final": false, "t_stream": 37.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 37.43}
+{"type": "transcript", "speaker": "agent", "text": "so for your policy the renewal premium is eleven thousand four hundred rupees", "final": true, "t_stream": 37.11, "asr_conf": 1.0, "asr_lag_ms": 931.6, "t_wall_rel_s": 38.13}
+{"type": "transcript", "speaker": "customer", "text": "hi i'm", "final": false, "t_stream": 40.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 40.84}
+{"type": "transcript", "speaker": "customer", "text": "hein can i pay online", "final": true, "t_stream": 41.16, "asr_conf": 0.878, "asr_lag_ms": 833.6, "t_wall_rel_s": 42.04}
+{"type": "topic", "from": "renewal", "to": "payment", "t_stream": 41.16, "speaker": "customer", "t_wall_rel_s": 42.04}
+{"type": "suppressed", "kind": "buying_signal", "topic": "ready", "reason": "duplicate", "confidence": 0.614, "asr_conf": 0.878, "evidence": "can i pay online", "t_stream": 41.16, "grouped_into": "c6f5ea7d", "t_wall_rel_s": 42.04}
+{"type": "transcript", "speaker": "agent", "text": "yes i", "final": false, "t_stream": 44.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 44.83}
+{"type": "transcript", "speaker": "agent", "text": "yes i will send you a payment", "final": false, "t_stream": 45.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 45.85}
+{"type": "transcript", "speaker": "agent", "text": "yes i will send you a payment linked by message", "final": true, "t_stream": 45.72, "asr_conf": 1.0, "asr_lag_ms": 1017.6, "t_wall_rel_s": 46.82}
+{"type": "nudge_closed", "id": "c6f5ea7d", "status": "resolved_by_agent", "t_wall_rel_s": 46.82}
+{"type": "transcript", "speaker": "customer", "text": "also my son", "final": false, "t_stream": 49.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 49.44}
+{"type": "transcript", "speaker": "customer", "text": "also my son just got his driving", "final": false, "t_stream": 50.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 50.42}
+{"type": "transcript", "speaker": "customer", "text": "also my son just got his driving licence and he will use", "final": false, "t_stream": 51.3, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 51.38}
+{"type": "nudge_updated", "id": "28c43942", "message": "Customer mentioned another vehicle. Offer the multi-vehicle discount on a second policy. Also: A new driver will use the car. Suggest adding a named driver so claims stay covered.", "evidence": ["second car", "son just got his driving licence"], "t_wall_rel_s": 51.38}
+{"type": "transcript", "speaker": "customer", "text": "also my son just got his driving licence and he will use the car sometimes", "final": true, "t_stream": 51.51, "asr_conf": 0.967, "asr_lag_ms": 921.4, "t_wall_rel_s": 52.52}
+{"type": "suppressed", "kind": "cross_sell", "topic": "add_driver", "reason": "duplicate", "confidence": 0.774, "asr_conf": 0.967, "evidence": "son just got his driving licence", "t_stream": 51.51, "grouped_into": "28c43942", "t_wall_rel_s": 52.52}
+{"type": "transcript", "speaker": "agent", "text": "he noted", "final": true, "t_stream": 53.49, "asr_conf": 0.823, "asr_lag_ms": 922.4, "t_wall_rel_s": 54.42}
+{"type": "transcript", "speaker": "agent", "text": "is there", "final": false, "t_stream": 56.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 56.44}
+{"type": "transcript", "speaker": "agent", "text": "is there anything else i can help you", "final": false, "t_stream": 57.1, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 57.14}
+{"type": "transcript", "speaker": "agent", "text": "is there anything else i can help you with today", "final": true, "t_stream": 56.73, "asr_conf": 1.0, "asr_lag_ms": 827.5, "t_wall_rel_s": 57.63}
+{"type": "transcript", "speaker": "customer", "text": "no", "final": false, "t_stream": 60.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 60.24}
+{"type": "transcript", "speaker": "customer", "text": "no that is", "final": false, "t_stream": 60.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 60.97}
+{"type": "transcript", "speaker": "customer", "text": "no that is all", "final": false, "t_stream": 61.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 61.62}
+{"type": "transcript", "speaker": "customer", "text": "no that is all thank you", "final": true, "t_stream": 60.99, "asr_conf": 0.948, "asr_lag_ms": 928.9, "t_wall_rel_s": 61.93}
+{"type": "transcript", "speaker": "agent", "text": "huh", "final": true, "t_stream": 62.4, "asr_conf": 0.455, "asr_lag_ms": 40.8, "t_wall_rel_s": 62.44}
+{"type": "nudge_closed", "id": "28c43942", "status": "missed_opportunity", "t_wall_rel_s": 62.78}

@@ -1,0 +1,52 @@
+{"type": "started", "mode": "replay", "asr": "vosk-small-en-us-0.15", "t_wall_rel_s": 0.0}
+{"type": "replay_started", "duration_s": 49.46, "speed": 1.0, "t_wall_rel_s": 1.0}
+{"type": "transcript", "speaker": "agent", "text": "hi this is", "final": false, "t_stream": 3.1, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 4.22}
+{"type": "transcript", "speaker": "agent", "text": "hi this is vikram from", "final": false, "t_stream": 3.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 4.81}
+{"type": "transcript", "speaker": "agent", "text": "hi this is vikram broncos your capital", "final": true, "t_stream": 3.3, "asr_conf": 0.967, "asr_lag_ms": 1019.6, "t_wall_rel_s": 5.32}
+{"type": "transcript", "speaker": "agent", "text": "i saw that you", "final": false, "t_stream": 6.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 7.27}
+{"type": "transcript", "speaker": "agent", "text": "i saw that you apply for a business", "final": false, "t_stream": 7.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 8.29}
+{"type": "transcript", "speaker": "agent", "text": "i saw that you apply for a business loan on our website", "final": true, "t_stream": 7.2, "asr_conf": 1.0, "asr_lag_ms": 837.0, "t_wall_rel_s": 9.13}
+{"type": "transcript", "speaker": "customer", "text": "he yes i need about", "final": false, "t_stream": 10.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 11.88}
+{"type": "transcript", "speaker": "customer", "text": "he yes i need about twenty lakh rupees", "final": false, "t_stream": 12.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 13.25}
+{"type": "transcript", "speaker": "customer", "text": "he yes i need about twenty lakh rupees for my shop", "final": true, "t_stream": 12.06, "asr_conf": 0.981, "asr_lag_ms": 840.5, "t_wall_rel_s": 13.94}
+{"type": "transcript", "speaker": "agent", "text": "great", "final": false, "t_stream": 15.6, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 16.66}
+{"type": "transcript", "speaker": "agent", "text": "great do not", "final": false, "t_stream": 16.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 17.87}
+{"type": "transcript", "speaker": "agent", "text": "great do not worry the approval", "final": false, "t_stream": 17.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 18.27}
+{"type": "transcript", "speaker": "agent", "text": "great do not worry the approval is guaranteed", "final": false, "t_stream": 18.7, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 19.75}
+{"type": "transcript", "speaker": "agent", "text": "great do not worry the approval is guaranteed for you", "final": false, "t_stream": 19.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 20.46}
+{"type": "nudge", "id": "5aab8693", "kind": "compliance", "topic": "risky_claim", "priority": 1, "title": "Compliance risk", "message": "Risky claim: approval cannot be guaranteed. Correct it now: the final decision is subject to credit assessment.", "confidence": 0.855, "evidence": ["guaranteed"], "t_stream": 19.4, "expires_in_s": 60.0, "source": "rule-partial", "latency": {"asr_ms": 2060.3, "signal_ms": 0.19, "llm_ms": null, "nudge_ms": 0.11, "t_ref_wall": 1790867337.4302788, "t_sent_wall": 1790867339.4908745}, "t_wall_rel_s": 20.46}
+{"type": "nudge_updated", "id": "5aab8693", "message": "Risky claim: approval cannot be guaranteed. Correct it now: the final decision is subject to credit assessment. Also: Recording disclosure missing. Tell the customer the call is recorded before continuing.", "evidence": ["guaranteed", "no recording disclosure by 20s (agent ASR conf 0.98)"], "t_wall_rel_s": 21.01}
+{"type": "transcript", "speaker": "agent", "text": "great do not worry the approval is guaranteed for you and the interest rate will be", "final": false, "t_stream": 20.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 21.47}
+{"type": "transcript", "speaker": "agent", "text": "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent", "final": true, "t_stream": 20.73, "asr_conf": 1.0, "asr_lag_ms": 1043.4, "t_wall_rel_s": 22.84}
+{"type": "topic", "from": null, "to": "pricing", "t_stream": 20.73, "speaker": "agent", "t_wall_rel_s": 22.84}
+{"type": "nudge_updated", "id": "5aab8693", "message": "Risky claim: approval cannot be guaranteed. Correct it now: the final decision is subject to credit assessment. Also: Recording disclosure missing. Tell the customer the call is recorded before continuing. Also: Rate quoted without the credit-assessment disclosure. Add: final terms are subject to credit assessment.", "evidence": ["guaranteed", "no recording disclosure by 20s (agent ASR conf 0.98)", "great do not worry the approval is guaranteed for you and the interest rate will be only twelve percent"], "t_wall_rel_s": 22.84}
+{"type": "suppressed", "kind": "compliance", "topic": "risky_claim", "reason": "duplicate", "confidence": 0.95, "asr_conf": 1.0, "evidence": "guaranteed", "t_stream": 20.73, "grouped_into": "5aab8693", "t_wall_rel_s": 22.84}
+{"type": "transcript", "speaker": "customer", "text": "wheeler", "final": true, "t_stream": 22.71, "asr_conf": 1.0, "asr_lag_ms": 728.0, "t_wall_rel_s": 24.53}
+{"type": "transcript", "speaker": "customer", "text": "it is guaranteed", "final": false, "t_stream": 25.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 26.42}
+{"type": "transcript", "speaker": "customer", "text": "it is guaranteed", "final": true, "t_stream": 24.57, "asr_conf": 1.0, "asr_lag_ms": 1024.5, "t_wall_rel_s": 26.62}
+{"type": "transcript", "speaker": "agent", "text": "yes one", "final": false, "t_stream": 28.0, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 29.04}
+{"type": "transcript", "speaker": "agent", "text": "yes one hundred percent", "final": true, "t_stream": 28.17, "asr_conf": 1.0, "asr_lag_ms": 1017.9, "t_wall_rel_s": 30.21}
+{"type": "suppressed", "kind": "compliance", "topic": "risky_claim", "reason": "duplicate", "confidence": 0.95, "asr_conf": 1.0, "evidence": "one hundred percent", "t_stream": 28.17, "grouped_into": "5aab8693", "t_wall_rel_s": 30.21}
+{"type": "transcript", "speaker": "agent", "text": "you will definitely get the", "final": false, "t_stream": 31.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 32.23}
+{"type": "transcript", "speaker": "agent", "text": "you will definitely get the load", "final": true, "t_stream": 30.57, "asr_conf": 0.867, "asr_lag_ms": 1033.7, "t_wall_rel_s": 32.63}
+{"type": "suppressed", "kind": "compliance", "topic": "risky_claim", "reason": "duplicate", "confidence": 0.824, "asr_conf": 0.867, "evidence": "definitely get", "t_stream": 30.57, "grouped_into": "5aab8693", "t_wall_rel_s": 32.63}
+{"type": "transcript", "speaker": "customer", "text": "huh okay", "final": true, "t_stream": 32.61, "asr_conf": 0.796, "asr_lag_ms": 628.3, "t_wall_rel_s": 34.32}
+{"type": "transcript", "speaker": "customer", "text": "what documents", "final": false, "t_stream": 35.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 36.25}
+{"type": "transcript", "speaker": "customer", "text": "what documents do you need from me", "final": true, "t_stream": 35.28, "asr_conf": 1.0, "asr_lag_ms": 929.2, "t_wall_rel_s": 37.23}
+{"type": "topic", "from": "pricing", "to": "documents", "t_stream": 35.28, "speaker": "customer", "t_wall_rel_s": 37.23}
+{"type": "transcript", "speaker": "agent", "text": "just", "final": false, "t_stream": 37.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 38.95}
+{"type": "transcript", "speaker": "agent", "text": "just your pen", "final": false, "t_stream": 39.1, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 40.14}
+{"type": "transcript", "speaker": "agent", "text": "just your pen card or god", "final": false, "t_stream": 39.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 40.88}
+{"type": "transcript", "speaker": "agent", "text": "just your pen card or god heart and twelve months of banks", "final": false, "t_stream": 40.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 41.87}
+{"type": "transcript", "speaker": "agent", "text": "just your pen card or god heart and twelve months of bank statements", "final": true, "t_stream": 40.74, "asr_conf": 0.905, "asr_lag_ms": 927.2, "t_wall_rel_s": 42.72}
+{"type": "transcript", "speaker": "customer", "text": "and what is the", "final": false, "t_stream": 44.4, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 45.43}
+{"type": "transcript", "speaker": "customer", "text": "and what is the processing fee", "final": true, "t_stream": 43.86, "asr_conf": 1.0, "asr_lag_ms": 731.8, "t_wall_rel_s": 45.63}
+{"type": "topic", "from": "documents", "to": "pricing", "t_stream": 43.86, "speaker": "customer", "t_wall_rel_s": 45.63}
+{"type": "transcript", "speaker": "agent", "text": "it is", "final": false, "t_stream": 46.5, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 47.55}
+{"type": "transcript", "speaker": "agent", "text": "it is very small", "final": false, "t_stream": 47.7, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 48.76}
+{"type": "transcript", "speaker": "agent", "text": "it is very small i", "final": false, "t_stream": 48.7, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 49.72}
+{"type": "nudge", "id": "32777869", "kind": "compliance", "topic": "fee_evasion", "priority": 1, "title": "Compliance risk", "message": "Fee question deflected. State the processing fee (up to 2% plus GST) and point to the Key Fact Statement.", "confidence": 0.675, "evidence": ["it is very small"], "t_stream": 48.7, "expires_in_s": 60.0, "source": "rule-partial", "latency": {"asr_ms": 2224.8, "signal_ms": 0.16, "llm_ms": null, "nudge_ms": 0.02, "t_ref_wall": 1790867366.5302787, "t_sent_wall": 1790867368.7552507}, "t_wall_rel_s": 49.72}
+{"type": "transcript", "speaker": "agent", "text": "it is very small i will tell you later", "final": true, "t_stream": 48.0, "asr_conf": 1.0, "asr_lag_ms": 927.0, "t_wall_rel_s": 49.92}
+{"type": "suppressed", "kind": "compliance", "topic": "fee_evasion", "reason": "duplicate", "confidence": 0.75, "asr_conf": 1.0, "evidence": "it is very small", "t_stream": 48.0, "grouped_into": "32777869", "t_wall_rel_s": 49.92}
+{"type": "nudge_closed", "id": "5aab8693", "status": "open_at_call_end", "t_wall_rel_s": 50.79}
+{"type": "nudge_closed", "id": "32777869", "status": "open_at_call_end", "t_wall_rel_s": 50.8}

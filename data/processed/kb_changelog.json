@@ -1,0 +1,42 @@
+[
+  {
+    "kb_version": "a049826b4c",
+    "built_at": "2026-10-01T14:26:20+00:00",
+    "records": 78,
+    "added": 78,
+    "removed": 0,
+    "changed": 0
+  },
+  {
+    "kb_version": "1b1460816e",
+    "built_at": "2026-10-01T14:37:01+00:00",
+    "records": 78,
+    "added": 0,
+    "removed": 0,
+    "changed": 17
+  },
+  {
+    "kb_version": "b685dbcc93",
+    "built_at": "2026-10-01T14:59:54+00:00",
+    "records": 79,
+    "added": 1,
+    "removed": 0,
+    "changed": 0
+  },
+  {
+    "kb_version": "392871ef4a",
+    "built_at": "2026-10-01T15:00:25+00:00",
+    "records": 79,
+    "added": 1,
+    "removed": 1,
+    "changed": 0
+  },
+  {
+    "kb_version": "1b1460816e",
+    "built_at": "2026-10-01T15:01:27+00:00",
+    "records": 78,
+    "added": 0,
+    "removed": 1,
+    "changed": 0
+  }
+]

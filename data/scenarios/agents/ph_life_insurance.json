@@ -1,0 +1,45 @@
+[
+  {
+    "id": "q3_ph_01_cooperative_taglish", "agent": "ph_life_insurance", "today": "2026-10-01",
+    "title": "Cooperative customer in natural Taglish with finance terms; quotation request and advisor callback",
+    "turns": [
+      {"user": "Sige po, okay lang.", "expect": {"lang": "tl"}},
+      {"user": "32 years old na po ako.", "expect": {"slot": ["age", 32]}},
+      {"user": "Yung asawa ko at dalawang anak ko po.", "expect": {"slot": ["dependents", "spouse_and_children"]}},
+      {"user": "Siguro mga 2,500 pesos kada buwan po.", "expect": {"slot": ["monthly_budget_php", 2500]}},
+      {"user": "Para sa income protection ng family ko po.", "expect": {"slot": ["coverage_goal", "income_protection"]}},
+      {"user": "Wala pa po, HMO lang from work.", "expect": {"contains": "licensed financial advisor"}},
+      {"user": "Oo, sige po."},
+      {"user": "Sa Sabado ng hapon po.", "expect": {"contains": "Sabado"}}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "qualified_lead", "actions": ["quotation_request", "callback_scheduled"]}
+  },
+  {
+    "id": "q3_ph_02_objections_colloquial", "agent": "ph_life_insurance", "today": "2026-10-01",
+    "title": "Sector objections (HMO, mahal, lapse question) in colloquial Tagalog; KB-grounded Taglish answers",
+    "turns": [
+      {"user": "Ano ba yan, may HMO na ako eh, bakit kailangan ko pa ng life insurance?", "expect": {"intent": "objection", "citations": true, "lang": "tl"}},
+      {"user": "Sige na nga, tanong lang kayo."},
+      {"user": "45 po."},
+      {"user": "Mga magulang ko po."},
+      {"user": "Grabe, mahal siguro yan, wala akong budget.", "expect": {"intent": "objection", "citations": true, "contains": "PHP 500,000"}},
+      {"user": "Siguro 1,500 a month."},
+      {"user": "Pag na-ospital ako, critical illness.", "expect": {"slot": ["coverage_goal", "critical_illness"]}},
+      {"user": "Paano po kung hindi ako makabayad, ma-lapse ba agad?", "expect": {"intent": "question", "citations": true, "contains": "31-day"}},
+      {"user": "Wala po."},
+      {"user": "Hindi muna po, pag-iisipan ko pa."}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "qualified_lead"}
+  },
+  {
+    "id": "q3_ph_03_english_switch_escalation", "agent": "ph_life_insurance", "today": "2026-10-01",
+    "title": "Customer replies in English (bot follows), asks something unsupported, then asks for a human",
+    "turns": [
+      {"user": "Hi, yes, I have a few minutes. Is this really from the bank?", "expect": {"lang": "en", "citations": true, "not_contains": "Ayon po"}},
+      {"user": "Okay, go ahead. I'm 28 years old.", "expect": {"slot": ["age", 28]}},
+      {"user": "Do you offer car insurance as well?", "expect": {"intent": "fallback", "lang": "en"}},
+      {"user": "Pwede ko bang makausap yung totoong tao, yung advisor?", "expect": {"intent": "escalation", "lang": "tl", "contains": "licensed financial advisor"}}
+    ],
+    "expect_final": {"stage": "escalated", "actions": ["escalation"]}
+  }
+]

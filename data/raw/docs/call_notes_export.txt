@@ -1,0 +1,8 @@
+CRM EXPORT - FAQ CANDIDATES FROM CALL NOTES (FAKE DATA)
+==========================================================
+
+Note 1: Customer Ramesh Kulkarni (ph 9876543210, ramesh.k@example.com) asked whether a GST certificate is mandatory. Answer given: any one business registration proof is accepted - GST certificate, Udyam registration or shop and establishment licence.
+
+Note 2: Caller Priya Sharma, PAN ABCPS1234K, Aadhaar 1234 5678 9012, wanted to know if a co-applicant is required. Answer given: a co-applicant is not mandatory for proprietorships; partnership firms and companies need all partners or directors holding more than 25% as co-applicants.
+
+Note 3: Customer at +91-98200-11223 asked whether women entrepreneurs get a concession. Answer given: women-owned businesses receive a 0.25% interest rate concession, subject to eligibility.

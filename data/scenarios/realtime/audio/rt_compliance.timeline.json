@@ -1,0 +1,66 @@
+{
+  "id": "rt_compliance",
+  "duration_s": 49.46,
+  "sample_rate": 16000,
+  "channels": {
+    "0": "agent",
+    "1": "customer"
+  },
+  "noise_snr_db": 28,
+  "segments": [
+    {
+      "speaker": "agent",
+      "text": "Hi, this is Vikram from Kosha Capital. I saw that you applied for a business loan on our website.",
+      "start_s": 0.5,
+      "end_s": 7.97
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes, I need about twenty lakh rupees for my shop.",
+      "start_s": 8.67,
+      "end_s": 12.815
+    },
+    {
+      "speaker": "agent",
+      "text": "Great. Do not worry, the approval is guaranteed for you, and the interest rate will be only twelve percent.",
+      "start_s": 13.515,
+      "end_s": 21.51
+    },
+    {
+      "speaker": "customer",
+      "text": "Really? It is guaranteed?",
+      "start_s": 22.21,
+      "end_s": 25.29
+    },
+    {
+      "speaker": "agent",
+      "text": "Yes, one hundred percent. You will definitely get the loan.",
+      "start_s": 25.99,
+      "end_s": 31.35
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay. What documents do you need from me?",
+      "start_s": 32.05,
+      "end_s": 36.0
+    },
+    {
+      "speaker": "agent",
+      "text": "Just your PAN card, Aadhaar, and twelve months of bank statements.",
+      "start_s": 36.7,
+      "end_s": 41.51
+    },
+    {
+      "speaker": "customer",
+      "text": "And what is the processing fee?",
+      "start_s": 42.21,
+      "end_s": 44.58
+    },
+    {
+      "speaker": "agent",
+      "text": "It is very small, I will tell you later.",
+      "start_s": 45.28,
+      "end_s": 48.76
+    }
+  ]
+}

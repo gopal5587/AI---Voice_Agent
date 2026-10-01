@@ -1,0 +1,86 @@
+[
+  {
+    "id": "rt_cross_sell",
+    "title": "Motor insurance renewal: customer mentions a second car and a new driver; agent misses both",
+    "noise_snr_db": 28,
+    "expected": {"required": ["cross_sell"], "allowed": ["buying_signal"]},
+    "segments": [
+      {"speaker": "agent", "text": "Good morning, this is Rahul from Kosha General Insurance. This call is recorded for quality and training purposes. Am I speaking with Mister Mehta?"},
+      {"speaker": "customer", "text": "Yes, speaking."},
+      {"speaker": "agent", "text": "I am calling about the renewal of your car insurance policy, which expires on the fifteenth."},
+      {"speaker": "customer", "text": "Right, I wanted to renew it. Actually my wife also bought a second car last month, a small hatchback."},
+      {"speaker": "agent", "text": "Okay. So for your policy, the renewal premium is eleven thousand four hundred rupees."},
+      {"speaker": "customer", "text": "Fine. Can I pay online?"},
+      {"speaker": "agent", "text": "Yes, I will send you a payment link by message."},
+      {"speaker": "customer", "text": "Also my son just got his driving licence and he will use the car sometimes."},
+      {"speaker": "agent", "text": "Noted. Is there anything else I can help you with today?"},
+      {"speaker": "customer", "text": "No, that is all. Thank you."}
+    ]
+  },
+  {
+    "id": "rt_compliance",
+    "title": "Business-loan sales call: recording disclosure skipped, approval guaranteed, rate quoted before credit-assessment disclosure",
+    "noise_snr_db": 28,
+    "expected": {"required": ["compliance"], "allowed": ["buying_signal"]},
+    "segments": [
+      {"speaker": "agent", "text": "Hi, this is Vikram from Kosha Capital. I saw that you applied for a business loan on our website."},
+      {"speaker": "customer", "text": "Yes, I need about twenty lakh rupees for my shop."},
+      {"speaker": "agent", "text": "Great. Do not worry, the approval is guaranteed for you, and the interest rate will be only twelve percent."},
+      {"speaker": "customer", "text": "Really? It is guaranteed?"},
+      {"speaker": "agent", "text": "Yes, one hundred percent. You will definitely get the loan."},
+      {"speaker": "customer", "text": "Okay. What documents do you need from me?"},
+      {"speaker": "agent", "text": "Just your PAN card, Aadhaar, and twelve months of bank statements."},
+      {"speaker": "customer", "text": "And what is the processing fee?"},
+      {"speaker": "agent", "text": "It is very small, I will tell you later."}
+    ]
+  },
+  {
+    "id": "rt_frustration",
+    "title": "Overdue EMI call: customer frustration rises and payment difficulty is disclosed",
+    "noise_snr_db": 28,
+    "expected": {"required": ["frustration", "payment_difficulty"], "allowed": ["callback"]},
+    "segments": [
+      {"speaker": "agent", "text": "Hello, this is Neha from Kosha Capital. This call is recorded. I am calling about your monthly installment that was due on the fifth."},
+      {"speaker": "customer", "text": "I already told your colleague yesterday, I will pay next week."},
+      {"speaker": "agent", "text": "I understand. But the installment is overdue, and late charges are applying."},
+      {"speaker": "customer", "text": "This is ridiculous. How many times do I have to explain the same thing?"},
+      {"speaker": "agent", "text": "Sir, as per our policy, I need to remind you."},
+      {"speaker": "customer", "text": "I lost my job last month and I simply cannot pay right now. You people keep calling me again and again."},
+      {"speaker": "agent", "text": "Can you pay at least half of the amount today?"},
+      {"speaker": "customer", "text": "Are you even listening to me? This is so frustrating."}
+    ]
+  },
+  {
+    "id": "rt_noisy",
+    "title": "Noisy, ambiguous call on a bad line: should produce no low-value nudges",
+    "noise_snr_db": 4,
+    "expected": {"required": [], "allowed": ["callback"]},
+    "segments": [
+      {"speaker": "agent", "text": "Hello, this is Kosha Capital. This call is recorded for quality."},
+      {"speaker": "customer", "text": "Hello? Sorry, the line is very bad."},
+      {"speaker": "agent", "text": "Can you hear me now?"},
+      {"speaker": "customer", "text": "Uh, yeah, hmm. I am on the road, the signal is weak."},
+      {"speaker": "agent", "text": "Is this about your loan application?"},
+      {"speaker": "customer", "text": "Maybe, I do not know. My brother handles it."},
+      {"speaker": "agent", "text": "No problem at all."},
+      {"speaker": "customer", "text": "Hmm, okay. Sorry, hello?"}
+    ]
+  },
+  {
+    "id": "rt_holdout_noisy",
+    "title": "HELD-OUT (written after rule tuning): noisy market background, routine document follow-up; no nudge needed",
+    "noise_snr_db": 6,
+    "holdout": true,
+    "expected": {"required": [], "allowed": ["callback", "buying_signal"]},
+    "segments": [
+      {"speaker": "agent", "text": "Good afternoon, this is Priya from Kosha Capital. This call is being recorded."},
+      {"speaker": "customer", "text": "Hi, sorry, I am at the market, it is very noisy here."},
+      {"speaker": "agent", "text": "No worries. I am calling about the documents for your loan application."},
+      {"speaker": "customer", "text": "Which documents? I think I sent everything already."},
+      {"speaker": "agent", "text": "We still need the bank statement for March."},
+      {"speaker": "customer", "text": "Okay, okay. I will check and upload it tonight."},
+      {"speaker": "agent", "text": "Thank you, that would be great."},
+      {"speaker": "customer", "text": "Yes. Bye."}
+    ]
+  }
+]

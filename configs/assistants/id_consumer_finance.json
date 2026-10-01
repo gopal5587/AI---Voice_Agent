@@ -1,0 +1,90 @@
+{
+  "key": "id_consumer_finance",
+  "name": "Sinar Multifinance Installment Reminder (ID)",
+  "description": "Pre-due installment reminder for motorcycle financing in Indonesia. Formal register by default; mirrors a colloquial register when the customer uses it; normalizes common Javanese/Sundanese/Betawi words.",
+  "script": {
+    "market": "ID",
+    "product": "motor_financing",
+    "languages": ["formal", "casual"],
+    "voice_lang": {"formal": "id-ID", "casual": "id-ID"},
+    "answer_lang": {"formal": "id", "casual": "id"},
+    "language_detection": {
+      "casual": "\\b(gue|gw|aku|gak|nggak|ngga|ga|udah|emang|banget|sih|dong|kok|nih|deh|lho|kak|bang|bro|sis|aja|gimana|kayak|bener|duit|gajian|mbak|mas|teh|aa|nggih|mboten|sampun|kagak)\\b",
+      "formal": "\\b(saya|tidak|sudah|bapak|ibu|apakah|bagaimana|mohon|terima kasih|baik|silakan|bersedia|berkenan)\\b"
+    },
+    "lines": {
+      "greeting": {
+        "formal": "Selamat {daypart}. Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam untuk menjaga kualitas layanan.",
+        "casual": "Halo, selamat {daypart}! Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam ya, untuk kualitas layanan."
+      },
+      "wrong_person": {"formal": "Mohon maaf atas gangguannya. Terima kasih, selamat {daypart}.", "casual": "Oh, maaf ya sudah mengganggu. Terima kasih, selamat {daypart}."},
+      "reprompt": {"formal": "Mohon maaf, saya kurang jelas mendengarnya.", "casual": "Maaf, Kak, saya kurang nangkep tadi."},
+      "conflict": {"formal": "Mohon konfirmasi: tadi disebutkan {old}, sekarang {new}. Yang benar yang mana, {customer_title}?", "casual": "Biar nggak salah catat ya, Kak: tadi {old}, sekarang {new}. Yang bener yang mana?"},
+      "conflict_resolved": {"formal": "Baik, kami catat {value}.", "casual": "Oke, saya catat {value} ya."},
+      "answer_prefix": {"formal": "Baik, {customer_title}.", "casual": "Jadi gini, Kak."},
+      "fallback": {"formal": "Untuk hal tersebut, petugas layanan pelanggan kami di 1500-777 dapat membantu.", "casual": "Soal itu, petugas kami di 1500-777 bisa bantu jelasin ya, Kak."},
+      "fallback_offer_human": {"formal": "Apakah {customer_title} ingin saya sambungkan ke petugas layanan pelanggan?", "casual": "Mau saya sambungin ke petugas aja, Kak?"},
+      "escalate": {"formal": "Baik, {customer_title}. Saya sambungkan ke petugas layanan pelanggan Sinar sekarang. Ringkasan percakapan ini sudah kami teruskan, jadi {customer_title} tidak perlu mengulang.", "casual": "Siap, Kak. Saya sambungin ke petugas sekarang ya. Ringkasan obrolan ini sudah saya kirim, jadi nggak perlu cerita ulang."},
+      "optout": {"formal": "Baik, kami hargai keputusan {customer_title}. Mohon diingat angsuran tetap jatuh tempo pada {due_text}. Terima kasih.", "casual": "Oke, Kak. Cuma mengingatkan, angsurannya tetap jatuh tempo {due_text} ya. Makasih."},
+      "closing": {"formal": "Terima kasih atas waktunya, {customer_title}. Selamat {daypart}.", "casual": "Makasih banyak ya, Kak. Selamat {daypart}!"},
+      "already_ended": {"formal": "Panggilan ini sudah selesai. Terima kasih.", "casual": "Panggilannya sudah selesai ya, Kak. Makasih."},
+      "promise_on_time": {"formal": "Baik, kami catat rencana pembayaran pada {date_text}, sebelum jatuh tempo, jadi tidak ada denda.", "casual": "Oke, dicatat ya, bayar tanggal {date_text}. Itu sebelum jatuh tempo, jadi aman, nggak kena denda."},
+      "promise_late": {"formal": "Baik, kami catat rencana pembayaran pada {date_text}. Karena melewati jatuh tempo {days_late} hari, akan ada denda keterlambatan sekitar {penalty_text}.", "casual": "Oke, dicatat tanggal {date_text} ya, Kak. Karena lewat {days_late} hari dari jatuh tempo, nanti ada denda sekitar {penalty_text}."},
+      "claimed_paid": {"formal": "Baik, kami catat bahwa {customer_title} sudah membayar. Tim kami akan memverifikasi pembayarannya.", "casual": "Oke, dicatat sudah bayar ya, Kak. Nanti tim kami cek pembayarannya."},
+      "hardship_noted": {"formal": "Kami juga mencatat kondisi ini agar petugas kami dapat menghubungi {customer_title} terkait pengajuan restrukturisasi.", "casual": "Kondisinya juga saya catat ya, Kak, biar petugas kami bisa hubungi soal pengajuan keringanan."},
+      "channel_noted": {"formal": "Terima kasih. Pembayaran melalui {channel_text} sudah kami catat.", "casual": "Sip, bayar lewat {channel_text} ya, Kak."}
+    },
+    "slots": [
+      {"name": "identity_confirmed", "type": "yesno", "required_yes": "wrong_person",
+       "ask": {"formal": "Apakah saya berbicara dengan {customer_title} {customer_name}?", "casual": "Apakah saya bicara dengan {customer_title} {customer_name}?"}},
+      {"name": "payment_date", "label": "tanggal bayar", "type": "date", "keywords": "\\b(besok|lusa|tanggal|tgl|minggu depan|senin|selasa|rabu|kamis|jumat|sabtu|hari ini)\\b",
+       "ask": {"formal": "Kami ingin mengingatkan bahwa angsuran ke-{installment_no} untuk {vehicle} sebesar {amount_text} akan jatuh tempo pada {due_text}. Kapan {customer_title} berencana melakukan pembayaran?",
+               "casual": "Mau ngingetin aja, Kak, cicilan ke-{installment_no} buat {vehicle} sebesar {amount_text} jatuh temponya {due_text}. Rencananya mau bayar kapan, Kak?"},
+       "ask_soft": {"formal": "Tidak perlu dipastikan sekarang. Jika {customer_title} sudah memiliki perkiraan tanggal pembayaran, boleh disampaikan; jika belum, petugas kami yang akan menghubungi.",
+                    "casual": "Nggak harus sekarang kok, Kak. Kalau sudah ada perkiraan tanggal bisa bayar, boleh kabari; kalau belum, nanti petugas kami yang hubungi."}},
+      {"name": "payment_channel", "label": "metode bayar", "type": "choice",
+       "choices": {"va_bca": "\\bbca\\b", "va_bri": "\\bbri\\b", "va_mandiri": "mandiri", "retail": "indomaret|alfamart|minimarket|alfa|indo", "app": "aplikasi|app|sinar mobile|m-banking|mbanking", "undecided": "belum tahu|tidak tahu|nanti|terserah|lihat nanti"},
+       "ask": {"formal": "Pembayarannya rencananya melalui apa, {customer_title}? Virtual account BCA, BRI, Mandiri, gerai Indomaret atau Alfamart, atau aplikasi Sinar Mobile?",
+               "casual": "Bayarnya mau lewat apa, Kak? VA BCA, BRI, Mandiri, Indomaret atau Alfamart, atau aplikasi Sinar Mobile?"},
+       "ask_if": {"slot": "payment_date", "equals": "claimed_paid",
+                  "ask": {"formal": "Untuk membantu verifikasi, pembayaran kemarin dilakukan melalui apa, {customer_title}? Virtual account, gerai Indomaret atau Alfamart, atau aplikasi Sinar Mobile?",
+                          "casual": "Biar gampang dicek, kemarin bayarnya lewat apa, Kak? VA, Indomaret atau Alfamart, atau aplikasi Sinar Mobile?"}}}
+    ],
+    "intents": {
+      "human": ["\\b(bicara|ngomong|sambung\\w*|hubung\\w*)\\b.{0,25}\\b(petugas|orang|manusia|operator|cs|agen|admin)\\b", "\\b(minta|mau) (ke )?(petugas|operator|cs|orang asli)\\b", "\\borang asli\\b", "\\bmanusia\\b"],
+      "optout": ["\\bjangan (telepon|telpon|nelpon|hubungi) (saya )?lagi\\b", "\\bberhenti (menelepon|nelpon)\\b"],
+      "objection": ["belum gajian", "\\bdenda\\w*\\b.*\\b(besar|gede|mahal)\\b|\\b(besar|gede|mahal)\\b.*\\bdenda\\w*\\b", "\\bsudah (bayar|transfer|lunas)\\b", "\\bmotor\\w* (rusak|dijual|hilang)\\b"],
+      "hardship": ["\\b(phk|di-?phk|dipecat|kena musibah|musibah|sakit|dirawat|kecelakaan|bangkrut|usaha sepi|nggak ada uang|tidak ada uang|lagi susah|kesulitan)\\b"],
+      "question": ["^(apa|apakah|bagaimana|gimana|kenapa|mengapa|kapan|dimana|di mana|berapa|bisa|boleh|emang)\\b", "\\b(berapa|bagaimana|gimana|bisa tidak|bisa nggak|boleh tidak)\\b"]
+    },
+    "kb_query_map": [
+      {"pattern": "belum gajian", "query": "Belum gajian"},
+      {"pattern": "denda", "query": "denda keterlambatan angsuran"},
+      {"pattern": "sudah (bayar|transfer)", "query": "Saya sudah bayar, kenapa masih ditagih"},
+      {"pattern": "phk|musibah|sakit|kesulitan|susah|restruktur|keringanan|tidak ada uang", "query": "musibah PHK sakit restrukturisasi"},
+      {"pattern": "motor\\w* (rusak|dijual|hilang)", "query": "Motornya rusak atau sudah dijual"},
+      {"pattern": "lunas|pelunasan", "query": "pelunasan dipercepat"},
+      {"pattern": "cara bayar|bayar (lewat|melalui|di mana|dimana)|virtual account|indomaret|alfamart", "query": "cara membayar cicilan"},
+      {"pattern": "tenor|dp|uang muka", "query": "DP dan tenor"}
+    ],
+    "business_rules": {"late_fee_rate_per_day": 0.002, "contact_hours_local": ["08:00", "20:00"], "utc_offset_hours": 7, "mock_account": {"customer_title": "Bapak", "customer_name": "Budi Santoso", "installment_no": 7, "amount_idr": 850000, "vehicle": "Honda Beat", "due_in_days": 3}}
+  },
+  "vapi": {
+    "name": "Sinar Multifinance ID Reminder",
+    "firstMessage": "Selamat siang. Saya Sari, asisten otomatis dari Sinar Multifinance. Panggilan ini direkam untuk menjaga kualitas layanan. Apakah saya berbicara dengan Bapak Budi Santoso?",
+    "transcriber": {"provider": "deepgram", "model": "nova-3", "language": "id", "keyterm": ["cicilan", "angsuran", "tenor", "denda", "jatuh tempo", "DP", "pembiayaan", "Sinar", "Indomaret", "Alfamart"]},
+    "voice": {"provider": "azure", "voiceId": "id-ID-GadisNeural"},
+    "model": {
+      "provider": "openai", "model": "gpt-4o-mini", "temperature": 0.3,
+      "systemPrompt": "Anda adalah Sari, asisten otomatis Sinar Multifinance (demo) untuk pengingat angsuran pembiayaan motor. Gunakan Bahasa Indonesia yang sopan (Bapak/Ibu). Jika pelanggan memakai bahasa santai (gak, udah, sih, Kak), ikuti register santai yang tetap sopan dengan sapaan 'Kak'. Jangan pernah beralih ke bahasa Inggris, termasuk saat fallback atau eskalasi.\n\nALUR: konfirmasi identitas terlebih dahulu; jika bukan pelanggan, akhiri tanpa menyebut utang (dilarang membahas utang dengan pihak ketiga). Sampaikan angsuran ke-7 Rp850.000 untuk Honda Beat jatuh tempo dalam 3 hari. Tanyakan tanggal rencana bayar, hitung denda 0,2% per hari jika melewati jatuh tempo, tanyakan metode bayar, lalu catat janji bayar.\n\nATURAN: untuk setiap pertanyaan atau keberatan (denda, sudah bayar, belum gajian, PHK/sakit, pelunasan) panggil kb_search dan jawab hanya dari hasilnya. Jika INSUFFICIENT_EVIDENCE, katakan informasinya tidak tersedia dan tawarkan petugas. Tidak boleh mengancam atau mempermalukan. Jika pelanggan minta petugas, panggil transfer_to_human.",
+      "tools": [
+        {"type": "function", "function": {"name": "kb_search", "description": "Cari materi resmi Sinar Multifinance.", "parameters": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools?market=ID"}},
+        {"type": "function", "function": {"name": "record_promise_to_pay", "description": "Catat janji bayar pelanggan.", "parameters": {"type": "object", "properties": {"payment_date": {"type": "string"}, "channel": {"type": "string"}, "summary": {"type": "string"}}, "required": ["payment_date"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools?market=ID"}},
+        {"type": "function", "function": {"name": "transfer_to_human", "description": "Sambungkan ke petugas layanan pelanggan.", "parameters": {"type": "object", "properties": {"reason": {"type": "string"}, "summary": {"type": "string"}}, "required": ["reason"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools?market=ID"}}
+      ]
+    },
+    "serverUrl": "{{PUBLIC_BASE_URL}}/api/vapi/events",
+    "recordingEnabled": true,
+    "maxDurationSeconds": 600
+  }
+}

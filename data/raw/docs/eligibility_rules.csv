@@ -1,0 +1,8 @@
+rule_id,product,field,operator,value,unit,description,effective_from
+BL-ELIG-01,business_loan,business_vintage_years,>=,2,years,Business must have been operating for at least 2 years,2026-07-01
+BL-ELIG-02,business_loan,annual_turnover_inr,>=,1200000,INR,Annual business turnover must be at least Rs. 12 lakh,2026-07-01
+BL-ELIG-03,business_loan,credit_score,>=,700,score,Applicant CIBIL credit score must be 700 or higher,2026-07-01
+BL-ELIG-04,business_loan,applicant_age,between,23-65,years,Applicant age must be between 23 and 65 years at loan maturity,2026-07-01
+BL-ELIG-05,business_loan,loan_amount_inr,between,100000-5000000,INR,Requested loan amount must be between Rs. 1 lakh and Rs. 50 lakh,2026-07-01
+BL-ELIG-06,business_loan,recent_default,==,no,flag,No loan default or 90+ days past due in the last 12 months,2026-07-01
+BL-ELIG-07,business_loan,business_registered,==,yes,flag,Business must be registered (GST or Udyam or shop and establishment licence),2026-07-01

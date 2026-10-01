@@ -1,0 +1,85 @@
+{
+  "defaults": {
+    "min_confidence": 0.6,
+    "min_asr_confidence": 0.55,
+    "min_words": 3,
+    "cooldown_s": 25,
+    "ttl_s": 45,
+    "max_active": 3
+  },
+  "signals": [
+    {
+      "kind": "compliance", "speaker": "agent", "priority": 1, "title": "Compliance risk", "ttl_s": 60, "cooldown_s": 10, "partial_trigger": true,
+      "patterns": [
+        {"topic": "risky_claim", "weight": 0.95, "re": "\\b(guarantee|guaranteed|one hundred percent|100 percent|definitely get|surely get|no risk at all|cannot be rejected)\\b",
+         "nudge": "Risky claim: approval cannot be guaranteed. Correct it now: the final decision is subject to credit assessment."},
+        {"topic": "fee_evasion", "weight": 0.75, "re": "\\b(tell you later|don't worry about the (fee|charges)|it is (very )?small)\\b",
+         "nudge": "Fee question deflected. State the processing fee (up to 2% plus GST) and point to the Key Fact Statement."}
+      ],
+      "state_checks": {
+        "recording_disclosure": {"deadline_s": 20, "said_re": "\\b(recorded|recording|monitored)\\b|\\bcall (is|may be|will be) \\w+(ed|ing) for (quality|training)\\b",
+                                 "min_channel_asr_conf": 0.88,
+                                 "nudge": "Recording disclosure missing. Tell the customer the call is recorded before continuing."},
+        "pricing_before_disclosure": {"pricing_re": "\\b(interest rate|rate of interest|processing fee|emi (of|will be)|percent interest)\\b",
+                                      "disclosure_re": "\\bsubject to (credit )?(assessment|approval|verification|underwriting)\\b",
+                                      "nudge": "Rate quoted without the credit-assessment disclosure. Add: final terms are subject to credit assessment."}
+      },
+      "resolve_agent": "subject to (credit )?(assessment|approval|verification)|cannot guarantee|not guaranteed|this call is recorded|processing fee is"
+    },
+    {
+      "kind": "payment_difficulty", "speaker": "customer", "priority": 1, "title": "Payment difficulty", "ttl_s": 60, "partial_trigger": true,
+      "patterns": [
+        {"topic": "hardship", "weight": 0.9, "re": "\\b(lost (my|his|her) job|laid off|cannot pay|can't pay|unable to pay|no money|salary (is )?(delayed|late)|medical emergency|struggling to pay|tight this month)\\b",
+         "nudge": "Payment difficulty disclosed. Offer the approved payment-support / restructuring callback; do not push for payment now."}
+      ],
+      "resolve_agent": "restructur|payment (support|plan)|hardship|callback from our (team|specialist)"
+    },
+    {
+      "kind": "frustration", "speaker": "customer", "priority": 1, "title": "Rising frustration", "ttl_s": 40, "cooldown_s": 30,
+      "lexicon": {
+        "ridiculous": 0.6, "frustrat": 0.6, "how many times": 0.6, "already told": 0.4, "again and again": 0.4, "are you even listening": 0.7,
+        "are you listening": 0.6, "waste of time": 0.6, "not happy": 0.4, "terrible": 0.5, "useless": 0.6, "fed up": 0.6, "keep calling": 0.4,
+        "stop calling": 0.5, "annoying": 0.5, "angry": 0.5, "nonsense": 0.5, "same thing": 0.3, "worst": 0.5
+      },
+      "threshold": 0.9, "half_life_s": 40,
+      "nudge": "Customer frustration is rising. Pause the script, acknowledge the concern, and summarize what you will do next.",
+      "resolve_agent": "i understand (your|how)|sorry for|i apologi[sz]e|i hear you|let me (help|fix)"
+    },
+    {
+      "kind": "cross_sell", "speaker": "customer", "priority": 2, "title": "Missed cross-sell", "ttl_s": 50, "partial_trigger": true,
+      "patterns": [
+        {"topic": "multi_vehicle", "weight": 0.9, "re": "\\b(second|another|other|two|new) (car|vehicle|bike|scooter|motorcycle)\\b",
+         "nudge": "Customer mentioned another vehicle. Offer the multi-vehicle discount on a second policy."},
+        {"topic": "add_driver", "weight": 0.8, "re": "\\b(son|daughter|wife|husband|brother)\\b.{0,40}\\b(licen[cs]e|driving|drive)\\b|\\bnew driver\\b",
+         "nudge": "A new driver will use the car. Suggest adding a named driver so claims stay covered."},
+        {"topic": "expansion", "weight": 0.85, "re": "\\b(second|new|another) (shop|store|outlet|branch)\\b",
+         "nudge": "Customer plans to expand. Mention the expansion use of the Business Growth Loan."}
+      ],
+      "resolve_agent": "multi[- ]?(vehicle|car)|second (car|vehicle|policy)|named driver|add (him|her|your son|your daughter|your wife)|another policy|expansion"
+    },
+    {
+      "kind": "callback", "speaker": "customer", "priority": 3, "title": "Callback needed", "ttl_s": 40, "partial_trigger": true,
+      "patterns": [
+        {"topic": "bad_time", "weight": 0.75, "re": "\\b(call (me )?(back|later)|busy right now|in a meeting|i am driving|on the road|bad (line|signal|network)|signal is (weak|bad))\\b",
+         "nudge": "Customer can't talk properly now. Offer to schedule a callback at a better time."}
+      ],
+      "resolve_agent": "call you back|schedule a callback|better time"
+    },
+    {
+      "kind": "buying_signal", "speaker": "customer", "priority": 2, "title": "Buying signal", "ttl_s": 30, "partial_trigger": true,
+      "patterns": [
+        {"topic": "ready", "weight": 0.7, "re": "\\b(how do i (apply|sign up|pay)|what is the next step|send me the (details|link)|sounds good|i want(ed)? to (renew|apply|buy)|can i pay online)\\b",
+         "nudge": "Buying signal. Confirm the next step and close: payment link or application."}
+      ],
+      "resolve_agent": "payment link|send you the link|next step"
+    }
+  ],
+  "topics": {
+    "pricing": "\\b(premium|interest|rate|fee|charges|price|cost|percent)\\b",
+    "documents": "\\b(documents?|pan|aadhaar|statement|kyc)\\b",
+    "payment": "\\b(pay|payment|installment|emi|overdue|due)\\b",
+    "renewal": "\\b(renew|renewal|expires|policy)\\b",
+    "complaint": "\\b(ridiculous|frustrat|complain|listening|told)\\b",
+    "small_talk": "\\b(hello|hear me|line|signal)\\b"
+  }
+}

@@ -1,0 +1,9 @@
+Charge,Amount,Notes
+Processing Fee,up to 2% + GST,Deducted from disbursal amount
+Processing fee ,25%,Duplicate row from legacy sheet
+Foreclosure Charge,4% of outstanding principal,Allowed after 6 EMIs
+Part-prepayment Charge,2% of prepaid amount,Once a year; max 25% of outstanding principal
+Late Payment Charge,2% per month on overdue amount,
+Cheque / NACH Bounce Charge,"Rs. 500",Per instance
+Stamp Duty,As per state law,Actuals
+Documentation Charge,,

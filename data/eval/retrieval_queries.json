@@ -1,0 +1,20 @@
+[
+  {"id": "Q01", "type": "product", "market": "IN", "query": "How much can I borrow and for how long?", "expect": {"source_id": "web_business_loan", "title": "Loan amount and tenure"}},
+  {"id": "Q02", "type": "product", "market": "IN", "query": "Do I need to pledge my property or gold?", "expect": {"source_id": "web_business_loan", "title": "No collateral required"}},
+  {"id": "Q03", "type": "policy", "market": "IN", "query": "What is the foreclosure charge if I close the loan early?", "expect": {"source_id": "web_business_loan_faq", "title": "Can I prepay or foreclose my loan"}, "note": "Must return the 2026 FAQ (4% after 6 EMIs), not the superseded 2025 page (5% after 12 EMIs)."},
+  {"id": "Q04", "type": "policy", "market": "IN", "query": "What is the penalty for a missed EMI?", "expect": {"source_id": "web_business_loan_faq", "title": "What happens if I miss an EMI"}},
+  {"id": "Q05", "type": "qualification", "market": "IN", "query": "How many years should my business be running to qualify?", "expect": {"source_id": "doc_credit_policy_v2", "title": "Business vintage"}, "accept": [{"source_id": "doc_eligibility_rules", "title": "BL-ELIG-01"}], "note": "Superseded v1 policy says 3 years; current answer is 2 years."},
+  {"id": "Q06", "type": "qualification", "market": "IN", "query": "What minimum CIBIL score do you need?", "expect": {"source_id": "doc_credit_policy_v2", "title": "Credit score"}, "accept": [{"source_id": "doc_eligibility_rules", "title": "BL-ELIG-03"}]},
+  {"id": "Q07", "type": "faq", "market": "IN", "query": "What documents are required for the application?", "expect": {"source_id": "web_business_loan_faq", "title": "What documents do I need to apply"}},
+  {"id": "Q08", "type": "faq", "market": "IN", "query": "Is a GST certificate mandatory?", "expect": {"source_id": "doc_call_notes", "title": "whether a GST certificate is mandatory"}, "accept": [{"source_id": "web_business_loan_faq", "title": "What documents do I need to apply"}]},
+  {"id": "Q09", "type": "objection", "market": "IN", "query": "Your interest rate is too high", "expect": {"source_id": "doc_objection_playbook", "title": "The interest rate is too high"}},
+  {"id": "Q10", "type": "objection", "market": "IN", "query": "I am worried there will be hidden charges", "expect": {"source_id": "doc_objection_playbook", "title": "I am worried about hidden charges"}, "accept": [{"source_id": "web_business_loan_faq", "title": "Are there any hidden charges"}]},
+  {"id": "Q11", "type": "product", "market": "IN", "query": "What support do branch partners get?", "expect": {"source_id": "web_branch_partnership", "title": "Branch partnership benefits"}},
+  {"id": "Q12", "type": "out_of_scope", "market": "IN", "query": "Do you offer home loans for flats in Pune?", "expect": null, "note": "Not in the corpus; must return INSUFFICIENT_EVIDENCE."},
+  {"id": "Q13", "type": "out_of_scope", "market": "IN", "query": "What is today's gold rate?", "expect": null},
+  {"id": "Q14", "type": "faq", "market": "PH", "query": "What happens if I miss my premium payment, will the policy lapse?", "expect": {"source_id": "ph_web_protect_plus", "title": "Grace period and lapse"}},
+  {"id": "Q15", "type": "objection", "market": "PH", "query": "I already have an HMO, why do I need life insurance?", "expect": {"source_id": "ph_call_guide", "title": "I already have an HMO"}},
+  {"id": "Q16", "type": "policy", "market": "ID", "query": "berapa denda keterlambatan angsuran", "expect": {"source_id": "id_web_faq", "title": "Berapa denda keterlambatan"}, "accept": [{"source_id": "id_reminder_playbook", "title": "Dendanya kok besar"}]},
+  {"id": "Q17", "type": "faq", "market": "ID", "query": "saya sudah bayar kok masih ditagih", "expect": {"source_id": "id_web_faq", "title": "Saya sudah bayar, kenapa masih ditagih"}},
+  {"id": "Q18", "type": "out_of_scope", "market": "ID", "query": "berapa harga emas hari ini", "expect": null}
+]

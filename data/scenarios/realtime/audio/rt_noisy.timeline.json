@@ -1,0 +1,60 @@
+{
+  "id": "rt_noisy",
+  "duration_s": 36.9,
+  "sample_rate": 16000,
+  "channels": {
+    "0": "agent",
+    "1": "customer"
+  },
+  "noise_snr_db": 4,
+  "segments": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Kosha Capital. This call is recorded for quality.",
+      "start_s": 0.5,
+      "end_s": 6.255
+    },
+    {
+      "speaker": "customer",
+      "text": "Hello? Sorry, the line is very bad.",
+      "start_s": 6.955,
+      "end_s": 11.13
+    },
+    {
+      "speaker": "agent",
+      "text": "Can you hear me now?",
+      "start_s": 11.83,
+      "end_s": 13.635
+    },
+    {
+      "speaker": "customer",
+      "text": "Uh, yeah, hmm. I am on the road, the signal is weak.",
+      "start_s": 14.335,
+      "end_s": 19.98
+    },
+    {
+      "speaker": "agent",
+      "text": "Is this about your loan application?",
+      "start_s": 20.68,
+      "end_s": 23.455
+    },
+    {
+      "speaker": "customer",
+      "text": "Maybe, I do not know. My brother handles it.",
+      "start_s": 24.155,
+      "end_s": 28.615
+    },
+    {
+      "speaker": "agent",
+      "text": "No problem at all.",
+      "start_s": 29.315,
+      "end_s": 31.325
+    },
+    {
+      "speaker": "customer",
+      "text": "Hmm, okay. Sorry, hello?",
+      "start_s": 32.025,
+      "end_s": 36.2
+    }
+  ]
+}

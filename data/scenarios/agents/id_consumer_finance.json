@@ -1,0 +1,53 @@
+[
+  {
+    "id": "q3_id_01_cooperative_formal", "agent": "id_consumer_finance", "today": "2026-10-01",
+    "title": "Cooperative customer, formal register; on-time promise to pay via virtual account",
+    "turns": [
+      {"user": "Iya, betul, saya sendiri.", "expect": {"lang": "formal", "contains": "jatuh tempo"}},
+      {"user": "Baik, saya akan bayar besok.", "expect": {"slot": ["payment_date", "2026-10-02"], "contains": "tidak ada denda"}},
+      {"user": "Melalui virtual account BCA.", "expect": {"slot": ["payment_channel", "va_bca"]}}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "promise_to_pay", "actions": ["promise_to_pay", "crm_summary"]}
+  },
+  {
+    "id": "q3_id_02_colloquial_objection", "agent": "id_consumer_finance", "today": "2026-10-01",
+    "title": "Colloquial Jakarta register with finance loanwords; 'belum gajian' and denda objections; late promise with computed penalty",
+    "turns": [
+      {"user": "Iya bener, gue sendiri. Kenapa ya?", "expect": {"lang": "casual"}},
+      {"user": "Waduh, gue belum gajian nih, Kak.", "expect": {"intent": "objection", "citations": true, "lang": "casual"}},
+      {"user": "Dendanya kok gede banget sih? Emang berapa?", "expect": {"intent": "objection", "citations": true, "contains": "0,2%"}},
+      {"user": "Ya udah, abis gajian tanggal 10 deh.", "expect": {"slot": ["payment_date", "2026-10-10"], "contains": "denda"}},
+      {"user": "Lewat Indomaret aja.", "expect": {"slot": ["payment_channel", "retail"], "citations": true, "contains": "Rp2.500"}}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "promise_to_pay"}
+  },
+  {
+    "id": "q3_id_03_regional_hardship_escalation", "agent": "id_consumer_finance", "today": "2026-10-01",
+    "title": "Javanese-influenced speech (nggih, mboten, sampun), hardship (PHK) routed to restructuring info, then human escalation in Indonesian",
+    "turns": [
+      {"user": "Nggih, leres, kula Budi.", "expect": {"lang": "casual"}},
+      {"user": "Mboten saged mbayar, Mbak, kula sampun di-PHK bulan kemarin.", "expect": {"intent": "objection", "citations": true, "contains": "restrukturisasi", "not_contains": "mau bayar kapan"}},
+      {"user": "Pripun carane? Sing ngurus sopo?", "expect": {"intent": "fallback", "contains": "tidak tersedia"}},
+      {"user": "Saya mau bicara sama petugas saja, Mbak.", "expect": {"intent": "escalation", "contains": "petugas"}}
+    ],
+    "expect_final": {"stage": "escalated", "actions": ["hardship_flag", "escalation"]}
+  },
+  {
+    "id": "q3_id_04_wrong_person", "agent": "id_consumer_finance", "today": "2026-10-01",
+    "title": "Third party answers; bot ends without disclosing the debt (collection-ethics rule)",
+    "turns": [
+      {"user": "Bukan, ini istrinya. Bapaknya lagi kerja.", "expect": {"not_contains": "Rp850.000"}}
+    ],
+    "expect_final": {"stage": "ended"}
+  },
+  {
+    "id": "q3_id_05_already_paid_sundanese", "agent": "id_consumer_finance", "today": "2026-10-01",
+    "title": "Sundanese-influenced speech (muhun, teh, atuh) claiming already paid",
+    "turns": [
+      {"user": "Muhun, abdi Budi.", "expect": {"lang": "formal"}},
+      {"user": "Atuh Teh, saya teh sudah bayar kemarin.", "expect": {"citations": true, "contains": "1x24 jam", "not_contains": "rencananya"}},
+      {"user": "Lewat aplikasi.", "expect": {"slot": ["payment_channel", "app"]}}
+    ],
+    "expect_final": {"stage": "ended", "outcome_status": "claimed_paid"}
+  }
+]

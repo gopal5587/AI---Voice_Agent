@@ -1,0 +1,103 @@
+{
+  "key": "ph_life_insurance",
+  "name": "Lumina Life Bancassurance Lead Qualifier (PH)",
+  "description": "Bank-referral life insurance lead qualification for the Philippines. Taglish by default, switches to English if the customer speaks English.",
+  "script": {
+    "market": "PH",
+    "product": "life_insurance",
+    "languages": ["tl", "en"],
+    "voice_lang": {"tl": "fil-PH", "en": "en-PH"},
+    "answer_lang": {"tl": "tl", "en": "en"},
+    "language_detection": {
+      "tl": "\\b(po|opo|ako|ko|mo|ba|naman|kasi|lang|yung|ang|ng|sa|na|hindi|wala|oo|sige|kailangan|magkano|paano|ano|pwede|gusto|talaga|kami|namin|natin|siya|kayo|nyo|ninyo|meron|mga|pa|ito|iyan|eh|daw|raw)\\b",
+      "en": "\\b(the|is|are|i'm|i am|my|you|your|what|how|would|could|have|has|does|please|thanks|thank you|about|which|really|already|should)\\b"
+    },
+    "lines": {
+      "greeting": {
+        "tl": "Hi po, magandang araw! Si Lumi po ito, automated assistant ng Lumina Life, partner ng Bangko Kapwa. Tumatawag po ako kasi nag-request kayo ng info about life insurance sa branch. Naka-record po ang call na ito for quality.",
+        "en": "Hi, good day! This is Lumi, the automated assistant of Lumina Life, Bangko Kapwa's insurance partner. I'm calling because you asked about life insurance at the branch. This call is recorded for quality."
+      },
+      "consent_declined": {"tl": "Walang problema po. Pwede po kayong bumalik sa kahit anong Bangko Kapwa branch kapag ready na kayo. Salamat po and ingat!", "en": "No problem at all. You can visit any Bangko Kapwa branch whenever you're ready. Thank you and take care!"},
+      "reprompt": {"tl": "Pasensya na po, hindi ko masyadong nakuha.", "en": "Sorry, I didn't quite catch that."},
+      "conflict": {"tl": "Para sigurado po: kanina {old} ang nasabi ninyo para sa {field}, pero ngayon {new}. Alin po ang tama?", "en": "Just to be sure: earlier you said {old} for {field}, but now I heard {new}. Which one is correct?"},
+      "conflict_resolved": {"tl": "Sige po, {value} ang ilalagay ko.", "en": "Got it, I'll note {value}."},
+      "answer_prefix": {"tl": "Ayon po sa aming policy:", "en": ""},
+      "fallback": {"tl": "Ang licensed financial advisor po namin ang makakasagot niyan nang tama.", "en": "Our licensed financial advisor can answer that properly."},
+      "fallback_offer_human": {"tl": "Gusto n'yo po bang ikonekta ko kayo sa isang licensed financial advisor? Sabihin n'yo lang po 'kausapin ang tao' anytime.", "en": "Would you like me to connect you to a licensed financial advisor? Just say 'talk to a person' anytime."},
+      "escalate": {"tl": "Sige po, ikokonekta ko na kayo sa isang licensed financial advisor ng Bangko Kapwa. Naipasa ko na po ang details ninyo para hindi na kayo mag-ulit. Kung busy po sila, tatawagan nila kayo within the day.", "en": "Sure, I'm connecting you to a licensed financial advisor at Bangko Kapwa. I've passed on your details so you won't need to repeat them. If they're busy, they'll call you back within the day."},
+      "optout": {"tl": "Naiintindihan ko po. Hindi na po namin kayo tatawagan tungkol dito. Salamat po sa oras ninyo.", "en": "Understood. We won't call you about this again. Thank you for your time."},
+      "closing": {"tl": "Maraming salamat po sa oras ninyo. Ingat po kayo!", "en": "Thank you so much for your time. Take care!"},
+      "already_ended": {"tl": "Tapos na po ang tawag na ito. Salamat po!", "en": "This call has ended. Thank you!"},
+      "not_advisor": {"tl": "Paalala lang po: hindi po ako licensed financial advisor, at ang premium ay illustration pa lang. Ang final na premium ay depende sa underwriting.", "en": "Just a reminder: I'm not a licensed financial advisor, and the premium is only an illustration. The final premium depends on underwriting."},
+      "age_out_of_range": {"tl": "Salamat po. Para sa Lumina Protect Plus, ang entry age ay {min_age} hanggang {max_age} years old, kaya ang advisor po namin ang magrerekomenda ng ibang option para sa inyo.", "en": "Thank you. Lumina Protect Plus accepts entry ages {min_age} to {max_age}, so our advisor will recommend other options for you."},
+      "quote_summary": {"tl": "Salamat po! Base sa budget na {budget} kada buwan, puwedeng nasa {coverage} ang coverage ninyo para sa isang 30-year-old na non-smoker. Ihahanda po ng advisor ang exact quotation.", "en": "Thank you! With a budget of {budget} a month, coverage could be around {coverage} for a 30-year-old non-smoker. Our advisor will prepare the exact quotation."},
+      "rider_hint": {"tl": "Dahil concern n'yo po ang critical illness, puwede rin pong idagdag ang Critical Illness rider.", "en": "Since critical illness is your concern, the Critical Illness rider can also be added."},
+      "callback_confirmed": {"tl": "Ayan po, naka-schedule na ang tawag ng advisor sa {when}.", "en": "Done, the advisor will call you on {when}."},
+      "callback_declined": {"tl": "Sige po. Puwede po kayong pumunta sa kahit anong Bangko Kapwa branch kung may tanong pa kayo.", "en": "Okay. You can visit any Bangko Kapwa branch if you have more questions."}
+    },
+    "slots": [
+      {"name": "consent", "type": "yesno", "required_yes": "consent_declined",
+       "ask": {"tl": "Okay lang po ba kung magtanong ako ng ilang quick questions? Mga 2 minutes lang po.", "en": "Is it okay if I ask a few quick questions? It'll only take about 2 minutes."}},
+      {"name": "age", "label": "edad / age", "type": "number", "range": [15, 99], "keywords": "\\b(taon|years? old|edad|age|yrs old)\\b",
+       "ask": {"tl": "Ilang taon na po kayo?", "en": "May I know your age?"}},
+      {"name": "dependents", "label": "dependents", "type": "choice",
+       "choices": {"spouse_and_children": "(asawa|wife|husband|misis|mister|spouse).*(anak|kids|children)|(anak|kids|children).*(asawa|wife|husband|misis|mister)",
+                   "children": "anak|kids|children|baby|bunso", "spouse": "asawa|wife|husband|misis|mister|spouse|partner",
+                   "parents": "magulang|nanay|tatay|parents|mama|papa|mother|father", "none": "wala|none|no one|single|ako lang|myself"},
+       "ask": {"tl": "Sino po ang umaasa sa inyo financially, halimbawa asawa, anak, o magulang? Sila po kasi ang magiging beneficiary.", "en": "Who depends on you financially, for example a spouse, children, or parents? They would be your beneficiaries."}},
+      {"name": "monthly_budget_php", "label": "monthly budget", "type": "money", "min_plausible": 100, "keywords": "\\b(budget|kada buwan|a month|per month|monthly|buwan-buwan)\\b",
+       "ask": {"tl": "Magkano po ang comfortable na budget ninyo para sa premium kada buwan?", "en": "How much would you be comfortable paying for the premium each month?"}},
+      {"name": "coverage_goal", "label": "goal", "type": "choice",
+       "choices": {"critical_illness": "sakit|cancer|critical|illness|heart|ospital|hospital|stroke",
+                   "education": "education|pag-aaral|school|tuition|college|eskwela",
+                   "income_protection": "income|kita|pamilya|family|protect|proteksyon|provide",
+                   "savings": "savings|ipon|investment|retire|pension"},
+       "ask": {"tl": "Ano po ang pinaka-goal ninyo: proteksyon ng income para sa pamilya, pang-education ng anak, o coverage para sa critical illness?", "en": "What's your main goal: protecting your family's income, your children's education, or critical illness coverage?"}},
+      {"name": "existing_life_policy", "label": "existing policy", "type": "yesno",
+       "ask": {"tl": "May existing life insurance policy na po ba kayo? Hindi po kasama dito ang HMO.", "en": "Do you already have a life insurance policy? An HMO doesn't count here."}},
+      {"name": "advisor_callback", "phase": "post", "type": "yesno",
+       "ask": {"tl": "Gusto n'yo po bang tawagan kayo ng licensed financial advisor para sa exact quotation?", "en": "Would you like a licensed financial advisor to call you with the exact quotation?"}},
+      {"name": "callback_time", "phase": "post", "type": "time", "only_if": {"slot": "advisor_callback", "equals": true},
+       "ask": {"tl": "Kailan po kayo available? Halimbawa, bukas ng umaga o sa Sabado ng hapon.", "en": "When are you available? For example, tomorrow morning or Saturday afternoon."}}
+    ],
+    "intents": {
+      "human": ["\\b(kausapin|makausap|usap)\\b.{0,20}\\b(tao|agent|advisor|tauhan)\\b", "\\b(talk|speak|connect)\\b.{0,25}\\b(human|person|agent|advisor|someone|real)\\b", "\\breal person\\b", "\\btotoong tao\\b", "\\bhuman\\b"],
+      "optout": ["\\bnot interested\\b", "\\bhindi (po )?ako interesado\\b", "\\bayoko na\\b", "\\bwag n(a|y)o na (po )?(akong )?tawagan\\b", "\\bdon'?t call\\b"],
+      "objection": ["\\bmahal\\b", "\\bexpensive\\b", "\\bwala(ng)? (pang )?budget\\b", "\\bhmo\\b", "\\bscam\\b", "\\bmanloloko\\b", "\\bbata pa\\b", "\\btoo young\\b", "\\bpag-?iisipan\\b", "\\bthink about it\\b", "\\bhindi ko (pa )?kailangan\\b"],
+      "question": ["^(ano|paano|bakit|kailan|saan|magkano|sino|pwede ba|meron ba|may .* ba)\\b", "\\b(ano po|paano po|magkano po)\\b", "^(what|how|why|when|where|which|who|can|do|does|is|are|will)\\b", "\\bba\\b.*\\?|\\bba po\\b"]
+    },
+    "kb_query_map": [
+      {"pattern": "mahal|expensive|budget", "query": "Mahal too expensive budget"},
+      {"pattern": "hmo", "query": "I already have an HMO"},
+      {"pattern": "scam|manloloko|totoo ba|legit|really from|is this real", "query": "Is this a scam trust concern"},
+      {"pattern": "bata pa|too young|hindi ko (pa )?kailangan", "query": "I'm still young I don't need it yet"},
+      {"pattern": "pag-?iisipan|think about it", "query": "I need to think about it"},
+      {"pattern": "claim|mag-?claim", "query": "How are claims paid"},
+      {"pattern": "medical|exam|check-?up", "query": "Do I need a medical exam"},
+      {"pattern": "lapse|ma-?lapse|hindi makabayad|di makabayad|grace", "query": "grace period lapse premium unpaid"},
+      {"pattern": "rider", "query": "riders optional"},
+      {"pattern": "beneficiar|benepisyaryo", "query": "beneficiaries revocable irrevocable"},
+      {"pattern": "cancel|refund|free look|ibalik", "query": "free look period cancel refund"},
+      {"pattern": "paano magbayad|payment|bayad|hulog", "query": "payment modes premium auto-debit"}
+    ],
+    "business_rules": {"entry_age": [18, 60], "illustration": {"premium_php": 1250, "per_coverage_php": 1000000, "profile": "30-year-old non-smoker"}, "coverage_bounds_php": [500000, 5000000]}
+  },
+  "vapi": {
+    "name": "Lumina Life PH Bancassurance",
+    "firstMessage": "Hi po, magandang araw! Si Lumi po ito, automated assistant ng Lumina Life, partner ng Bangko Kapwa. Naka-record po ang call na ito for quality. Okay lang po ba kung magtanong ako ng ilang quick questions?",
+    "transcriber": {"provider": "deepgram", "model": "nova-3", "language": "tl", "keyterm": ["premium", "beneficiary", "rider", "lapse", "coverage", "HMO", "Bangko Kapwa", "Lumina"]},
+    "voice": {"provider": "azure", "voiceId": "fil-PH-BlessicaNeural"},
+    "model": {
+      "provider": "openai", "model": "gpt-4o-mini", "temperature": 0.3,
+      "systemPrompt": "You are Lumi, an automated assistant for Lumina Life (demo) calling a Bangko Kapwa bank-referral lead in the Philippines. Speak natural Taglish by default (Tagalog sentence structure, English insurance terms like premium, coverage, beneficiary, rider, lapse), always polite with 'po' and 'opo'. If the customer speaks pure English for two turns, switch to Philippine English. Never switch to English unprompted inside a fallback or escalation.\n\nFLOW: consent, age (entry 18-60), dependents (who would be beneficiaries), monthly premium budget in pesos, main goal (income protection / education / critical illness), existing life policy (HMO does not count). Then summarize, remind that you are not a licensed financial advisor and premiums are illustrations subject to underwriting, and offer a licensed advisor callback.\n\nGROUNDING: For every product, premium, rider, claim, lapse, or objection question call kb_search and answer only from the returned records, rephrased into Taglish. If INSUFFICIENT_EVIDENCE, say 'wala po akong verified na info diyan' and offer an advisor. If they ask for a person, call transfer_to_human.",
+      "tools": [
+        {"type": "function", "function": {"name": "kb_search", "description": "Search Lumina Life approved material (Philippines).", "parameters": {"type": "object", "properties": {"query": {"type": "string"}}, "required": ["query"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools?market=PH"}},
+        {"type": "function", "function": {"name": "schedule_callback", "description": "Schedule a licensed advisor callback with a quotation request.", "parameters": {"type": "object", "properties": {"preferred_time": {"type": "string"}, "summary": {"type": "string"}}, "required": ["preferred_time", "summary"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools?market=PH"}},
+        {"type": "function", "function": {"name": "transfer_to_human", "description": "Escalate to a licensed financial advisor.", "parameters": {"type": "object", "properties": {"reason": {"type": "string"}, "summary": {"type": "string"}}, "required": ["reason"]}}, "server": {"url": "{{PUBLIC_BASE_URL}}/api/vapi/tools?market=PH"}}
+      ]
+    },
+    "serverUrl": "{{PUBLIC_BASE_URL}}/api/vapi/events",
+    "recordingEnabled": true,
+    "maxDurationSeconds": 600
+  }
+}

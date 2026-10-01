@@ -1,0 +1,60 @@
+{
+  "id": "rt_holdout_noisy",
+  "duration_s": 40.57,
+  "sample_rate": 16000,
+  "channels": {
+    "0": "agent",
+    "1": "customer"
+  },
+  "noise_snr_db": 6,
+  "segments": [
+    {
+      "speaker": "agent",
+      "text": "Good afternoon, this is Priya from Kosha Capital. This call is being recorded.",
+      "start_s": 0.5,
+      "end_s": 7.01
+    },
+    {
+      "speaker": "customer",
+      "text": "Hi, sorry, I am at the market, it is very noisy here.",
+      "start_s": 7.71,
+      "end_s": 12.86
+    },
+    {
+      "speaker": "agent",
+      "text": "No worries. I am calling about the documents for your loan application.",
+      "start_s": 13.56,
+      "end_s": 19.075
+    },
+    {
+      "speaker": "customer",
+      "text": "Which documents? I think I sent everything already.",
+      "start_s": 19.775,
+      "end_s": 24.205
+    },
+    {
+      "speaker": "agent",
+      "text": "We still need the bank statement for March.",
+      "start_s": 24.905,
+      "end_s": 27.91
+    },
+    {
+      "speaker": "customer",
+      "text": "Okay, okay. I will check and upload it tonight.",
+      "start_s": 28.61,
+      "end_s": 33.295
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you, that would be great.",
+      "start_s": 33.995,
+      "end_s": 36.695
+    },
+    {
+      "speaker": "customer",
+      "text": "Yes. Bye.",
+      "start_s": 37.395,
+      "end_s": 39.87
+    }
+  ]
+}

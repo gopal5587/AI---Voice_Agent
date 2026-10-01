@@ -1,0 +1,21 @@
+{
+  "_comment": "Source registry: one entry per raw file. Ingestion fails loudly for files that are not registered.",
+  "sources": [
+    {"path": "web/business-loan.html", "source_id": "web_business_loan", "source_type": "website section", "url": "https://kosha-demo.example/business-loan", "market": "IN", "product": "business_loan", "default_category": "product_feature", "version": "2026.07", "status": "current", "lang": "en"},
+    {"path": "web/business-loan-faq.html", "source_id": "web_business_loan_faq", "source_type": "website section", "url": "https://kosha-demo.example/faq", "market": "IN", "product": "business_loan", "default_category": "faq", "version": "2026.07", "status": "current", "lang": "en"},
+    {"path": "web/business-loan-faq-2025.html", "source_id": "web_business_loan_faq_2025", "source_type": "website section (archived)", "url": "https://kosha-demo.example/faq?archive=2025", "market": "IN", "product": "business_loan", "default_category": "faq", "version": "2025.11", "status": "superseded", "superseded_by_source": "web_business_loan_faq", "lang": "en"},
+    {"path": "web/branch-partnership.html", "source_id": "web_branch_partnership", "source_type": "website section", "url": "https://kosha-demo.example/partners", "market": "IN", "product": "branch_partnership", "default_category": "partnership_benefits", "version": "2026.07", "status": "current", "lang": "en"},
+    {"path": "docs/eligibility_rules.csv", "source_id": "doc_eligibility_rules", "source_type": "policy table", "market": "IN", "product": "business_loan", "default_category": "eligibility_rule", "version": "2.0", "status": "current", "lang": "en"},
+    {"path": "docs/fees_and_charges.csv", "source_id": "doc_fees_charges", "source_type": "pricing table", "market": "IN", "product": "business_loan", "default_category": "pricing_fees", "version": "2.0", "status": "current", "lang": "en"},
+    {"path": "docs/objection_handling.md", "source_id": "doc_objection_playbook", "source_type": "internal playbook", "market": "IN", "product": "business_loan", "default_category": "objection_handling", "status": "current", "lang": "en"},
+    {"path": "docs/application_form.html", "source_id": "doc_application_form", "source_type": "form", "market": "IN", "product": "business_loan", "default_category": "form_schema", "version": "1.0", "status": "current", "lang": "en"},
+    {"path": "docs/call_notes_export.txt", "source_id": "doc_call_notes", "source_type": "CRM export", "market": "IN", "product": "business_loan", "default_category": "faq", "version": "2026.08", "status": "current", "lang": "en"},
+    {"path": "docs/credit_policy_v1.pdf", "source_id": "doc_credit_policy_v1", "source_type": "policy pdf", "market": "IN", "product": "business_loan", "default_category": "policy", "status": "superseded", "superseded_by_source": "doc_credit_policy_v2", "lang": "en"},
+    {"path": "docs/credit_policy_v2.pdf", "source_id": "doc_credit_policy_v2", "source_type": "policy pdf", "market": "IN", "product": "business_loan", "default_category": "policy", "status": "current", "lang": "en"},
+    {"path": "docs/brochure_corrupted.pdf", "source_id": "doc_brochure", "source_type": "marketing pdf", "market": "IN", "product": "business_loan", "default_category": "product_feature", "status": "current", "lang": "en"},
+    {"path": "ph/lumina-protect-plus.html", "source_id": "ph_web_protect_plus", "source_type": "website section", "url": "https://lumina-demo.example/protect-plus", "market": "PH", "product": "life_insurance", "default_category": "product_feature", "version": "2026.08", "status": "current", "lang": "en-PH"},
+    {"path": "ph/ph_faq_objections.md", "source_id": "ph_call_guide", "source_type": "internal playbook", "market": "PH", "product": "life_insurance", "default_category": "faq", "status": "current", "lang": "en-PH"},
+    {"path": "id/sinar-pembiayaan-faq.html", "source_id": "id_web_faq", "source_type": "website section", "url": "https://sinar-demo.example/faq", "market": "ID", "product": "motor_financing", "default_category": "faq", "version": "2026.08", "status": "current", "lang": "id"},
+    {"path": "id/id_reminder_playbook.md", "source_id": "id_reminder_playbook", "source_type": "internal playbook", "market": "ID", "product": "motor_financing", "default_category": "objection_handling", "status": "current", "lang": "id"}
+  ]
+}

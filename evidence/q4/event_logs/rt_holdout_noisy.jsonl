@@ -1,0 +1,32 @@
+{"type": "started", "mode": "replay", "asr": "vosk-small-en-us-0.15", "t_wall_rel_s": 0.0}
+{"type": "replay_started", "duration_s": 40.57, "speed": 1.0, "t_wall_rel_s": 0.0}
+{"type": "transcript", "speaker": "agent", "text": "good afternoon", "final": true, "t_stream": 1.41, "asr_conf": 1.0, "asr_lag_ms": 683.4, "t_wall_rel_s": 2.19}
+{"type": "transcript", "speaker": "agent", "text": "this is free", "final": false, "t_stream": 4.0, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 4.06}
+{"type": "transcript", "speaker": "agent", "text": "this is free from broncos your", "final": false, "t_stream": 4.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 4.86}
+{"type": "transcript", "speaker": "agent", "text": "this is free of from social capital", "final": true, "t_stream": 3.87, "asr_conf": 0.855, "asr_lag_ms": 1131.3, "t_wall_rel_s": 5.03}
+{"type": "transcript", "speaker": "agent", "text": "this call is being", "final": false, "t_stream": 6.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 6.97}
+{"type": "transcript", "speaker": "agent", "text": "this call is being recorded", "final": true, "t_stream": 6.24, "asr_conf": 0.956, "asr_lag_ms": 928.3, "t_wall_rel_s": 7.23}
+{"type": "transcript", "speaker": "customer", "text": "hi", "final": false, "t_stream": 10.0, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 10.12}
+{"type": "transcript", "speaker": "customer", "text": "hi sorry", "final": false, "t_stream": 10.5, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 10.6}
+{"type": "transcript", "speaker": "customer", "text": "hi sorry i am if the market", "final": false, "t_stream": 11.5, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 11.6}
+{"type": "transcript", "speaker": "customer", "text": "hi sorry i am if the market it is very noisy here", "final": true, "t_stream": 12.12, "asr_conf": 0.941, "asr_lag_ms": 753.6, "t_wall_rel_s": 12.96}
+{"type": "transcript", "speaker": "agent", "text": "hey no worries", "final": true, "t_stream": 14.25, "asr_conf": 0.632, "asr_lag_ms": 837.8, "t_wall_rel_s": 15.14}
+{"type": "transcript", "speaker": "agent", "text": "i am talking about", "final": false, "t_stream": 17.0, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 17.05}
+{"type": "transcript", "speaker": "agent", "text": "i am talking about the documents", "final": false, "t_stream": 18.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 18.25}
+{"type": "transcript", "speaker": "agent", "text": "i am talking about the documents for your loan", "final": false, "t_stream": 18.9, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 18.92}
+{"type": "transcript", "speaker": "agent", "text": "i am talking about the documents for your loan application", "final": true, "t_stream": 18.27, "asr_conf": 0.862, "asr_lag_ms": 1129.2, "t_wall_rel_s": 19.43}
+{"type": "topic", "from": null, "to": "documents", "t_stream": 18.27, "speaker": "agent", "t_wall_rel_s": 19.43}
+{"type": "transcript", "speaker": "customer", "text": "which", "final": false, "t_stream": 21.1, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 21.14}
+{"type": "transcript", "speaker": "customer", "text": "which document", "final": true, "t_stream": 20.67, "asr_conf": 0.932, "asr_lag_ms": 1140.3, "t_wall_rel_s": 21.84}
+{"type": "transcript", "speaker": "customer", "text": "i think i", "final": false, "t_stream": 23.7, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 23.78}
+{"type": "transcript", "speaker": "customer", "text": "i think i sent everything already", "final": true, "t_stream": 23.46, "asr_conf": 0.92, "asr_lag_ms": 951.7, "t_wall_rel_s": 24.45}
+{"type": "transcript", "speaker": "agent", "text": "what we still need the bank statements", "final": false, "t_stream": 27.1, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 27.16}
+{"type": "transcript", "speaker": "agent", "text": "what we still need the bank statement for march", "final": true, "t_stream": 27.12, "asr_conf": 0.881, "asr_lag_ms": 1156.2, "t_wall_rel_s": 28.36}
+{"type": "transcript", "speaker": "customer", "text": "huh okay okay", "final": true, "t_stream": 30.03, "asr_conf": 0.906, "asr_lag_ms": 822.6, "t_wall_rel_s": 30.92}
+{"type": "transcript", "speaker": "customer", "text": "i will", "final": false, "t_stream": 32.8, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 32.94}
+{"type": "transcript", "speaker": "customer", "text": "i will check in every night", "final": true, "t_stream": 32.49, "asr_conf": 0.782, "asr_lag_ms": 661.4, "t_wall_rel_s": 33.16}
+{"type": "transcript", "speaker": "agent", "text": "hey you", "final": false, "t_stream": 36.2, "asr_conf": 0.9, "asr_lag_ms": null, "t_wall_rel_s": 36.24}
+{"type": "transcript", "speaker": "agent", "text": "hey you that would be great", "final": true, "t_stream": 35.91, "asr_conf": 0.932, "asr_lag_ms": 740.9, "t_wall_rel_s": 36.74}
+{"type": "transcript", "speaker": "customer", "text": "here", "final": true, "t_stream": 37.83, "asr_conf": 0.85, "asr_lag_ms": 912.6, "t_wall_rel_s": 38.81}
+{"type": "transcript", "speaker": "customer", "text": "by", "final": true, "t_stream": 39.15, "asr_conf": 0.329, "asr_lag_ms": 1145.7, "t_wall_rel_s": 40.35}
+{"type": "transcript", "speaker": "agent", "text": "huh", "final": true, "t_stream": 40.56, "asr_conf": 0.513, "asr_lag_ms": 36.7, "t_wall_rel_s": 40.61}

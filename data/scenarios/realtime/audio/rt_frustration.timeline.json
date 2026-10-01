@@ -1,0 +1,60 @@
+{
+  "id": "rt_frustration",
+  "duration_s": 51.48,
+  "sample_rate": 16000,
+  "channels": {
+    "0": "agent",
+    "1": "customer"
+  },
+  "noise_snr_db": 28,
+  "segments": [
+    {
+      "speaker": "agent",
+      "text": "Hello, this is Neha from Kosha Capital. This call is recorded. I am calling about your monthly installment that was due on the fifth.",
+      "start_s": 0.5,
+      "end_s": 10.5
+    },
+    {
+      "speaker": "customer",
+      "text": "I already told your colleague yesterday, I will pay next week.",
+      "start_s": 11.2,
+      "end_s": 15.73
+    },
+    {
+      "speaker": "agent",
+      "text": "I understand. But the installment is overdue, and late charges are applying.",
+      "start_s": 16.43,
+      "end_s": 22.735
+    },
+    {
+      "speaker": "customer",
+      "text": "This is ridiculous. How many times do I have to explain the same thing?",
+      "start_s": 23.435,
+      "end_s": 28.925
+    },
+    {
+      "speaker": "agent",
+      "text": "Sir, as per our policy, I need to remind you.",
+      "start_s": 29.625,
+      "end_s": 33.99
+    },
+    {
+      "speaker": "customer",
+      "text": "I lost my job last month and I simply cannot pay right now. You people keep calling me again and again.",
+      "start_s": 34.69,
+      "end_s": 41.95
+    },
+    {
+      "speaker": "agent",
+      "text": "Can you pay at least half of the amount today?",
+      "start_s": 42.65,
+      "end_s": 45.7
+    },
+    {
+      "speaker": "customer",
+      "text": "Are you even listening to me? This is so frustrating.",
+      "start_s": 46.4,
+      "end_s": 50.775
+    }
+  ]
+}
