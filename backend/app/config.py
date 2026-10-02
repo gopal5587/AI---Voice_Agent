@@ -22,9 +22,15 @@ class Settings:
     configs_dir: Path = ROOT / "configs"
     evidence_dir: Path = ROOT / "evidence"
 
-    public_base_url: str = _env("PUBLIC_BASE_URL", "http://localhost:8000")
+    public_base_url: str = field(
+        default_factory=lambda: _env("PUBLIC_BASE_URL", "http://localhost:8000").rstrip("/")
+    )
     cors_origins: list[str] = field(
-        default_factory=lambda: [o for o in _env("CORS_ORIGINS", "http://localhost:5173").split(",") if o]
+        default_factory=lambda: [
+            o.strip().rstrip("/")
+            for o in _env("CORS_ORIGINS", "http://localhost:5173").split(",")
+            if o.strip()
+        ]
     )
     webhook_secret: str = _env("WEBHOOK_SECRET")
 

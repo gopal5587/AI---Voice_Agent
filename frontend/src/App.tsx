@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { api, PublicConfig } from "./api";
+import { api, API_BASE, PublicConfig } from "./api";
 import VoiceAgent from "./features/agent/VoiceAgent";
 import KbExplorer from "./features/kb/KbExplorer";
 import NudgeDashboard from "./features/nudges/NudgeDashboard";
@@ -37,7 +37,13 @@ export default function App() {
           </div>
         )}
       </header>
-      {error && <div className="banner error">Backend unreachable: {error}. Start it with `uvicorn app.main:app` in backend/.</div>}
+      {error && (
+        <div className="banner error">
+          Backend unreachable{API_BASE ? ` (${API_BASE})` : " (via /api proxy)"}: {error}. On Cloudflare Pages,
+          push the latest code (Pages Function proxy) and redeploy. Railway:{" "}
+          <code>PUBLIC_BASE_URL</code> must be your https Railway URL.
+        </div>
+      )}
       <nav className="tabs">
         {TABS.map((t) => (
           <button key={t.id} className={tab === t.id ? "active" : ""} onClick={() => setTab(t.id)}>

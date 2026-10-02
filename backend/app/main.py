@@ -10,8 +10,23 @@ from .retrieval.index import get_index
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s %(message)s")
 
 app = FastAPI(title="Darwix AI Assessment", version="1.0.0")
-app.add_middleware(CORSMiddleware, allow_origins=settings.cors_origins + ["http://127.0.0.1:5173"],
-                   allow_methods=["*"], allow_headers=["*"])
+_deployed = settings.public_base_url.startswith("https://")
+if _deployed:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+else:
+    app.add_middleware(
+        CORSMiddleware,
+        allow_origins=settings.cors_origins
+        + ["http://127.0.0.1:5173", "http://localhost:5173"],
+        allow_origin_regex=r"https://([a-z0-9-]+\.)*pages\.dev$",
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
 for module in (kb, agent, vapi, realtime):
     app.include_router(module.router)
 
